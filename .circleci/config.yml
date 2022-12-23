@@ -6,7 +6,6 @@ jobs:
     docker:
       - image: cimg/node:19.2.0
     steps:
-
       - run:
           name: "NPM version check"
           command: npm --version
