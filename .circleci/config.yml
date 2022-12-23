@@ -1,0 +1,18 @@
+version: 2.1
+
+
+jobs:
+  developer-deploy:
+    docker:
+      - image: cimg/node:19.2.0
+    steps:
+
+      - run:
+          name: "NPM version check"
+          command: npm --version
+
+
+workflows:
+  developer-workflow:
+    jobs:
+      - developer-deploy:
