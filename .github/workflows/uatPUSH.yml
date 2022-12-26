@@ -4,7 +4,7 @@ name: CI
 on:
   push:
     branches:
-      - dev
+      - uat
 
   workflow_dispatch:
 
@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: dev push
+      - name: uat push
         run: echo Hello, world!
 
       - name: test rest api call circleci
