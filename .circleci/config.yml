@@ -137,7 +137,7 @@ workflows:
 #-----
 
   dev-pr-workflow:
-    when: << pipeline.parameters.run_qa_PR >>
+    when: << pipeline.parameters.run_dev_PR >>
     jobs:
       - developer-predeploy
   
