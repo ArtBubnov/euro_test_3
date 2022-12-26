@@ -1,20 +1,157 @@
 version: 2.1
 
+parameters:
+  run_dev_push:
+    default: false
+    type: boolean
 
+  run_qa_push:
+    default: false
+    type: boolean
+
+  run_uat_push:
+    default: false
+    type: boolean
+
+  run_prod_push:
+    default: false
+    type: boolean
+
+#-----------------
+
+  run_dev_PR:
+    default: false
+    type: boolean
+
+  run_qa_PR:
+    default: false
+    type: boolean
+
+  run_uat_PR:
+    default: false
+    type: boolean
+
+  run_prod_PR:
+    default: false
+    type: boolean
+
+
+
+
+#---------------------------- -----------------------------------------------------------
 jobs:
   developer-deploy:
     docker:
       - image: cimg/node:19.2.0
     steps:
       - run:
-          name: "NPM version check"
+          name: "DEV PUSH"
+          command: npm --version
+
+  qa-deploy:
+    docker:
+      - image: cimg/node:19.2.0
+    steps:
+      - run:
+          name: "QA PUSH"
+          command: npm --version
+
+  uat-deploy:
+    docker:
+      - image: cimg/node:19.2.0
+    steps:
+      - run:
+          name: "UAT PUSH"
+          command: npm --version
+
+  prod-deploy:
+    docker:
+      - image: cimg/node:19.2.0
+    steps:
+      - run:
+          name: "PROD  PUSH"
+          command: npm --version
+
+  developer-predeploy:
+    docker:
+      - image: cimg/node:19.2.0
+    steps:
+      - run:
+          name: "DEV PR"
+          command: npm --version
+
+  qa-predeploy:
+    docker:
+      - image: cimg/node:19.2.0
+    steps:
+      - run:
+          name: "QA PR"
+          command: npm --version
+
+  uat-predeploy:
+    docker:
+      - image: cimg/node:19.2.0
+    steps:
+      - run:
+          name: "UAT PR"
+          command: npm --version
+
+  prod-predeploy:
+    docker:
+      - image: cimg/node:19.2.0
+    steps:
+      - run:
+          name: "PROD PR"
           command: npm --version
 
 
+
+
+
+
+#------------------------------   --------------------------------------------------------
+
+
 workflows:
-  developer-workflow:
+  version: 2
+  dev-push-workflow:
+    when: << pipeline.parameters.run_dev_push >>
     jobs:
-      - developer-deploy:
-          filters:
-            branches:
-              only: dev
+      - developer-deploy
+  
+  qa-push-workflow:
+    when: << pipeline.parameters.run_qa_push >>
+    jobs:
+      - qa-deploy
+
+  uat-push-workflow:
+    when: << pipeline.parameters.run_uat_push >>
+    jobs:
+      - uat-deploy
+
+  prod-push-workflow:
+    when: << pipeline.parameters.run_prod_push >>
+    jobs:
+      - prod-deploy
+
+#-----
+
+  dev-pr-workflow:
+    when: << pipeline.parameters.run_dev_PR >>
+    jobs:
+      - developer-predeploy
+  
+  qa-pr-workflow:
+    when: << pipeline.parameters.run_qa_PR >>
+    jobs:
+      - qa-predeploy
+
+  uat-pr-workflow:
+    when: << pipeline.parameters.run_uat_PR >>
+    jobs:
+      - uat-predeploy
+
+  prod-pr-workflow:
+    when: << pipeline.parameters.run_prod_PR >>
+    jobs:
+      - prod-predeploy
