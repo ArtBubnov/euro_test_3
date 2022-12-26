@@ -12,7 +12,7 @@ workflows:
             /home/circleci/params.json
           pre-steps:
             - run:
-                name: "test"
+                name: "test1"
                 command: |
                   if [ -z "${CIRCLE_PULL_REQUEST##*/}" ]
                   then
