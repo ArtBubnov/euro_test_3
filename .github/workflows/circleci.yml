@@ -13,7 +13,26 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run a one-line script
+      - name: dev push
+        run: echo Hello, world!
+
+      - name: test rest api call circleci
+        run: curl google.com
+
+
+on:
+  push:
+    pull_request: [ "dev" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: dev PR
         run: echo Hello, world!
 
       - name: test rest api call circleci
