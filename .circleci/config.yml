@@ -12,6 +12,7 @@ workflows:
             /home/circleci/params.json
           pre-steps:
             - run:
+                name: "test"
                 command: |
                   if [ -z "${CIRCLE_PULL_REQUEST##*/}" ]
                   then
@@ -28,3 +29,4 @@ workflows:
                       IS_MAIN=false
                     fi
                     echo '{ "is_main": '$IS_MAIN' }' >> /home/circleci/params.json
+                
