@@ -2,7 +2,7 @@ version: 2.1
 
 parameters:
   run_test_workflow:
-    default: true
+    default: false
     type: boolean
 
 jobs:
