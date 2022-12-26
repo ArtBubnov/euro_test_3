@@ -1,20 +1,30 @@
+setup: true
 version: 2.1
-
-
-jobs:
-  developer-deploy:
-    docker:
-      - image: cimg/node:19.2.0
-    steps:
-      - run:
-          name: "NPM version check 1"
-          command: npm --version
-
-
+orbs:
+  continuation: circleci/continuation@0.2.0
 workflows:
-  developer-workflow:
+  setup:
     jobs:
-      - developer-deploy:
-          filters:
-            branches:
-              only: dev
+      - continuation/continue:
+          configuration_path: ".circleci/main.yml"
+          parameters: |
+            /home/circleci/paramsPR.json
+            /home/circleci/params.json
+          pre-steps:
+            - run:
+                command: |
+                  if [ -z "${CIRCLE_PULL_REQUEST##*/}" ]
+                  then
+                    IS_PR=false
+                  else
+                    IS_PR=true
+                  fi
+                  echo '{ "is_pr": '$IS_PR' }' >> /home/circleci/paramsPR.json
+                
+                  if [ -z "{$CIRCLE_BRANCH <> "main"}" ]
+                    then
+                      IS_MAIN=true
+                    else
+                      IS_MAIN=false
+                    fi
+                    echo '{ "is_main": '$IS_MAIN' }' >> /home/circleci/params.json
