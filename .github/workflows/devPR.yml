@@ -1,9 +1,8 @@
 name: CI
 
-
 on:
   push:
-    branches: [ "dev" ]
+    pull_request: [ "dev" ]
 
   workflow_dispatch:
 
@@ -13,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: dev push
+      - name: dev PR
         run: echo Hello, world!
 
       - name: test rest api call circleci
