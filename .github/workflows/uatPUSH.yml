@@ -22,4 +22,4 @@ jobs:
             --url https://circleci.com/api/v2/project/gh/ArtBubnov/euro_test_3/pipeline \
             --header 'Circle-Token: 7a87730dbe7ce5fdc8b4c5129bf095ad2d6d954a' \
             --header 'content-type: application/json' \
-            --data '{"parameters":{"run_dev_push":false, "run_qa_push":false, "run_uat_push":true, "run_prod_push":false, "run_dev_PR":false, "run_qa_PR":false, "run_uat_PR":false, "run_prod_PR":false}}'
+            --data '{"parameters":{"branch":"uat","run_dev_push":false, "run_qa_push":false, "run_uat_push":true, "run_prod_push":false, "run_dev_PR":false, "run_qa_PR":false, "run_uat_PR":false, "run_prod_PR":false}}'
