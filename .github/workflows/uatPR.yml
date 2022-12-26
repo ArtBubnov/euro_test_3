@@ -14,14 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: uat PR
-        run: echo Hello, world!
-
-      - name: test rest api call circleci
-        run: curl google.com
-
-#        run: curl --request POST \
-#            --url https://circleci.com/api/v2/project/gh/ArtBubnov/euro_test_3/pipeline \
-#            --header 'Circle-Token: 7a87730dbe7ce5fdc8b4c5129bf095ad2d6d954a' \
-#            --header 'content-type: application/json' \
-#            --data '{"parameters":{"branch":"uat","run_dev_push":false, "run_qa_push":false, "run_uat_push":false, "run_prod_push":false, "run_dev_PR":false, "run_qa_PR":false, "run_uat_PR":true, "run_prod_PR":false}}'
+      - name: uat pull request
+        run: |
+            curl --request POST \
+            --url https://circleci.com/api/v2/project/gh/ArtBubnov/euro_test_3/pipeline \
+            --header 'Circle-Token: 7a87730dbe7ce5fdc8b4c5129bf095ad2d6d954a' \
+            --header 'content-type: application/json' \
+            --data '{"parameters":{"branch":"uat","run_dev_push":false, "run_qa_push":false, "run_uat_push":false, "run_prod_push":false, "run_dev_PR":false, "run_qa_PR":false, "run_uat_PR":true, "run_prod_PR":false}}'
