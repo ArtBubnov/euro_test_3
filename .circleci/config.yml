@@ -69,7 +69,7 @@ jobs:
       - image: cimg/node:19.2.0
     steps:
       - run:
-          name: "PROD PUSH"
+          name: "PROD  PUSH"
           command: npm --version
 
   developer-predeploy:
