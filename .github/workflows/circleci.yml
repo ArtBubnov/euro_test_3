@@ -17,6 +17,4 @@ jobs:
         run: echo Hello, world!
 
       - name: test rest api call circleci
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: curl google.com
