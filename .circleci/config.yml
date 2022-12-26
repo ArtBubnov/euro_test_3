@@ -1,5 +1,9 @@
 version: 2.1
 
+parameters:
+  run_test_workflow:
+    default: false
+    type: boolean
 
 jobs:
   developer-deploy:
@@ -10,11 +14,18 @@ jobs:
           name: "NPM vers ion check"
           command: npm --version
 
-
 workflows:
-  developer-workflow:
+  version: 2
+  test-workflow:
+    when: << pipeline.parameters.run_test_workflow >>
     jobs:
-      - developer-deploy:
-          filters:
-            branches:
-              only: dev
+      - developer-deploy
+
+
+#workflows:
+#  developer-workflow:
+#    jobs:
+#      - developer-deploy:
+#          filters:
+#            branches:
+#              only: dev
