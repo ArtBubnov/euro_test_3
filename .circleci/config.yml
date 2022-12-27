@@ -54,7 +54,11 @@ jobs:
     steps:
       - run:
           name: "DEV PR"
-          command: npm --version
+          command: |
+            npm --version
+            echo << pipeline.parameters.eventType >>
+            echo << pipeline.parameters.branchName >>
+            echo << pipeline.parameters.sourceBranchName >>
 
   qa-predeploy:
     docker:
@@ -62,7 +66,11 @@ jobs:
     steps:
       - run:
           name: "QA PR"
-          command: npm --version
+          command: |
+            npm --version
+            echo << pipeline.parameters.eventType >>
+            echo << pipeline.parameters.branchName >>
+            echo << pipeline.parameters.sourceBranchName >>
 
   uat-predeploy:
     docker:
