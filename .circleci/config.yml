@@ -113,7 +113,7 @@ jobs:
 
 
 
-
+#"eventType":"push", "branchName":"dev"
 
 #------------------------------   --------------------------------------------------------
 
@@ -123,8 +123,8 @@ workflows:
   dev-push-workflow:
     when:
       and:
-        - equal: [ "dev", << pipeline.parameters.eventType >> ]
-        - equal: [ "push", << pipeline.parameters.branchName >> ]
+        - equal: [ "push", << pipeline.parameters.eventType >> ]
+        - equal: [ "dev", << pipeline.parameters.branchName >> ]
     jobs:
       - developer-deploy
   
