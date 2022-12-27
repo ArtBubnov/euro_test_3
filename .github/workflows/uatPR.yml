@@ -13,11 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
-      - name: variable test
-        run: |
-          echo "test"
-          echo $GITHUB_REF_NAME
 
       - name: uat pull request
         run: |
