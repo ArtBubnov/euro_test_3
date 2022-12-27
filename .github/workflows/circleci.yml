@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: variable test
-        run: ech $GITHUB_HEAD_REF
+        run: ech $GITHUB_REF_NAME
 
       - name: dev push
         run: |
