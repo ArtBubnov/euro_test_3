@@ -17,7 +17,6 @@ jobs:
       - name: variable test
         run: |
           echo "test"
-          echo $GITHUB_HEAD_REF
           echo $GITHUB_REF_NAME
 
       - name: dev pull request
@@ -33,3 +32,4 @@ jobs:
 
 
 #--data '{"branch":"dev","parameters":{"run_dev_push":false, "run_qa_push":false, "run_uat_push":false, "run_prod_push":false, "run_dev_PR":true, "run_qa_PR":false, "run_uat_PR":false, "run_prod_PR":false}}'
+#echo $GITHUB_HEAD_REF
