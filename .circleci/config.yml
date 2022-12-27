@@ -95,38 +95,59 @@ workflows:
       - developer-deploy
   
   qa-push-workflow:
-    when: << pipeline.parameters.run_qa_push >>
+    when:
+      and:
+        - equal: [ "push", << pipeline.parameters.eventType >> ]
+        - equal: [ "qa", << pipeline.parameters.branchName >> ]
     jobs:
       - qa-deploy
 
   uat-push-workflow:
-    when: << pipeline.parameters.run_uat_push >>
+    when:
+      and:
+        - equal: [ "push", << pipeline.parameters.eventType >> ]
+        - equal: [ "uat", << pipeline.parameters.branchName >> ]
     jobs:
       - uat-deploy
 
   prod-push-workflow:
-    when: << pipeline.parameters.run_prod_push >>
+    when:
+      and:
+        - equal: [ "push", << pipeline.parameters.eventType >> ]
+        - equal: [ "main", << pipeline.parameters.branchName >> ]
     jobs:
       - prod-deploy
 
 #-----
 
   dev-pr-workflow:
-    when: << pipeline.parameters.run_dev_PR >>
+    when:
+      and:
+        - equal: [ "pr", << pipeline.parameters.eventType >> ]
+        - equal: [ "dev", << pipeline.parameters.branchName >> ]
     jobs:
       - developer-predeploy
   
   qa-pr-workflow:
-    when: << pipeline.parameters.run_qa_PR >>
+    when:
+      and:
+        - equal: [ "pr", << pipeline.parameters.eventType >> ]
+        - equal: [ "qa", << pipeline.parameters.branchName >> ]
     jobs:
       - qa-predeploy
 
   uat-pr-workflow:
-    when: << pipeline.parameters.run_uat_PR >>
+    when:
+      and:
+        - equal: [ "pr", << pipeline.parameters.eventType >> ]
+        - equal: [ "uat", << pipeline.parameters.branchName >> ]
     jobs:
       - uat-predeploy
 
   prod-pr-workflow:
-    when: << pipeline.parameters.run_prod_PR >>
+    when:
+      and:
+        - equal: [ "pr", << pipeline.parameters.eventType >> ]
+        - equal: [ "main", << pipeline.parameters.branchName >> ]
     jobs:
       - prod-predeploy
