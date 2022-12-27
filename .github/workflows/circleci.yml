@@ -14,6 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: variable test
+        run: ech $GITHUB_HEAD_REF
+
       - name: dev push
         run: |
             curl --request POST \
