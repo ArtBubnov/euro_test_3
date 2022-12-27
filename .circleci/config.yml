@@ -1,40 +1,6 @@
 version: 2.1
 
 parameters:
-  run_dev_push:
-    default: false
-    type: boolean
-
-  run_qa_push:
-    default: false
-    type: boolean
-
-  run_uat_push:
-    default: false
-    type: boolean
-
-  run_prod_push:
-    default: false
-    type: boolean
-
-#-----------------
-
-  run_dev_PR:
-    default: false
-    type: boolean
-
-  run_qa_PR:
-    default: false
-    type: boolean
-
-  run_uat_PR:
-    default: false
-    type: boolean
-
-  run_prod_PR:
-    default: false
-    type: boolean
-
   eventType:
     default: "test"
     type: string
