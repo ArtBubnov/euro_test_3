@@ -1,0 +1,24 @@
+version: 2.1
+
+parameters:
+  is_main:
+    type: boolean
+    default: false
+
+jobs:
+  on_main_actions:
+    docker:
+      - image: cimg/node:19.2.0
+    steps:
+        - checkout
+        - run:
+            name: test
+            command: . build/test.sh
+
+workflows:
+  version: 2
+   main-branch-workflow:
+    when: << pipeline.parameters.is_main >>
+    jobs:
+      - on_main_actions:
+            name: on_main_actions
