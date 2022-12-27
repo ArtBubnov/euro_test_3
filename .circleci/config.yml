@@ -35,7 +35,13 @@ parameters:
     default: false
     type: boolean
 
-
+  eventType:
+    default: "test"
+    type: string
+    
+  branchName:
+    default: "test"
+    type: string   
 
 
 #----------------------------   -----------------------------------------------------------
@@ -115,7 +121,10 @@ jobs:
 workflows:
   version: 2
   dev-push-workflow:
-    when: << pipeline.parameters.run_dev_push >>
+    when:
+      and:
+        - equal: [ dev, << pipeline.parameters.eventType >> ]
+        - equal: [ push, << pipeline.parameters.branchName >> ]
     jobs:
       - developer-deploy
   
