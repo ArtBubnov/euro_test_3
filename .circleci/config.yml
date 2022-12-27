@@ -9,6 +9,10 @@ parameters:
     default: "test"
     type: string   
 
+  sourceBranchName:
+    default: "test"
+    type: string
+
 
 #----------------------------   - ----------------------------------------------------------
 jobs:
