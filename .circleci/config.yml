@@ -88,7 +88,7 @@ jobs:
 
 workflows:
   version: 2
-  dev-push-workflow:
+  developer-deploy:
     when:
       and:
         - equal: [ "push", << pipeline.parameters.eventType >> ]
