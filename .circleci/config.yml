@@ -13,9 +13,9 @@ parameters:
     default: "test"
     type: string
 
-  globalVariable:
-    type: env_var_name
-    default: "tester"
+#  globalVariable:
+#    type: env_var_name
+#    default: "tester"
 
 
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
