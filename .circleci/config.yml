@@ -56,12 +56,15 @@ jobs:
           name: "DEV PR"
           command: npm --version
 
+      - run:
           name: "eventType log"
           command: echo << pipeline.parameters.eventType >>
-            
+
+      - run:  
           name: "branchName log"
           command: echo << pipeline.parameters.branchName >>
 
+      - run:
           name: "sourceBranchName log"
           command: echo << pipeline.parameters.sourceBranchName >>
             
@@ -74,12 +77,15 @@ jobs:
           name: "DEV PR"
           command: npm --version
 
+      - run:
           name: "eventType log"
           command: echo << pipeline.parameters.eventType >>
-            
+
+      - run:  
           name: "branchName log"
           command: echo << pipeline.parameters.branchName >>
-
+          
+      - run:
           name: "sourceBranchName log"
           command: echo << pipeline.parameters.sourceBranchName >>
 
