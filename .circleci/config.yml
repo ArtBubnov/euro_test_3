@@ -31,7 +31,7 @@ jobs:
 
       - run:
           name: "Global variables test"
-          command: echo "my test" >> $BASH_ENV
+          command: echo "my test" >> $EVENT_TYPE
 
 
       #- run:
