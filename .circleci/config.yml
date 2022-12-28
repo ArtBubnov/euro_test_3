@@ -37,6 +37,9 @@ jobs:
           name: "Deploy data to Dev Env"
           command: . build/deploy_to_developer_sf_org.sh
 
+      - run:
+          name: "test variables"
+          command: . build/test.sh
 
 
 workflows:
