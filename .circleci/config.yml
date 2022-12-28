@@ -54,7 +54,19 @@ jobs:
     steps:
       - run:
           name: "DEV PR"
-          command: npm --version         
+          command: npm --version
+
+      - run:
+          name: "eventType"  
+          command: echo << pipeline.parameters.eventType >>
+
+      - run:
+          name: "target branch"
+          command: echo << pipeline.parameters.branchName >>
+
+      - run:
+          name: "source branch"
+          command: echo << pipeline.parameters.sourceBranchName >>
 
   qa-predeploy:
     docker:
@@ -63,6 +75,18 @@ jobs:
       - run:
           name: "QA PR"
           command: npm --version
+          
+      - run:
+          name: "eventType"  
+          command: echo << pipeline.parameters.eventType >>
+
+      - run:
+          name: "target branch"
+          command: echo << pipeline.parameters.branchName >>
+
+      - run:
+          name: "source branch"
+          command: echo << pipeline.parameters.sourceBranchName >>
 
   uat-predeploy:
     docker:
@@ -86,7 +110,7 @@ jobs:
 
 workflows:
   version: 2
-  developer-deploy:
+  dev-push-workflow:
     when:
       and:
         - equal: [ "push", << pipeline.parameters.eventType >> ]
