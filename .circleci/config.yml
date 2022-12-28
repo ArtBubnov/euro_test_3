@@ -68,6 +68,10 @@ jobs:
           name: "source branch"
           command: echo << pipeline.parameters.sourceBranchName >>
 
+
+
+
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   qa-predeploy:
     docker:
       - image: cimg/node:19.2.0
@@ -77,16 +81,12 @@ jobs:
           command: npm --version
           
       - run:
-          name: "eventType"  
-          command: echo << pipeline.parameters.eventType >>
+          name: "Deploy data to Dev Env"
+          command: . build/deploy_to_developer_sf_org.sh
 
-      - run:
-          name: "target branch"
-          command: echo << pipeline.parameters.branchName >>
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-      - run:
-          name: "source branch"
-          command: echo << pipeline.parameters.sourceBranchName >>
+
 
   uat-predeploy:
     docker:
