@@ -24,13 +24,13 @@ jobs:
           name: "DEV PUSH"
           command: npm --version
 
+      - run: EVENT_TYPE = << pipeline.parameters.eventType >>
+      - run: EVENT_TYPE = << pipeline.parameters.branchName >>
+      - run: EVENT_TYPE = << pipeline.parameters.sourceBranchName >>
+      
       - run:
           name: "Deploy data to Dev Env"
-          command: >-
-            EVENT_TYPE = << pipeline.parameters.eventType >>
-            BRANCH_NAME = << pipeline.parameters.branchName >>
-            SOURCE_BRANCH_NAME = << pipeline.parameters.sourceBranchName >>
-            . build/deploy_to_developer_sf_org.sh
+          command: . build/deploy_to_developer_sf_org.sh
 
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
