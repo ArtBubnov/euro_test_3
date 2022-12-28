@@ -20,6 +20,7 @@ jobs:
     docker:
       - image: cimg/node:19.2.0
     steps:
+      - checkout
       - run:
           name: "DEV PUSH"
           command: npm --version
