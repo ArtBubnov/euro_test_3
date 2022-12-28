@@ -3,15 +3,19 @@ version: 2.1
 parameters:
   eventType:
     default: "test"
-    type: env_var_name
+    type: string
     
   branchName:
     default: "test"
-    type: env_var_name   
+    type: string   
 
   sourceBranchName:
     default: "test"
+    type: string
+
+  globalVariable:
     type: env_var_name
+    default: "tester"
 
 
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -25,9 +29,14 @@ jobs:
           name: "DEV PUSH"
           command: npm --version
 
+      - run:
+          name: "Global variables test"
+          command: echo "my test" >> $BASH_ENV
+
+
       #- run:
       #    name: "SET EVENT_TYPE"
-      #    command: echo "export "EVENT_TYPE=<< pipeline.parameters.eventType >>
+      #    command: EVENT_TYPE=<< pipeline.parameters.eventType >>
 
       #- run:
       #    name: "SET EVENT_TYPE"
