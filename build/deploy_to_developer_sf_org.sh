@@ -1,9 +1,9 @@
 echo "Deploy data to Dev Env"
 
 echo "variables test"
-EVENT_TYPE = << pipeline.parameters.eventType >>
-EVENT_TYPE = << pipeline.parameters.branchName >>
-EVENT_TYPE = << pipeline.parameters.sourceBranchName >>
+EVENT_TYPE=<< pipeline.parameters.eventType >>
+EVENT_TYPE=<< pipeline.parameters.branchName >>
+EVENT_TYPE=<< pipeline.parameters.sourceBranchName >>
 
 echo $EVENT_TYPE
 echo $BRANCH_NAME
