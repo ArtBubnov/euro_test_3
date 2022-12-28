@@ -13,10 +13,6 @@ parameters:
     default: "test"
     type: string
 
-#  globalVariable:
-#    type: env_var_name
-#    default: "tester"
-
 
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 jobs:
@@ -32,7 +28,10 @@ jobs:
 
       - run:
           name: "SET EVENT_TYPE"
-          command: echo 'export PATH=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
+          command: |
+            echo 'export EVENT_TYPE=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
+            echo 'export BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
+            echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
       #- run:
       #    name: "SET EVENT_TYPE"
