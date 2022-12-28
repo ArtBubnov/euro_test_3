@@ -32,6 +32,7 @@ jobs:
             echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
             echo 'export BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
             echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
+            echo 'export UPDATED_FILES=""' >> "$BASH_ENV"
 
       - run:
           name: "Deploy data to Dev Env"
