@@ -77,13 +77,13 @@ jobs:
           name: "DEV PR"
           command: npm --version
 
-      - run:
-          name: "eventType log"
-          command: echo << pipeline.parameters.eventType >>
+#      - run:
+#          name: "eventType log"
+#          command: echo << pipeline.parameters.eventType >>
 
-      - run:  
-          name: "branchName log"
-          command: echo << pipeline.parameters.branchName >>
+#      - run:  
+#          name: "branchName log"
+#          command: echo << pipeline.parameters.branchName >>
           
       - run:
           name: "sourceBranchName log"
