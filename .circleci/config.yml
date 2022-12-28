@@ -32,7 +32,7 @@ jobs:
 
       - run:
           name: "SET EVENT_TYPE"
-          command: echo 'export PATH="$GOPATH"/bin:"$PATH"' >> "$BASH_ENV"
+          command: echo 'export PATH=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
 
       #- run:
       #    name: "SET EVENT_TYPE"
