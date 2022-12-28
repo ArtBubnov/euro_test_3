@@ -26,4 +26,4 @@ jobs:
             --url https://circleci.com/api/v2/project/gh/ArtBubnov/euro_test_3/pipeline \
             --header 'Circle-Token: 7a87730dbe7ce5fdc8b4c5129bf095ad2d6d954a' \
             --header 'content-type: application/json' \
-            --data '{"branch":"dev","parameters":{"eventType":"pr", "branchName":"dev", "sourceBranchName":"$GITHUB_HEAD_REF"}}'
+            --data '{"branch":"dev","parameters":{"eventType":"pr", "branchName":"dev", "sourceBranchName":"'"$GITHUB_HEAD_REF"'"}}'
