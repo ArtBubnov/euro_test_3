@@ -25,12 +25,12 @@ jobs:
           name: "DEV PUSH"
           command: npm --version
 
-      - run: 
-          name: "SET VARIABLES"
-          command: |
-            EVENT_TYPE = << pipeline.parameters.eventType >>
-            EVENT_TYPE = << pipeline.parameters.branchName >>
-            EVENT_TYPE = << pipeline.parameters.sourceBranchName >>
+      #- run: 
+      #    name: "SET VARIABLES"
+      #    command: |
+      #      EVENT_TYPE = << pipeline.parameters.eventType >>
+      #      EVENT_TYPE = << pipeline.parameters.branchName >>
+      #      EVENT_TYPE = << pipeline.parameters.sourceBranchName >>
 
       - run:
           name: "Deploy data to Dev Env"
