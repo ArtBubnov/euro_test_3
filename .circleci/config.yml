@@ -33,21 +33,6 @@ jobs:
             echo 'export BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
             echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
-      #- run:
-      #    name: "SET EVENT_TYPE"
-      #    command: BRANCH_NAME=<< pipeline.parameters.branchName >>
-
-      #- run:
-      #    name: "SET EVENT_TYPE"
-      #    command: SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>
-
-      #- run: 
-      #    name: "SET VARIABLES"
-      #    command: |
-      #      EVENT_TYPE = << pipeline.parameters.eventType >>
-      #      EVENT_TYPE = << pipeline.parameters.branchName >>
-      #      EVENT_TYPE = << pipeline.parameters.sourceBranchName >>
-
       - run:
           name: "Deploy data to Dev Env"
           command: . build/deploy_to_developer_sf_org.sh
