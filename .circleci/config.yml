@@ -27,15 +27,15 @@ jobs:
 
       - run:
           name: "SET EVENT_TYPE"
-          command: EVENT_TYPE = << pipeline.parameters.eventType >>
+          command: EVENT_TYPE=<< pipeline.parameters.eventType >>
 
       - run:
           name: "SET EVENT_TYPE"
-          command: BRANCH_NAME = << pipeline.parameters.branchName >>
+          command: BRANCH_NAME=<< pipeline.parameters.branchName >>
 
       - run:
           name: "SET EVENT_TYPE"
-          command: SOURCE_BRANCH_NAME = << pipeline.parameters.sourceBranchName >>
+          command: SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>
 
       #- run: 
       #    name: "SET VARIABLES"
