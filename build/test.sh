@@ -1,3 +1,3 @@
 echo "my wars test"
 
-echo $UPDATED_FILES
+echo $UPDATED_FILES_GLOBAL

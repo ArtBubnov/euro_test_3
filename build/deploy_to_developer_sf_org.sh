@@ -11,3 +11,5 @@ PATH_FILTER="./"
 UPDATED_FILES=$(git diff --name-only origin/qa force-app)
 echo "What is the diff?"
 echo $UPDATED_FILES
+
+echo 'export UPDATED_FILES_GLOBAL=$UPDATED_FILES' >> "$BASH_ENV"
