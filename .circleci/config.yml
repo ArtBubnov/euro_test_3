@@ -14,7 +14,7 @@ parameters:
     type: string
 
 
-#----------------------------   - ----------------------------------------------------------
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 jobs:
   developer-deploy:
     docker:
@@ -23,6 +23,18 @@ jobs:
       - run:
           name: "DEV PUSH"
           command: npm --version
+
+      - run:
+          name: "Deploy data to Dev Env"
+          command: |
+            EVENT_TYPE = << pipeline.parameters.eventType >>
+            BRANCH_NAME = << pipeline.parameters.branchName >>
+            SOURCE_BRANCH_NAME = << pipeline.parameters.sourceBranchName >>
+            . build/deploy_to_developer_sf_org.sh
+
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
 
   qa-deploy:
     docker:
