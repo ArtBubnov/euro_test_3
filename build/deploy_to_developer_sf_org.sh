@@ -1,7 +1,7 @@
 echo "Deploy data to Dev Env"
 
 echo "variables test"
-
+echo ${<< pipeline.parameters.branchName >>}
 
 echo $BASH_ENV
 echo $EVENT_TYPE

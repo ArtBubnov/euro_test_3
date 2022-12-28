@@ -29,10 +29,6 @@ jobs:
           name: "DEV PUSH"
           command: npm --version
 
-      - run:
-          name: "Global variables test"
-          command: echo "export << pipeline.parameters.eventType >>" >> $EVENT_TYPE
-
 
       #- run:
       #    name: "SET EVENT_TYPE"
