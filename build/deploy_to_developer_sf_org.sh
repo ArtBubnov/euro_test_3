@@ -1,5 +1,10 @@
 echo "Deploy data to Dev Env"
 
+echo "variables test"
+echo $EVENT_TYPE
+echo $BRANCH_NAME
+echo $SOURCE_BRANCH_NAME
+
 echo "Find the difference between organizations"
 PATH_FILTER="./"
 #BASH_VERSION=`bash --version`

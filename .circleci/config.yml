@@ -79,10 +79,14 @@ jobs:
       - run:
           name: "QA PR"
           command: npm --version
-          
+
       - run:
           name: "Deploy data to Dev Env"
-          command: . build/deploy_to_developer_sf_org.sh
+          command: |
+            EVENT_TYPE = << pipeline.parameters.eventType >>
+            BRANCH_NAME = << pipeline.parameters.branchName >>
+            SOURCE_BRANCH_NAME = << pipeline.parameters.sourceBranchName >>
+            . build/deploy_to_developer_sf_org.sh
 
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
