@@ -21,18 +21,25 @@ jobs:
       - image: cimg/node:19.2.0
     steps:
       - checkout
+      
       - run:
-          name: "DEV PUSH"
+          name: "NPM version check"
           command: npm --version
 
+      #- run:
+      #    name: "Install Dependencies"
+      #    command: . build/install_dependencies.sh
 
       - run:
           name: "SET EVENT_TYPE"
           command: |
             echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
-            echo 'export BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
+            echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
             echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
-            echo 'export UPDATED_FILES=""' >> "$BASH_ENV"
+
+      #- run:
+      #    name: "Salesforce AUTH"
+      #    command: . build/login_to_org.sh
 
       - run:
           name: "Deploy data to Dev Env"
