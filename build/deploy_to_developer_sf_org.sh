@@ -23,4 +23,4 @@ sfdx force:source:deploy -p "$UPDATED_FILES" -c -l RunLocalTests -u salesforce_b
 
 
 
-sfdx force:source:deploy -p force-app -c -l RunLocalTests -u salesforce_test.org --loglevel WARN
+#sfdx force:source:deploy -p force-app -c -l RunLocalTests -u salesforce_test.org --loglevel WARN
