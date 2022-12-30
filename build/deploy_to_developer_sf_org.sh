@@ -5,6 +5,7 @@ echo "variables test"
 echo $EVENT_TYPE
 echo $TARGET_BRANCH_NAME
 echo $SOURCE_BRANCH_NAME
+
 UPDATED_FILES=""
 
 
