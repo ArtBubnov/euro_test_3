@@ -40,14 +40,14 @@ jobs:
       #- run:
       #    name: "Salesforce AUTH"
       #    command: . build/login_to_org.sh
-
+      
       - run:
           name: "Deploy data to Dev Env"
           command: . build/deploy_to_developer_sf_org.sh
 
-      - run:
-          name: "test variables"
-          command: . build/test.sh
+      #- run:
+      #    name: "test variables"
+      #    command: . build/test.sh
 ######################################################################################################
   deploy:
     docker:
