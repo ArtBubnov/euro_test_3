@@ -49,7 +49,7 @@ jobs:
       #    name: "test variables"
       #    command: . build/test.sh
 ######################################################################################################
-  deploy:
+  pre-deploy:
     docker:
       - image: cimg/node:19.2.0
     steps:
