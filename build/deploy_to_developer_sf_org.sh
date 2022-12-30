@@ -11,6 +11,7 @@ UPDATED_FILES=""
 
 
 
+
 echo "Find the difference between organizations"
 PATH_FILTER="./"
 UPDATED_FILES=$(git diff --name-only origin/dev force-app)
