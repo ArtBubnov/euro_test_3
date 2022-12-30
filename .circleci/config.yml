@@ -14,164 +14,90 @@ parameters:
     type: string
 
 
-#----------------------------   - ----------------------------------------------------------
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 jobs:
-  developer-deploy:
+  deploy:
     docker:
       - image: cimg/node:19.2.0
     steps:
+      - checkout
+      
       - run:
-          name: "DEV PUSH"
+          name: "NPM version check"
           command: npm --version
 
-  qa-deploy:
+      #- run:
+      #    name: "Install Dependencies"
+      #    command: . build/install_dependencies.sh
+
+      - run:
+          name: "SET EVENT_TYPE"
+          command: |
+            echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
+            echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
+            echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
+
+      #- run:
+      #    name: "Salesforce AUTH"
+      #    command: . build/login_to_org.sh
+
+      - run:
+          name: "Deploy data to Dev Env"
+          command: . build/deploy_to_developer_sf_org.sh
+
+      - run:
+          name: "test variables"
+          command: . build/test.sh
+######################################################################################################
+  deploy:
     docker:
       - image: cimg/node:19.2.0
     steps:
+      - checkout
+      
       - run:
-          name: "QA PUSH"
+          name: "NPM version check"
           command: npm --version
 
-  uat-deploy:
-    docker:
-      - image: cimg/node:19.2.0
-    steps:
-      - run:
-          name: "UAT PUSH"
-          command: npm --version
+      #- run:
+      #    name: "Install Dependencies"
+      #    command: . build/install_dependencies.sh
 
-  prod-deploy:
-    docker:
-      - image: cimg/node:19.2.0
-    steps:
-      - run:
-          name: "PROD  PUSH"
-          command: npm --version
+      #- run:
+      #    name: "SET EVENT_TYPE"
+      #    command: |
+      #      echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
+      #      echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
+      #      echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
-  developer-predeploy:
-    docker:
-      - image: cimg/node:19.2.0
-    steps:
-      - run:
-          name: "DEV PR"
-          command: npm --version
+      #- run:
+      #    name: "Salesforce AUTH"
+      #    command: . build/login_to_org.sh
 
-      - run:
-          name: "eventType"  
-          command: echo << pipeline.parameters.eventType >>
+      #- run:
+      #    name: "Deploy data to Dev Env"
+      #    command: . build/deploy_to_developer_sf_org.sh
 
-      - run:
-          name: "target branch"
-          command: echo << pipeline.parameters.branchName >>
-
-      - run:
-          name: "source branch"
-          command: echo << pipeline.parameters.sourceBranchName >>
-
-  qa-predeploy:
-    docker:
-      - image: cimg/node:19.2.0
-    steps:
-      - run:
-          name: "QA PR"
-          command: npm --version
-          
-      - run:
-          name: "eventType"  
-          command: echo << pipeline.parameters.eventType >>
-
-      - run:
-          name: "target branch"
-          command: echo << pipeline.parameters.branchName >>
-
-      - run:
-          name: "source branch"
-          command: echo << pipeline.parameters.sourceBranchName >>
-
-  uat-predeploy:
-    docker:
-      - image: cimg/node:19.2.0
-    steps:
-      - run:
-          name: "UAT PR"
-          command: npm --version
-
-  prod-predeploy:
-    docker:
-      - image: cimg/node:19.2.0
-    steps:
-      - run:
-          name: "PROD PR"
-          command: npm --version
+      #- run:
+      #    name: "test variables"
+      #    command: . build/test.sh
 
 
-#------------------------------      --------------------------------------------------------
+
 
 
 workflows:
   version: 2
-  dev-push-workflow:
+  push-workflow:
     when:
       and:
         - equal: [ "push", << pipeline.parameters.eventType >> ]
-        - equal: [ "dev", << pipeline.parameters.branchName >> ]
     jobs:
-      - developer-deploy
-  
-  qa-push-workflow:
-    when:
-      and:
-        - equal: [ "push", << pipeline.parameters.eventType >> ]
-        - equal: [ "qa", << pipeline.parameters.branchName >> ]
-    jobs:
-      - qa-deploy
+      - deploy
 
-  uat-push-workflow:
-    when:
-      and:
-        - equal: [ "push", << pipeline.parameters.eventType >> ]
-        - equal: [ "uat", << pipeline.parameters.branchName >> ]
-    jobs:
-      - uat-deploy
-
-  prod-push-workflow:
-    when:
-      and:
-        - equal: [ "push", << pipeline.parameters.eventType >> ]
-        - equal: [ "main", << pipeline.parameters.branchName >> ]
-    jobs:
-      - prod-deploy
-
-#-----
-
-  dev-pr-workflow:
+  pull-request-workflow:
     when:
       and:
         - equal: [ "pr", << pipeline.parameters.eventType >> ]
-        - equal: [ "dev", << pipeline.parameters.branchName >> ]
     jobs:
-      - developer-predeploy
-  
-  qa-pr-workflow:
-    when:
-      and:
-        - equal: [ "pr", << pipeline.parameters.eventType >> ]
-        - equal: [ "qa", << pipeline.parameters.branchName >> ]
-    jobs:
-      - qa-predeploy
-
-  uat-pr-workflow:
-    when:
-      and:
-        - equal: [ "pr", << pipeline.parameters.eventType >> ]
-        - equal: [ "uat", << pipeline.parameters.branchName >> ]
-    jobs:
-      - uat-predeploy
-
-  prod-pr-workflow:
-    when:
-      and:
-        - equal: [ "pr", << pipeline.parameters.eventType >> ]
-        - equal: [ "main", << pipeline.parameters.branchName >> ]
-    jobs:
-      - prod-predeploy
+      - pre-deploy
