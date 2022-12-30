@@ -19,7 +19,7 @@ echo $UPDATED_FILES
 
 
 echo "Test deploy to Salesforce env without saving"
-sfdx force:source:deploy -p "$UPDATED_FILES" -c -l RunLocalTests -u salesforce_build.org --loglevel WARN
+#sfdx force:source:deploy -p "$UPDATED_FILES" -c -l RunLocalTests -u salesforce_build.org --loglevel WARN
 
 
 
