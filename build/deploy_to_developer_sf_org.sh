@@ -1,4 +1,4 @@
-echo "Deploy data to Dev Env"
+echo -e "Deploy data to Dev Env\n\n\n"
 
 echo "variables test"
 
@@ -41,16 +41,16 @@ echo SALESFORCE_ORG_ALIAS
 
 
 
-echo "Find the difference between organizations"
+echo -e "\n\n\nFind the difference between organizations"
 PATH_FILTER="./"
 UPDATED_FILES=$(git diff --name-only origin/dev force-app)
 echo "What is the diff?"
 echo $UPDATED_FILES
 
-echo "Place diff data to a file"
+echo -e "\n\n\nPlace diff data to a file"
 echo -e $UPDATED_FILES | tr '\n' ',' | sed 's/\(.*\),/\1 /'>>$DIFF_FILE_NAME.txt
 
-echo "RESUL TEST"
+echo -e "\n\n\nRESUL TEST"
 cat $DIFF_FILE_NAME.txt
 
 
