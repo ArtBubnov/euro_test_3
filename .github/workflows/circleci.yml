@@ -16,7 +16,7 @@ jobs:
 
       - name: test
         run: |
-          UPDATED_FILES=$(git diff --name-only origin/dev force-app)
+          UPDATED_FILES=$(git diff --name-only origin/qa force-app)
           echo "What is the diff?"
           echo $UPDATED_FILES
 
