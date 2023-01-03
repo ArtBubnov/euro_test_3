@@ -48,8 +48,8 @@ echo "What is the diff?"
 echo $UPDATED_FILES
 
 echo $UPDATED_FILES>>$DIFF_FILE_NAME.txt
-#echo -e "\n\n\nPlace diff data to a file"
-#echo -e $UPDATED_FILES | tr '\n' ',' | sed 's/\(.*\),/\1 /'>>$DIFF_FILE_NAME.txt
+echo -e "\n\n\nPlace diff data to a file"
+echo -e $UPDATED_FILES | tr '\n' ',' | sed 's/\(.*\),/\1 /'>>storage.txt
 
 echo -e "\n\n\nRESUL TEST"
 cat $DIFF_FILE_NAME.txt
