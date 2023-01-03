@@ -1,5 +1,5 @@
 echo -e "test\n\n\n"
 
 
-cat qadiff.txt
+cat /tmp/artifacts/artifact-2
 echo "------------"
