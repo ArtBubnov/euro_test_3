@@ -45,6 +45,9 @@ jobs:
           name: "Deploy data to Dev Env"
           command: . build/deploy_to_developer_sf_org.sh
 
+      - store_artifacts:
+          path: /tmp/artifacts
+
       - run:
           name: "TESTER"
           command: . build/test.sh
