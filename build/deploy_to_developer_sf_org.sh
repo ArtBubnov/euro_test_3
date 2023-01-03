@@ -49,6 +49,7 @@ echo $UPDATED_FILES
 
 echo $UPDATED_FILES>>$DIFF_FILE_NAME.txt
 echo -e "\n\n\nPlace diff data to a file"
+mkdir /tmp/artifacts
 echo -e $UPDATED_FILES | tr '\n' ',' | sed 's/\(.*\),/\1 /'>/tmp/artifacts/artifact-2
 
 echo -e "\n\n\nRESUL TEST"
