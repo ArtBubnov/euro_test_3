@@ -48,7 +48,7 @@ echo "What is the diff?"
 echo $UPDATED_FILES
 
 echo "Place diff data to a file"
-echo $UPDATED_FILES | tr ' ' ',' | sed 's/\(.*\),/\1 /'>>$DIFF_FILE_NAME.txt
+echo -e $UPDATED_FILES | tr '\n' ',' | sed 's/\(.*\),/\1 /'>>$DIFF_FILE_NAME.txt
 
 echo "RESUL TEST"
 cat $DIFF_FILE_NAME.txt
