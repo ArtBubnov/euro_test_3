@@ -34,9 +34,9 @@ case $TARGET_BRANCH_NAME in
         echo "Not valid"
         ;;
 esac
-echo CASE_LOG
-echo DIFF_FILE_NAME
-echo SALESFORCE_ORG_ALIAS
+echo $CASE_LOG
+echo $DIFF_FILE_NAME
+echo $SALESFORCE_ORG_ALIAS
 
 
 
@@ -47,8 +47,9 @@ UPDATED_FILES=$(git diff --name-only origin/dev force-app)
 echo "What is the diff?"
 echo $UPDATED_FILES
 
-echo -e "\n\n\nPlace diff data to a file"
-echo -e $UPDATED_FILES | tr '\n' ',' | sed 's/\(.*\),/\1 /'>>$DIFF_FILE_NAME.txt
+echo $UPDATED_FILES>>$DIFF_FILE_NAME.txt
+#echo -e "\n\n\nPlace diff data to a file"
+#echo -e $UPDATED_FILES | tr '\n' ',' | sed 's/\(.*\),/\1 /'>>$DIFF_FILE_NAME.txt
 
 echo -e "\n\n\nRESUL TEST"
 cat $DIFF_FILE_NAME.txt
