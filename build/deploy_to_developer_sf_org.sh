@@ -8,7 +8,7 @@ echo $SOURCE_BRANCH_NAME
 
 UPDATED_FILES=""
 
-echo "Select diff_file and Salesforce org alias"
+echo -e "\n\n\nSelect diff_file and Salesforce org alias"
 case $TARGET_BRANCH_NAME in
     "dev")
         CASE_LOG="dev"
