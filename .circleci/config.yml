@@ -48,12 +48,7 @@ jobs:
       #- store_artifacts:
       #    path: /tmp/artifacts
 
-      - run:
-          name: "TESTER"
-          command: . build/test.sh
-      #- run:
-      #    name: "test variables"
-      #    command: . build/test.sh
+
 ########################################## ##### #######################################################
   pre-deploy:
     docker:
@@ -81,15 +76,8 @@ jobs:
       #    command: . build/login_to_org.sh
 
       #- run:
-      #    name: "Deploy data to Dev Env"
-      #    command: . build/deploy_to_developer_sf_org.sh
-
-      #- run:
-      #    name: "test variables"
-      #    command: . build/test.sh
-
-
-
+      #    name: "Salesforce predeploy tests"
+      #    command: . build/pre_deploy_actions.sh
 
 
 workflows:
