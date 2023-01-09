@@ -16,6 +16,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: diff test
+        run: git diff --name-only origin/dev
+
       - name: qa push
         run: |
             curl --request POST \
