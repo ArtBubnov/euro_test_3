@@ -1,4 +1,4 @@
-echo "Deploy data to Dev Env"
+echo -e "Deploy data to Dev Env\n\n\n"
 
 echo "variables test"
 
@@ -8,7 +8,7 @@ echo $SOURCE_BRANCH_NAME
 
 UPDATED_FILES=""
 
-echo "Select diff_file and Salesforce org alias"
+echo -e "\n\n\nSelect diff_file and Salesforce org alias"
 case $TARGET_BRANCH_NAME in
     "dev")
         CASE_LOG="dev"
@@ -34,25 +34,27 @@ case $TARGET_BRANCH_NAME in
         echo "Not valid"
         ;;
 esac
-echo CASE_LOG
-echo DIFF_FILE_NAME
-echo SALESFORCE_ORG_ALIAS
+echo $CASE_LOG
+echo $DIFF_FILE_NAME
+echo $SALESFORCE_ORG_ALIAS
 
 
 
 
-echo "Find the difference between organizations"
-PATH_FILTER="./"
-UPDATED_FILES=$(git diff --name-only origin/dev force-app)
-echo "What is the diff?"
-echo $UPDATED_FILES
+#echo -e "\n\n\nFind the difference between organizations"
+#PATH_FILTER="./"
+#UPDATED_FILES=$(git diff --name-only origin/dev force-app)
+#echo "What is the diff?"
+#echo $UPDATED_FILES
 
-echo "Place diff data to a file"
-echo $UPDATED_FILES | tr '\n' ',' | sed 's/\(.*\),/\1 /'>>$DIFF_FILE_NAME.txt
+#echo $UPDATED_FILES>>$DIFF_FILE_NAME.txt
+#echo -e "\n\n\nPlace diff data to a file"
+#mkdir /tmp/artifacts
+#echo -e $UPDATED_FILES | tr '\n' ',' | sed 's/\(.*\),/\1 /'>/tmp/artifacts/artifact-2
 
-echo "RESUL TEST"
-cat $DIFF_FILE_NAME.txt
+#echo -e "\n\n\nRESUL TEST"
+#cat /tmp/artifacts/artifact-2
 
 
-echo "Test deploy to Salesforce env without saving"
-#sfdx force:source:deploy -p "$UPDATED_FILES" -c -l RunLocalTests -u salesforce_build.org --loglevel WARN
+echo "Test deploy to Salesforce env \n\n\n"
+#sfdx force:source:deploy -p "$UPDATED_FILES" -l RunLocalTests -u salesforce_build.org --loglevel WARN

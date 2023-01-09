@@ -46,17 +46,3 @@ echo $SALESFORCE_ORG_ALIAS
 #echo "Try SF login"
 #sfdx force:auth:sfdxurl:store -f "access_pass.key" -a $SALESFORCE_ORG_ALIAS -d
 #sfdx force:org:display -u salesforce_test.org
-
-
-
-
-
-
-
-
-      #- touch access_pass.key
-      #- echo $accessKeySF > access_pass.key
-
-      #Salesfrce org auth
-      #- sfdx force:auth:sfdxurl:store -f "access_pass.key" -a salesforce_test.org -d
-      #- sfdx force:org:display -u salesforce_test.org
