@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: diff test
+        run: git diff --name-only origin/dev
             
       - name: variable test
         run: |
