@@ -4,7 +4,7 @@ name: CI
 on:
   push:
     branches:
-      - qa
+      - main
 
   workflow_dispatch:
 
@@ -13,16 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      - name: diff test
-        run: git diff --name-only origin/dev
-
-      - name: qa push
+      - name: prod push
         run: |
             curl --request POST \
             --url https://circleci.com/api/v2/project/gh/ArtBubnov/euro_test_3/pipeline \
             --header 'Circle-Token: 7a87730dbe7ce5fdc8b4c5129bf095ad2d6d954a' \
             --header 'content-type: application/json' \
-            --data '{"branch":"qa","parameters":{"eventType":"push", "branchName":"qa", "sourceBranchName":"false"}}'
+            --data '{"branch":"main","parameters":{"eventType":"push", "branchName":"main"}}'
+            
+          
+#--data '{"branch":"main","parameters":{"run_dev_push":false, "run_qa_push":false, "run_uat_push":false, "run_prod_push":true, "run_dev_PR":false, "run_qa_PR":false, "run_uat_PR":false, "run_prod_PR":false}}'
