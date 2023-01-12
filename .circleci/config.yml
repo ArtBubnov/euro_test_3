@@ -2,7 +2,7 @@ version: 2.1
 
 parameters:
   eventType:
-    default: "test"
+    default: "test2"
     type: string
     
   branchName:
