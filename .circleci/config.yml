@@ -26,16 +26,20 @@ jobs:
           name: "NPM version check"
           command: npm --version
 
+      - run:
+          name: "var test"
+          command: echo $CIRCLE_PULL_REQUEST
+
       #- run:
       #    name: "Install Dependencies"
       #    command: . build/install_dependencies.sh
 
-      - run:
-          name: "SET EVENT_TYPE"
-          command: |
-            echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
-            echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
-            echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
+      #- run:
+      #    name: "SET EVENT_TYPE"
+      #    command: |
+      #      echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
+      #      echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
+      #      echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
       #- run:
       #    name: "Salesforce AUTH"
@@ -83,9 +87,6 @@ jobs:
 workflows:
   version: 2
   push-workflow:
-    when:
-      and:
-        - equal: [ "push", << pipeline.parameters.eventType >> ]
     jobs:
       - deploy
 
