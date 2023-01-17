@@ -2,11 +2,11 @@ version: 2.1
 
 parameters:
   eventType:
-    default: "test1"
+    default: "test11"
     type: string
     
   branchName:
-    default: "test2"
+    default: "test22"
     type: string   
 
   sourceBranchName:
