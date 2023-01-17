@@ -6,7 +6,7 @@ parameters:
     type: string
     
   branchName:
-    default: "test"
+    default: "test2"
     type: string   
 
   sourceBranchName:
