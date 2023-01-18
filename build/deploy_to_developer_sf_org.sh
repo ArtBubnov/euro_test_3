@@ -9,11 +9,17 @@ cutPRLog=$((git log --oneline --no-decorate --merges qa)| cut -d\  -f1)
 echo $cutPRLog
 echo -e "\n\n\n"
 
-getLastPRid=$(echo $cutPRLog| cut -d\  -f1)
+
+getcurrentPRid=$(echo $cutPRLog| cut -d\  -f1)
+getpreviousPRid=$(echo $cutPRLog| cut -d\  -f2)
 
 
 echo -e "ID IS"
-echo $getLastPRid
+echo "getcurrentPRid"
+echo $getcurrentPRid
+echo "---------------"
+echo "getpreviousPRid"
+echo $getpreviousPRid
 
 
 #echo "variables test"
