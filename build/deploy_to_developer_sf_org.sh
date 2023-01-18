@@ -13,7 +13,7 @@ getLastPRid=$(echo $cutPRLog| cut -d\  -f1)
 
 
 echo -e "ID IS"
-echo $test
+echo $getLastPRid
 
 
 #echo "variables test"
