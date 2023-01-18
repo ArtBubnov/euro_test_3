@@ -3,7 +3,7 @@ echo -e "Deploy data to Dev Env\n\n\n"
 echo -e "New tests\n\n\n"
 echo "git log"
 echo $(git log --oneline --no-decorate --merges qa)
-ehco -e "\n\n\n"
+ehco -e "-----\n\n\n"
 
 getBranchPRInfo=$((git log --oneline --no-decorate --merges qa)| cut -d\  -f1)
 test=$($getBranchPRInfo| cut -d\  -f1)
