@@ -134,7 +134,6 @@
         <isCollection>true</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <test>true</test>
-        <test2>true</test2>
+        <test>false</test>
     </variables>
 </Flow>
