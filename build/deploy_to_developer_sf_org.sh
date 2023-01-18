@@ -1,12 +1,14 @@
 echo -e "Deploy data to Dev Env\n\n\n"
 
 echo -e "New tests\n\n\n"
+echo "git log"
+echo $(git log --oneline --no-decorate --merges qa)
 
 getBranchPRInfo=$((git log --oneline --no-decorate --merges qa)| cut -d\  -f1)
 
 #echo $(git log --oneline --no-decorate --merges qa)| cut -d\  -f1 > getBranchPRInfo
 
-echo -e "ID IS \n\n\n"
+echo -e "ID IS"
 echo $getBranchPRInfo
 
 
