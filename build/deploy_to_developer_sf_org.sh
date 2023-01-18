@@ -5,7 +5,11 @@ echo "git log"
 echo $(git log --oneline --no-decorate --merges qa)
 echo -e "\n\n\n"
 
+echo -e "cut log 1"
 getBranchPRInfo=$((git log --oneline --no-decorate --merges qa)| cut -d\  -f1)
+echo $getBranchPRInfo
+echo -e "\n\n\n"
+
 test=$($getBranchPRInfo| cut -d\  -f1)
 
 #echo $(git log --oneline --no-decorate --merges qa)| cut -d\  -f1 > getBranchPRInfo
