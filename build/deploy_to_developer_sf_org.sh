@@ -24,6 +24,11 @@ echo $getpreviousPRid
 
 git checkout $getpreviousPRid
 
+echo -e "\n\n\n"
+
+git diff --name-only origin/dev force-app
+
+
 #echo "variables test"
 
 #echo $EVENT_TYPE
