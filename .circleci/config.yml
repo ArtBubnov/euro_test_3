@@ -26,9 +26,6 @@ jobs:
           name: "NPM version check"
           command: npm --version
 
-      - run:
-          name: "var test"
-          command: echo $CIRCLE_PULL_REQUEST
 
       #- run:
       #    name: "Install Dependencies"
@@ -45,9 +42,9 @@ jobs:
       #    name: "Salesforce AUTH"
       #    command: . build/login_to_org.sh
       
-      #- run:
-      #    name: "Deploy data to Dev Env"
-      #    command: . build/deploy_to_developer_sf_org.sh
+      - run:
+          name: "Deploy data to Dev Env"
+          command: . build/deploy_to_developer_sf_org.sh
 
       #- store_artifacts:
       #    path: /tmp/artifacts
