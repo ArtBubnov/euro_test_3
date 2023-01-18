@@ -1,28 +1,19 @@
 echo -e "Deploy data to Dev Env\n\n\n"
 
-echo -e "New tests\n\n\n"
 echo "git log"
 echo $(git log --oneline --no-decorate --merges qa)
 echo -e "\n\n\n"
 
 echo -e "cut log 1"
-getBranchPRInfo=$((git log --oneline --no-decorate --merges qa)| cut -d\  -f1)
-echo $getBranchPRInfo
+cutPRLog=$((git log --oneline --no-decorate --merges qa)| cut -d\  -f1)
+echo $cutPRLog
 echo -e "\n\n\n"
 
-test=$(echo $getBranchPRInfo| cut -d\  -f1)
+getLastPRid=$(echo $cutPRLog| cut -d\  -f1)
 
-#echo $(git log --oneline --no-decorate --merges qa)| cut -d\  -f1 > getBranchPRInfo
 
 echo -e "ID IS"
 echo $test
-
-
-#echo $(git log --oneline qa) > gitLog.txt
-
-
-#echo -e "Cat result"
-#cat gitLog.txt
 
 
 #echo "variables test"
