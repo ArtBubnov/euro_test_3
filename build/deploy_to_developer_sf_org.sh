@@ -10,7 +10,7 @@ getBranchPRInfo=$((git log --oneline --no-decorate --merges qa)| cut -d\  -f1)
 echo $getBranchPRInfo
 echo -e "\n\n\n"
 
-test=$($getBranchPRInfo| cut -d\  -f1)
+test=$(echo $getBranchPRInfo| cut -d\  -f1)
 
 #echo $(git log --oneline --no-decorate --merges qa)| cut -d\  -f1 > getBranchPRInfo
 
