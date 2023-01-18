@@ -22,6 +22,8 @@ echo "getpreviousPRid"
 echo $getpreviousPRid
 
 
+git checkout $getpreviousPRid
+
 #echo "variables test"
 
 #echo $EVENT_TYPE
