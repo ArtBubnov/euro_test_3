@@ -2,17 +2,12 @@ echo -e "Deploy data to Dev Env\n\n\n"
 
 echo -e "New tests\n\n\n"
 
+getBranchPRInfo=$((git log --oneline --no-decorate --merges qa)| cut -d\  -f1)
 
-echo $(git log --oneline --no-decorate --merges qa) > read getBranchPRInfo
-echo "$getBranchPRInfo"
+#echo $(git log --oneline --no-decorate --merges qa)| cut -d\  -f1 > getBranchPRInfo
 
-#getBranchPRInfo=$(git log --oneline --no-decorate --merges qa)
-
-#echo "$getBranchPRInfo" > read -a $getPRlogList
-
-#echo ${$getPRlogList[0]}
 echo -e "ID IS \n\n\n"
-
+echo $getBranchPRInfo
 
 
 #echo $(git log --oneline qa) > gitLog.txt
