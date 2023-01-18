@@ -7,7 +7,7 @@ getBranchPRInfo=$(git log --oneline --no-decorate --merges qa)
 
 echo "$getBranchPRInfo" > read -a $getPRlogList
 
-echo "$getPRlogList"
+echo ${$getPRlogList[0]}
 echo -e "ID IS \n\n\n"
 
 
