@@ -3,9 +3,14 @@ echo -e "Deploy data to Dev Env\n\n\n"
 echo -e "New tests\n\n\n"
 
 
-getLastPRid=$(git log --oneline --no-decorate --merges qa)
+getBranchPRInfo=$(git log --oneline --no-decorate --merges qa)
 
-echo "$getLastPRid"
+echo "$getBranchPRInfo" > read -a $getPRlogList
+
+
+echo -e "ID IS \n\n\n"
+
+
 
 #echo $(git log --oneline qa) > gitLog.txt
 
