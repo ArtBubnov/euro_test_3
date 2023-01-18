@@ -2,11 +2,16 @@ echo -e "Deploy data to Dev Env\n\n\n"
 
 echo -e "New tests\n\n\n"
 
-echo $(git log --oneline qa) > gitLog.txt
+
+getLastPRid=$(git log --oneline --no-decorate --merges qa)
+
+echo "$getLastPRid"
+
+#echo $(git log --oneline qa) > gitLog.txt
 
 
-echo -e "Cat result"
-cat gitLog.txt
+#echo -e "Cat result"
+#cat gitLog.txt
 
 
 #echo "variables test"
