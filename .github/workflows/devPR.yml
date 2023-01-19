@@ -3,8 +3,8 @@ name: CI
 
 on:
   pull_request:
-    branches:
-      - dev
+    patch:
+      - './'
 
   workflow_dispatch:
 
@@ -17,15 +17,15 @@ jobs:
       - name: variable test
         run: |
           echo $GITHUB_REF_NAME
+          echo "**************"
           echo $GITHUB_HEAD_REF
+          echo "----------------"
+          echo -e '{"branch":"'$GITHUB_REF_NAME'","parameters":{"eventType":"push", "branchName":"'$GITHUB_REF_NAME'", "sourceBranchName":"false"}}'
 
-      - name: echo
-        run: echo "test"
-
-      - name: dev pull request
-        run: |
-            curl --request POST \
-            --url https://circleci.com/api/v2/project/gh/ArtBubnov/euro_test_3/pipeline \
-            --header 'Circle-Token: 6da8a1e6759256c342785b7315374722adca636a' \
-            --header 'content-type: application/json' \
-            --data '{"branch":"dev","parameters":{"eventType":"pr", "branchName":"dev", "sourceBranchName":"'"$GITHUB_HEAD_REF"'"}}'
+      #- name: dev pull request
+      #  run: |
+      #      curl --request POST \
+      #      --url https://circleci.com/api/v2/project/gh/ArtBubnov/euro_test_3/pipeline \
+      #      --header 'Circle-Token: 6da8a1e6759256c342785b7315374722adca636a' \
+      #      --header 'content-type: application/json' \
+      #      --data '{"branch":"dev","parameters":{"eventType":"pr", "branchName":"dev", "sourceBranchName":"'"$GITHUB_HEAD_REF"'"}}'
