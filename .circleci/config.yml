@@ -23,9 +23,8 @@ jobs:
       - checkout
       - run:
           name: "test vars"
-          command: |
-            echo 'test'
-            echo 'test'
+          command: echo 'test'
+
 
 
 
