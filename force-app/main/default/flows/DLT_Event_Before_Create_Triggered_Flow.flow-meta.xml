@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <assignments>
+        <name>Assign_Public_Calendar_Names_For_Outlook</name>
+        <label>Assign Public Calendar Names For Outlook</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>Public_Calendar_Names_For_Outlook</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Brussels Midi Meeting Room</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Public_Calendar_Names_For_Outlook</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Paris Nord Meeting Room</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_If_Supposed_To_Be_Exposed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Change_Owner_To_Outlook_User</name>
+        <label>Change Owner To Outlook User</label>
+        <locationX>50</locationX>
+        <locationY>671</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Setup.DLT_Automation_Settings__c.Outlook_Integration_User_ID__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_Event_Type</name>
+        <label>Check Event Type</label>
+        <locationX>336</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Meeting</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Meeting</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Public_Calendar_Names_For_Outlook</targetReference>
+            </connector>
+            <label>Is Meeting</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_If_Supposed_To_Be_Exposed</name>
+        <label>Check If Supposed To Be Exposed</label>
+        <locationX>182</locationX>
+        <locationY>551</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Supposed_To_Be_Exposed_To_Outlook</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.DLT_Automation_Settings__c.Outlook_Integration_User_ID__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner:Calendar.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Public_Calendar_Names_For_Outlook</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>$Record.Owner:Calendar.Name</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Change_Owner_To_Outlook_User</targetReference>
+            </connector>
+            <label>Supposed To Be Exposed To Outlook</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>DLT Event Before Create Triggered Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>DLT Event Before Create Triggered Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>210</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Event_Type</targetReference>
+        </connector>
+        <object>Event</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <variables>
+        <name>Public_Calendar_Names_For_Outlook</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <test>true</test>
+    </variables>
+</Flow>
