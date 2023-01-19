@@ -18,6 +18,9 @@ jobs:
         run: |
           echo $GITHUB_REF_NAME
           echo $GITHUB_HEAD_REF
+          echo "----------------"
+          echo '{"branch":"'$GITHUB_HEAD_REF'","parameters":{"eventType":"push", "branchName":"'$GITHUB_HEAD_REF'", "sourceBranchName":"false"}}'
+
 
       #- name: dev push
       #  run: |
