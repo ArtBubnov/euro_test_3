@@ -16,6 +16,19 @@ parameters:
 
 
 jobs:
+  test:
+    docker:
+      - image: cimg/node:19.2.0
+    steps:
+      - checkout
+      - run:
+          name: "test vars"
+          command: |
+            echo "test"
+
+
+
+
   deploy:
     docker:
       - image: cimg/node:19.2.0
@@ -80,6 +93,10 @@ jobs:
 
 workflows:
   version: 2
+  test-test:
+    jobs:
+      -test
+
   push-workflow:
     when:
       and:
