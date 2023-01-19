@@ -23,7 +23,9 @@ jobs:
       - checkout
       - run:
           name: "test vars"
-          command: echo 'test'
+          command: |
+            echo 'test'
+            echo << pipeline.parameters.eventType >>
 
 
 
