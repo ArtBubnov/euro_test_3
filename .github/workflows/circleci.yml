@@ -20,7 +20,7 @@ jobs:
           echo "**************"
           echo $GITHUB_HEAD_REF
           echo "----------------"
-          echo -e '{"branch":"'$GITHUB_REF_NAME
+          echo -e '{"branch":"'$GITHUB_REF_NAME'","parameters":{"eventType":"push", "branchName":"'
 
 
       #- name: dev push
