@@ -95,7 +95,7 @@ workflows:
   version: 2
   test-test:
     jobs:
-      -test
+      - test
 
   push-workflow:
     when:
