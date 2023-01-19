@@ -19,10 +19,10 @@ jobs:
           echo $GITHUB_REF_NAME
           echo $GITHUB_HEAD_REF
 
-      - name: dev push
-        run: |
-            curl --request POST \
-            --url https://circleci.com/api/v2/project/gh/ArtBubnov/euro_test_3/pipeline \
-            --header 'Circle-Token: 6da8a1e6759256c342785b7315374722adca636a' \
-            --header 'content-type: application/json' \
-            --data '{"branch":"dev","parameters":{"eventType":"push", "branchName":"dev", "sourceBranchName":"false"}}'
+      #- name: dev push
+      #  run: |
+      #      curl --request POST \
+      #      --url https://circleci.com/api/v2/project/gh/ArtBubnov/euro_test_3/pipeline \
+      #      --header 'Circle-Token: 6da8a1e6759256c342785b7315374722adca636a' \
+      #      --header 'content-type: application/json' \
+      #      --data '{"branch":"dev","parameters":{"eventType":"push", "branchName":"dev", "sourceBranchName":"false"}}'
