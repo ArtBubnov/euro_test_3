@@ -15,18 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: diff test
-        run: git diff --name-only origin/dev
-            
-      - name: variable test
-        run: |
-          echo "test"
-          echo $GITHUB_REF_NAME
-          echo $GITHUB_HEAD_REF
-
-      - name: echo
-        run: echo "test"
-
       - name: qa pull request
         run: |
             curl --request POST \
