@@ -2,19 +2,19 @@ version: 2.1
 
 parameters:
   eventType:
-    default: "test1111"
+    default: "test"
     type: string
     
   branchName:
-    default: "test22"
+    default: "test"
     type: string   
 
   sourceBranchName:
-    default: "test44"
+    default: "test"
     type: string
 
 
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! !! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 jobs:
   deploy:
     docker:
@@ -26,31 +26,28 @@ jobs:
           name: "NPM version check"
           command: npm --version
 
+      - run:
+          name: "Install Dependencies"
+          command: . build/install_dependencies.sh
 
-      #- run:
-      #    name: "Install Dependencies"
-      #    command: . build/install_dependencies.sh
+      - run:
+          name: "Set global variables"
+          command: |
+            echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
+            echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
+            echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
-      #- run:
-      #    name: "SET EVENT_TYPE"
-      #    command: |
-      #      echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
-      #      echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
-      #      echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
-
-      #- run:
-      #    name: "Salesforce AUTH"
-      #    command: . build/login_to_org.sh
+      - run:
+          name: "Salesforce AUTH"
+          command: . build/login_to_org.sh
       
       - run:
           name: "Deploy data to Dev Env"
           command: . build/deploy_to_developer_sf_org.sh
 
-      #- store_artifacts:
-      #    path: /tmp/artifacts
 
 
-########################################## ##### #######################################################
+
   pre-deploy:
     docker:
       - image: cimg/node:19.2.0
@@ -61,29 +58,32 @@ jobs:
           name: "NPM version check"
           command: npm --version
 
-      #- run:
-      #    name: "Install Dependencies"
-      #    command: . build/install_dependencies.sh
+      - run:
+          name: "Install Dependencies"
+          command: . build/install_dependencies.sh
 
-      #- run:
-      #    name: "SET EVENT_TYPE"
-      #    command: |
-      #      echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
-      #      echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
-      #      echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
+      - run:
+          name: "SET EVENT_TYPE"
+          command: |
+            echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
+            echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
+            echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
-      #- run:
-      #    name: "Salesforce AUTH"
-      #    command: . build/login_to_org.sh
+      - run:
+          name: "Salesforce AUTH"
+          command: . build/login_to_org.sh
 
-      #- run:
-      #    name: "Salesforce predeploy tests"
-      #    command: . build/pre_deploy_actions.sh
+      - run:
+          name: "Salesforce predeploy tests"
+          command: . build/pre_deploy_actions.sh
 
 
 workflows:
   version: 2
   push-workflow:
+    when:
+      and:
+        - equal: [ "push", << pipeline.parameters.eventType >> ]
     jobs:
       - deploy
 
