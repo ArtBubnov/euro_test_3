@@ -20,9 +20,9 @@ jobs:
           echo "**************"
           echo $GITHUB_HEAD_REF
           echo "----------------"
-          echo ${{ github.event.pull_request.base.ref }}
+          echo -e ${{ github.event.pull_request.base.ref }}
           echo "///////////////"
-          echo ${{ github.event.pull_request.head.ref }}
+          echo -e ${{ github.event.pull_request.head.ref }}
 
           echo -e '{"branch":"'$GITHUB_REF_NAME'","parameters":{"eventType":"push", "branchName":"'$GITHUB_REF_NAME'", "sourceBranchName":"false"}}'
 
