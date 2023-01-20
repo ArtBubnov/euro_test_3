@@ -16,19 +16,19 @@ case $TARGET_BRANCH_NAME in
     "qa")
         CASE_LOG="qa"
         ORIGIN_BRANCH="qa"
-        DIFF_BRANCH = "origin/dev"
+        DIFF_BRANCH="origin/dev"
         SALESFORCE_ORG_ALIAS="salesforce_qa.org"
         ;;
     "uat")
         CASE_LOG="uat"
         ORIGIN_BRANCH="uat"
-        DIFF_BRANCH = "origin/qa"
+        DIFF_BRANCH="origin/qa"
         SALESFORCE_ORG_ALIAS="salesforce_uat.org"
         ;;
     "main")
         CASE_LOG="prod"
         ORIGIN_BRANCH="prod"
-        DIFF_BRANCH = "origin/uat"
+        DIFF_BRANCH="origin/uat"
         SALESFORCE_ORG_ALIAS="salesforce_prod.org"
         ;;
     *)
