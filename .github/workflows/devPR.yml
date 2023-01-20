@@ -23,7 +23,7 @@ jobs:
           echo "Source///////////////"
           echo -e ${{ github.event.pull_request.head.ref }}
 
-          echo -e '{"branch":"'${{ github.event.pull_request.base.ref }}'","parameters":{"eventType":"pr", "branchName":"'${{ github.event.pull_request.base.ref }}'", "sourceBranchName":"'echo -e ${{ github.event.pull_request.head.ref }}'"}}'
+          echo -e '{"branch":"'${{ github.event.pull_request.base.ref }}'","parameters":{"eventType":"pr", "branchName":"'${{ github.event.pull_request.base.ref }}'", "sourceBranchName":"'${{ github.event.pull_request.head.ref }}'"}}'
 
       #- name: dev pull request
       #  run: |
