@@ -58,6 +58,13 @@ jobs:
           name: "NPM version check"
           command: npm --version
 
+      - run:
+          name: "test"
+          command: |
+            echo -e << pipeline.parameters.eventType >>
+            echo -e << pipeline.parameters.branchName >>
+            echo -e << pipeline.parameters.sourceBranchName >>
+
       #- run:
       #    name: "Install Dependencies"
       #    command: . build/install_dependencies.sh
