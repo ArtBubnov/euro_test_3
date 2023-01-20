@@ -27,7 +27,7 @@ jobs:
 #          echo -e ${{ github.event.pull_request.base.ref }}
 #          echo "///////////////"
         #source
-#          echo -e ${{ github.event.pull_request.head.ref }}
+          echo -e ${{ github.event.pull_request.head.ref }}
 
 #          echo -e '{"branch":"'${{ github.event.pull_request.base.ref }}'","parameters":{"eventType":"pr", "branchName":"'echo -e ${{ github.event.pull_request.base.ref }}'", "sourceBranchName":"'echo -e ${{ github.event.pull_request.head.ref }}'"}}'
 
