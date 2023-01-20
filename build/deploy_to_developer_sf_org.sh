@@ -58,7 +58,7 @@ echo $(git log --oneline --no-decorate --merges ${TARGET_BRANCH_NAME})
 echo -e "\n\n\n"
 
 echo -e "Git log cut logic execution"
-cutPRLog=$((git log --oneline --no-decorate --merges $TARGET_BRANCH_NAME)| cut -d\  -f1)
+cutPRLog=$((git log --oneline --no-decorate --merges ${TARGET_BRANCH_NAME})| cut -d\  -f1)
 
 echo -e "Git log cut logic result\n"
 echo $cutPRLog
@@ -75,7 +75,7 @@ echo "getpreviousPRid"
 echo $getpreviousPRid
 
 
-echo -e"\n\n\nCheckout to previous pull request"
+echo -e "\n\n\nCheckout to previous pull request"
 git checkout $getpreviousPRid
 
 echo -e "\n\n\n"
