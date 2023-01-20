@@ -20,11 +20,13 @@ jobs:
           echo "**************"
           echo $GITHUB_HEAD_REF
           echo "----------------"
+        #target
           echo -e ${{ github.event.pull_request.base.ref }}
           echo "///////////////"
+        #source
           echo -e ${{ github.event.pull_request.head.ref }}
 
-          echo -e '{"branch":"'$GITHUB_REF_NAME'","parameters":{"eventType":"push", "branchName":"'$GITHUB_REF_NAME'", "sourceBranchName":"false"}}'
+          echo -e '{"branch":"'${{ github.event.pull_request.base.ref }}'","parameters":{"eventType":"pr", "branchName":"'echo -e ${{ github.event.pull_request.base.ref }}'", "sourceBranchName":"'echo -e ${{ github.event.pull_request.head.ref }}'"}}'
 
 #56/merge
 #**************
