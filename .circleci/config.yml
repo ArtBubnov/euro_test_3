@@ -30,20 +30,20 @@ jobs:
       #    name: "Install Dependencies"
       #    command: . build/install_dependencies.sh
 
-      #- run:
-      #    name: "Set global variables"
-      #    command: |
-      #      echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
-      #      echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
-      #      echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
+      - run:
+          name: "Set global variables"
+          command: |
+            echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
+            echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
+            echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
       #- run:
       #    name: "Salesforce AUTH"
       #    command: . build/login_to_org.sh
       
-      #- run:
-      #    name: "Deploy data to Dev Env"
-      #    command: . build/deploy_to_developer_sf_org.sh
+      - run:
+          name: "Deploy data to Dev Env"
+          command: . build/deploy_to_developer_sf_org.sh
 
 
 
