@@ -23,7 +23,7 @@ jobs:
           echo "**************"
           echo $GITHUB_HEAD_REF
           echo "----------------"
-        #target
+
           echo -e "test"
 #          echo -e ${{ github.event.pull_request.base.ref }}
 #          echo "///////////////"
