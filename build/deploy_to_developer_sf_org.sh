@@ -1,13 +1,14 @@
-echo -e "Deploy data to Dev Env\n\n\n"
+echo -e "Deploy data to Dev Env logic execution has started ..."
 
 
 echo "Global variables display"
+echo "Event type is:"
 echo $EVENT_TYPE
+echo "Target branch is:"
 echo $TARGET_BRANCH_NAME
-echo $SOURCE_BRANCH_NAME
 
 
-echo -e "\n\n\nSelect Salesforce org alias"
+echo -e "\n\n\nCase logic execution logic to define salesforce org alias and internal variables has started..."
 case $TARGET_BRANCH_NAME in
     "dev")
         CASE_LOG="dev"
@@ -36,12 +37,12 @@ case $TARGET_BRANCH_NAME in
         ;;
 esac
 
-echo -e "\n\n\nCase log display"
+echo -e "\n\n\nCase logic execution results:"
 echo "Case result"
 echo $CASE_LOG
 echo "Origin branch is:"
 echo $ORIGIN_BRANCH
-echo "Name of the branch to fid diff is:"
+echo "Name of the branch to find diff is:"
 echo $DIFF_BRANCH
 echo "Salesforce org alias is:"
 echo $SALESFORCE_ORG_ALIAS
