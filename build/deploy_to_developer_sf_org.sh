@@ -44,7 +44,7 @@ echo $SALESFORCE_ORG_ALIAS
 echo -e "\n\n\nFind the difference between organizations"
 
 echo "Get git log"
-echo $(git log --oneline --no-decorate --merges qa)
+echo $(git log --oneline --no-decorate --merges $TARGET_BRANCH_NAME)
 echo -e "\n\n\n"
 
 echo -e "Git log cut logic execution"
@@ -75,5 +75,5 @@ GET_DIFF=$(git diff --name-only $DIFF_BRANCH force-app)
 echo "Get back to origin branch"
 git checkout $ORIGIN_BRANCH
 
-echo "Deploy to Salesforce env \n\n\n"
-sfdx force:source:deploy -p "$ORIGIN_BRANCH" -l RunLocalTests -u salesforce_build.org --loglevel WARN
+#echo "Deploy to Salesforce env \n\n\n"
+#sfdx force:source:deploy -p "$ORIGIN_BRANCH" -l RunLocalTests -u salesforce_build.org --loglevel WARN
