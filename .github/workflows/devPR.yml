@@ -19,7 +19,7 @@ jobs:
       - name: variable test
         run: |
           echo $GITHUB_REF_NAME
-          echo "**************"
+          echo "************** "
           echo $GITHUB_HEAD_REF
           echo "----------------"
         #target
