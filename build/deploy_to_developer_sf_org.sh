@@ -7,7 +7,7 @@ echo $TARGET_BRANCH_NAME
 echo $SOURCE_BRANCH_NAME
 
 
-echo -e "\n\n\nSelect Salesforce org alias "
+echo -e "\n\n\nSelect Salesforce org alias"
 case $TARGET_BRANCH_NAME in
     "dev")
         CASE_LOG="dev"
@@ -36,8 +36,14 @@ case $TARGET_BRANCH_NAME in
         ;;
 esac
 
-echo e- "\n\n\nCase log display"
+echo -e "\n\n\nCase log display"
+echo "Case result"
 echo $CASE_LOG
+echo "Origin branch is:"
+echo $ORIGIN_BRANCH
+echo "Name of the branch to fid diff is:"
+echo $DIFF_BRANCH
+echo "Salesforce org alias is:"
 echo $SALESFORCE_ORG_ALIAS
 
 
@@ -48,7 +54,8 @@ echo $(git log --oneline --no-decorate --merges $TARGET_BRANCH_NAME)
 echo -e "\n\n\n"
 
 echo -e "Git log cut logic execution"
-cutPRLog=$((git log --oneline --no-decorate --merges qa)| cut -d\  -f1)
+cutPRLog=$((git log --oneline --no-decorate --merges $TARGET_BRANCH_NAME)| cut -d\  -f1)
+
 echo -e "Git log cut logic result\n"
 echo $cutPRLog
 echo -e "\n\n\n"
@@ -64,15 +71,15 @@ echo "getpreviousPRid"
 echo $getpreviousPRid
 
 
-echo "Checkout to previous pull request"
+echo -e"\n\n\nCheckout to previous pull request"
 git checkout $getpreviousPRid
 
 echo -e "\n\n\n"
 
-echo "Find diff"
+echo "Diff logic execution result"
 GET_DIFF=$(git diff --name-only $DIFF_BRANCH force-app)
 
-echo "Get back to origin branch"
+echo -e "\n\n\nGet back to origin branch"
 git checkout $ORIGIN_BRANCH
 
 #echo "Deploy to Salesforce env \n\n\n"
