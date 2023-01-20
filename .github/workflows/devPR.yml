@@ -21,8 +21,8 @@ jobs:
         run: |
           echo $GITHUB_REF_NAME
           echo "**************"
-#          echo $GITHUB_HEAD_REF
-#          echo "----------------"
+          echo $GITHUB_HEAD_REF
+          echo "----------------"
         #target
 #          echo -e ${{ github.event.pull_request.base.ref }}
 #          echo "///////////////"
