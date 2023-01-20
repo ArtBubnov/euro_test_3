@@ -54,7 +54,7 @@ echo $SALESFORCE_ORG_ALIAS
 echo -e "\n\n\nFind the difference between organizations"
 
 echo "Get git log"
-echo $(git log --oneline --no-decorate --merges ${$TARGET_BRANCH_NAME})
+echo $(git log --oneline --no-decorate --merges ${TARGET_BRANCH_NAME})
 echo -e "\n\n\n"
 
 echo -e "Git log cut logic execution"
