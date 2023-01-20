@@ -7,7 +7,7 @@ echo $TARGET_BRANCH_NAME
 echo $SOURCE_BRANCH_NAME
 
 
-echo -e "\n\n\nSelect Salesforce org alias"
+echo -e "\n\n\nSelect Salesforce org alias "
 case $TARGET_BRANCH_NAME in
     "dev")
         CASE_LOG="dev"
