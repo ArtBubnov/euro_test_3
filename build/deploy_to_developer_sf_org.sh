@@ -41,7 +41,7 @@ echo "..."
 echo "..."
 echo "..."
 echo -e "Case logic execution results:"
-echo "Case result"
+echo "Case result:"
 echo $CASE_LOG
 echo "Origin branch is:"
 echo $ORIGIN_BRANCH
@@ -53,14 +53,14 @@ echo $SALESFORCE_ORG_ALIAS
 
 echo -e "\n\n\nFind the difference between organizations"
 
-echo "Get git log"
+echo "Get git log:"
 echo $(git log --oneline --no-decorate --merges ${TARGET_BRANCH_NAME})
 echo -e "\n\n\n"
 
-echo -e "Git log cut logic execution"
+echo -e "Git log cut logic execution:"
 cutPRLog=$((git log --oneline --no-decorate --merges ${TARGET_BRANCH_NAME})| cut -d\  -f1)
 
-echo -e "Git log cut logic result\n"
+echo -e "Git log cut logic result:\n"
 echo $cutPRLog
 echo -e "\n\n\n"
 
@@ -80,7 +80,7 @@ git checkout $getpreviousPRid
 
 echo -e "\n\n\n"
 
-echo "Diff logic execution result"
+echo "Diff logic execution result:"
 GET_DIFF=$(git diff --name-only ${DIFF_BRANCH} force-app)
 echo $GET_DIFF
 echo -e "\n\n\n"
