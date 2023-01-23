@@ -1,8 +1,11 @@
-echo "Logging into Salesforce Org"
+echo -e "Logging into Salesforce Org\n"
 
-echo "Define Salesforce Org"
+echo "Global variables display"
+echo "Target branch is:"
 echo $TARGET_BRANCH_NAME
 
+
+echo -e "\n\n\nCase logic execution logic to define salesforce org alias and internal variables has started..."
 case $TARGET_BRANCH_NAME in
     "dev")
         CASE_LOG="dev"
@@ -29,17 +32,23 @@ case $TARGET_BRANCH_NAME in
         ;;
 esac
 
+echo "..."
+echo "..."
+echo "..."
+echo "Case logic execution results:"
+echo "Case result:"
+echo $CASE_LOG
 echo "Salesforce org to be used:"
 echo $CASE_LOG
 echo "Salesforce alias to be used:"
 echo $SALESFORCE_ORG_ALIAS
 
 
-echo "Creating .key file"
+echo -e "\n\n\nCreating .key file"
 touch access_pass.key
 
 
-echo "Adding access data to .key file"
+echo -e "\n\n\nAdding access data to .key file"
 echo $ACCESS_KEY_SF > access_pass.key
 
 

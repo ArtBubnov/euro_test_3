@@ -43,8 +43,7 @@ echo $SALESFORCE_ORG_ALIAS
 
 
 
-#echo "Rin apex tests \n\n\n"
-#sfdx force:apex:test:run -l RunLocalTests -d ${SOURCE_BRANCH_NAME}/force-app -u $SALESFORCE_ORG_ALIAS
+
 
 echo "Test deploy to Salesforce env without saving \n\n\n"
 sfdx force:source:deploy -p $TARGET_BRANCH_NAME/force-app -c -l RunLocalTests -u $SALESFORCE_ORG_ALIAS --loglevel WARN
