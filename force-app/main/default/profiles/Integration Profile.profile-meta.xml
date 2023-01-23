@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
-    <categoryGroupVisibilities>
-        <dataCategoryGroup>Category</dataCategoryGroup>
-        <visibility>ALL</visibility>
-    </categoryGroupVisibilities>
-    <custom>false</custom>
+    <custom>true</custom>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Integration_User</name>
+    </customPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Business_Account__c</field>
@@ -301,32 +301,32 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>B2b_ReductionGrid__c.B2b_MaxNumberOfTickets__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>B2b_ReductionGrid__c.B2b_MaxPercentage__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>B2b_ReductionGrid__c.B2b_MinNumberOfTickets__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>B2b_ReductionGrid__c.B2b_Route__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>B2b_ReductionGrid__c.B2b_Segment__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.AccountNumber__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -336,7 +336,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Account_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -361,37 +361,37 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Annual_Review_Reneg__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.BillingCity__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.BillingCountry__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.BillingPostalCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.BillingState__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.BillingStreet__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Blue_Account_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -416,17 +416,17 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Company_Name_B__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Company_Size__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Concession__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -446,17 +446,17 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Contract_End_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Contract_Start_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Contract_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -466,12 +466,12 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Contracting_Language__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Corporate_Client_Rep__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -486,22 +486,22 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Discount_Level_BP__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Discount_Level_SP__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Disruption_2_Email__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Disruption_Email__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -511,7 +511,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Event__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -521,22 +521,22 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Fare_Range__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Gifts__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Industry__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Invoice_Email__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -546,12 +546,12 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Legal_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Legal_form__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -566,7 +566,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Notices_Email__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -581,22 +581,22 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Other_Discount_NL__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.ParentId__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Phone__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.RIT_Comms_Email__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -606,7 +606,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Red_Account_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -616,12 +616,12 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Reg_Address_Same_Trading__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Reg_Company_No__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -636,42 +636,42 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Secondary_Account_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.ShippingCity__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.ShippingCountry__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.ShippingPostalCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.ShippingState__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.ShippingStreet__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Signatory_Contact__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Status_of_Contract__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -691,22 +691,22 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.VAT_Applicable__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.Website__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Business_Account__c.second_signatory__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1261,7 +1261,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Subscription__c.Cancellation_before_end_date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1326,7 +1326,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Subscription__c.Duration__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1456,7 +1456,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Subscription__c.Subscription_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1486,7 +1486,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Subscription__c.Subscription_Type_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1501,17 +1501,17 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Subscription__c.TECH_Day_Contribution__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Subscription__c.TECH_Max_Day_End_Month__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Subscription__c.TECH_Max_Day_Start_Month__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1526,12 +1526,12 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Subscription__c.TECH_VAT_Percentage_Rate__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Subscription__c.TECH_isIntraCommunautaire__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1566,12 +1566,12 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Subscription__c.VAT_Applied_Factor__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Subscription__c.VAT_Country_Code__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1621,7 +1621,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Ticket__c.Carrier__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1631,12 +1631,12 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Train__c.Comments__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Train__c.Force_Majeure__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1718,8 +1718,403 @@
         <layout>Train__c-Train Layout</layout>
     </layoutAssignments>
     <loginIpRanges>
+        <description>All</description>
         <endAddress>255.255.255.255</endAddress>
         <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>5.79.57.11</endAddress>
+        <startAddress>5.79.57.10</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>10.75.136.58</endAddress>
+        <startAddress>10.75.136.33</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>13.111.250.28</endAddress>
+        <startAddress>13.111.250.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>13.111.251.28</endAddress>
+        <startAddress>13.111.251.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>23.23.255.255</endAddress>
+        <startAddress>23.20.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>ICLP / FutureLoyalty</description>
+        <endAddress>34.240.46.215</endAddress>
+        <startAddress>34.240.46.215</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>ICLP / FutureLoyalty</description>
+        <endAddress>34.240.199.158</endAddress>
+        <startAddress>34.240.199.158</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Eurostar Account Service</description>
+        <endAddress>34.251.141.232</endAddress>
+        <startAddress>34.251.141.232</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Eurostar Account Service</description>
+        <endAddress>34.251.250.195</endAddress>
+        <startAddress>34.251.250.195</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>37.188.109.251</endAddress>
+        <startAddress>37.188.109.249</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>37.188.110.177</endAddress>
+        <startAddress>37.188.110.176</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>50.19.255.255</endAddress>
+        <startAddress>50.16.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>50.112.255.255</endAddress>
+        <startAddress>50.112.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>52.1.255.255</endAddress>
+        <startAddress>52.0.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>52.13.255.255</endAddress>
+        <startAddress>52.10.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Added 09/07/18 for compensation</description>
+        <endAddress>52.18.227.122</endAddress>
+        <startAddress>52.18.227.122</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>AWS</description>
+        <endAddress>52.215.255.255</endAddress>
+        <startAddress>52.208.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>54.245.255.255</endAddress>
+        <startAddress>54.68.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Eurostar EIF for Weekly Bank Transfers</description>
+        <endAddress>54.154.46.182</endAddress>
+        <startAddress>54.154.46.182</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>64.79.134.164</endAddress>
+        <startAddress>64.79.134.164</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>64.132.92.254</endAddress>
+        <startAddress>64.132.92.251</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>66.231.85.201</endAddress>
+        <startAddress>66.231.85.170</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>66.231.90.212</endAddress>
+        <startAddress>66.231.90.212</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>66.231.91.195</endAddress>
+        <startAddress>66.231.91.195</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>66.231.91.251</endAddress>
+        <startAddress>66.231.91.251</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>66.231.93.28</endAddress>
+        <startAddress>66.231.93.28</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>66.231.93.186</endAddress>
+        <startAddress>66.231.93.184</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>66.231.94.252</endAddress>
+        <startAddress>66.231.94.247</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Boomi Platform Cloud</description>
+        <endAddress>67.192.139.80</endAddress>
+        <startAddress>67.192.139.72</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>67.202.63.255</endAddress>
+        <startAddress>67.202.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>68.232.192.198</endAddress>
+        <startAddress>68.232.192.104</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>68.232.193.193</endAddress>
+        <startAddress>68.232.193.146</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>68.232.199.1</endAddress>
+        <startAddress>68.232.199.1</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>68.232.200.3</endAddress>
+        <startAddress>68.232.200.1</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>68.232.203.63</endAddress>
+        <startAddress>68.232.203.56</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>68.232.204.99</endAddress>
+        <startAddress>68.232.204.99</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>68.232.207.20</endAddress>
+        <startAddress>68.232.207.20</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>72.44.63.255</endAddress>
+        <startAddress>72.44.32.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>75.101.255.255</endAddress>
+        <startAddress>75.101.128.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>INNTEL</description>
+        <endAddress>86.131.29.52</endAddress>
+        <startAddress>86.131.29.52</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>89.234.37.62</endAddress>
+        <startAddress>89.234.37.33</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Eurostar internal</description>
+        <endAddress>94.199.129.187</endAddress>
+        <startAddress>94.199.129.186</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>94.236.10.174</endAddress>
+        <startAddress>94.236.10.169</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>94.236.43.30</endAddress>
+        <startAddress>94.236.43.25</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>94.236.51.94</endAddress>
+        <startAddress>94.236.51.89</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>94.236.67.62</endAddress>
+        <startAddress>94.236.67.57</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>95.138.147.157</endAddress>
+        <startAddress>95.138.147.156</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>99.50.81.140</endAddress>
+        <startAddress>99.50.81.121</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>107.23.255.255</endAddress>
+        <startAddress>107.20.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>136.147.128.14</endAddress>
+        <startAddress>136.147.128.1</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>136.147.129.15</endAddress>
+        <startAddress>136.147.129.15</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>136.147.131.18</endAddress>
+        <startAddress>136.147.131.11</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Anthony&apos;s laptop</description>
+        <endAddress>146.101.159.142</endAddress>
+        <startAddress>146.101.159.142</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>146.101.159.190</endAddress>
+        <startAddress>146.101.159.161</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>162.13.22.39</endAddress>
+        <startAddress>162.13.22.38</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>162.13.23.222</endAddress>
+        <startAddress>162.13.23.221</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>162.13.73.254</endAddress>
+        <startAddress>162.13.72.249</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>162.13.79.130</endAddress>
+        <startAddress>162.13.79.129</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>162.13.79.146</endAddress>
+        <startAddress>162.13.79.145</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>162.13.79.170</endAddress>
+        <startAddress>162.13.79.169</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>162.13.134.14</endAddress>
+        <startAddress>162.13.134.13</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>162.13.134.22</endAddress>
+        <startAddress>162.13.134.21</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>INNTEL Production</description>
+        <endAddress>162.13.149.60</endAddress>
+        <startAddress>162.13.149.60</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>174.129.255.255</endAddress>
+        <startAddress>174.129.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>184.72.255.255</endAddress>
+        <startAddress>184.72.64.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>184.73.255.255</endAddress>
+        <startAddress>184.72.64.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>184.72.230.214</endAddress>
+        <startAddress>184.72.230.214</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>INNTEL Test</description>
+        <endAddress>194.247.227.81</endAddress>
+        <startAddress>194.247.227.81</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>199.122.126.99</endAddress>
+        <startAddress>199.122.126.99</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>203.191.34.180</endAddress>
+        <startAddress>203.191.34.180</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>204.236.255.255</endAddress>
+        <startAddress>204.236.192.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>206.246.157.6</endAddress>
+        <startAddress>206.246.157.1</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Social Studio</description>
+        <endAddress>207.34.25.77</endAddress>
+        <startAddress>207.34.25.76</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>207.67.38.45</endAddress>
+        <startAddress>207.67.38.20</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>207.67.53.78</endAddress>
+        <startAddress>207.67.53.64</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>207.67.66.222</endAddress>
+        <startAddress>207.67.66.192</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>207.67.98.216</endAddress>
+        <startAddress>207.67.98.216</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>207.250.68.36</endAddress>
+        <startAddress>207.250.68.26</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>207.250.76.183</endAddress>
+        <startAddress>207.250.76.176</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>207.250.79.110</endAddress>
+        <startAddress>207.250.79.96</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>SFMC Connector</description>
+        <endAddress>209.43.14.97</endAddress>
+        <startAddress>209.43.14.97</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>212.100.237.70</endAddress>
+        <startAddress>212.100.237.65</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Okta (https://forums.aws.amazon.com/ann</description>
+        <endAddress>216.182.239.255</endAddress>
+        <startAddress>216.182.224.0</startAddress>
     </loginIpRanges>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -1749,13 +2144,13 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>B2b_ReductionGrid__c</object>
-        <viewAllRecords>true</viewAllRecords>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -1833,12 +2228,12 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Business_Account__c.Agency_Account</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>true</default>
+        <default>false</default>
         <recordType>Business_Account__c.Corporate_Account</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
@@ -1868,15 +2263,15 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Business_Account__c</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Business_Contract__c</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Corp_Tracking_Type_and_Code__c</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Invoice__c</tab>
@@ -1897,19 +2292,11 @@
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
-        <name>AIViewInsightObjects</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ActivateContract</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ActivitiesAccess</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>AddDirectMessageMembers</name>
+        <name>AllowEmailIC</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -1929,15 +2316,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ApproveContract</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ArchiveArticles</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>AssignPermissionSets</name>
+        <name>ApiUserOnly</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -1945,39 +2324,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>AssignUserToSkill</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>AuthorApex</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>BulkMacrosAllowed</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>CanInsertFeedSystemFields</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>CanUseNewDashboardBuilder</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>CanVerifyComment</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ChangeDashboardColors</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ChatterEditOwnPost</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ChatterEditOwnRecordPost</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -1985,39 +2332,11 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ChatterFileLink</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ChatterInternalUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ChatterInviteExternalUsers</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ChatterOwnGroups</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ClientSecretRotation</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ConnectOrgToEnvironmentHub</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ConsentApiUpdate</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ContentAdministrator</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ContentWorkspaces</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2045,14 +2364,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>CreateLtngTempFolder</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>CreatePackaging</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>CreateReportFolders</name>
     </userPermissions>
     <userPermissions>
@@ -2061,59 +2372,11 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>CreateWorkspaces</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>CustomizeApplication</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>DataExport</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>DecisionTableExecUserAccess</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>DelegatedTwoFactor</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>DeleteActivatedContract</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>DeleteTopics</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>DistributeFromPersWksp</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EditBillingInfo</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EditBrandTemplates</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EditCaseComments</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>EditEvent</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EditHtmlTemplates</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EditKnowledge</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2122,10 +2385,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>EditMyReports</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EditOppLineItemUnitPrice</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2141,10 +2400,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>EditReadonlyFields</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>EditTask</name>
     </userPermissions>
     <userPermissions>
@@ -2153,19 +2408,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>EditTranslation</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EmailMass</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>EmailSingle</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EnableCommunityAppLauncher</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2173,11 +2416,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ExportReport</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>GiveRecognitionBadge</name>
+        <name>IdentityEnabled</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2189,18 +2428,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ImportPersonal</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>InboundMigrationToolsUser</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>InstallPackaging</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>LightningConsoleAllowedForUser</name>
     </userPermissions>
     <userPermissions>
@@ -2209,67 +2436,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ListEmailSend</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageAnalyticSnapshots</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageAuthProviders</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageBusinessHourHolidays</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageC360AConnections</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageCMS</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageCallCenters</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageCases</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ManageCategories</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageCertificates</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageContentPermissions</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageContentProperties</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageContentTypes</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageConvMiningReports</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageCustomPermissions</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageCustomReportTypes</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2277,67 +2444,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ManageDataCategories</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageDataIntegrations</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageDynamicDashboards</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageEmailClientConfig</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageEntitlements</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageExchangeConfig</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageHealthCheck</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageHubConnections</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageInteraction</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ManageInternalUsers</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageIpAddresses</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageKnowledge</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageKnowledgeImportExport</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageLeads</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageLoginAccessPolicies</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageMobile</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2345,23 +2452,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ManageOrchInstsAndWorkItems</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ManagePackageLicenses</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManagePartners</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManagePasswordPolicies</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageProfilesPermissionsets</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2369,19 +2460,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ManagePvtRptsAndDashbds</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ManageRecommendationStrategies</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageReleaseUpdates</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageRemoteAccess</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2389,63 +2468,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ManageRoles</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageSandboxes</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageSearchPromotionRules</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageSelfService</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageSharing</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageSolutions</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageSubscriptions</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageSynonyms</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageTranslation</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageTrustMeasures</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageUnlistedGroups</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageUsers</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>MassInlineEdit</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>MergeTopics</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ModerateChatter</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2453,47 +2476,11 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ModifyDataClassification</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ModifyMetadata</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>NewReportBuilder</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>OutboundMigrationToolsUser</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>Packaging2</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>Packaging2Delete</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>PrivacyDataAccess</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>PublishArticles</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>PublishPackaging</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>PublishTranslation</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>RemoveDirectMessageMembers</name>
+        <name>PasswordNeverExpires</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2505,31 +2492,11 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ScheduleJob</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ScheduleReports</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>SelectFilesFromSalesforce</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>SendCustomNotifications</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SendSitRequests</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ShareFilesWithNetworks</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ShareInternalArticles</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2541,31 +2508,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>SubmitForTranslation</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>SubmitMacrosAllowed</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SubscribeDashboardRolesGrps</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SubscribeDashboardToOtherUsers</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SubscribeReportRolesGrps</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SubscribeReportToOtherUsers</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SubscribeReportsRunAsUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2573,19 +2516,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>SubscribeToLightningReports</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>TraceXdsQueries</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>TransactionalEmailSend</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>TransferAnyCase</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2613,23 +2544,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ViewAllProfiles</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ViewAllUsers</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewArchivedArticles</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewDataAssessment</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewDataCategories</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2637,11 +2552,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ViewDeveloperName</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewDraftArticles</name>
+        <name>ViewEncryptedData</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2649,23 +2560,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ViewFlowUsageAndFlowEventData</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewHealthCheck</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ViewHelpLink</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewMLModels</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewMyTeamsDashboards</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2686,13 +2581,5 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewSetup</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewTrustMeasures</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewUserPII</name>
     </userPermissions>
 </Profile>
