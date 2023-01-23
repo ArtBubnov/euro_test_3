@@ -84,6 +84,24 @@ echo "Diff logic execution result"
 GET_DIFF=$(git diff --name-only ${DIFF_BRANCH} force-app)
 echo $GET_DIFF
 
+if [[ $GET_DIFF == *"/profiles/"* ]];
+then
+    echo "Changes in the directory force-app/main/default/profiles/ have been detected"
+    echo "In this case all files in force-app should be deployed on the target org"
+    FILES_TO_DEPLOY="force-app/main/default"
+    TEST_TRUNC=$(${GET_DIFF} | tr '\n' ',' | sed 's/\(.*\),/\1 /')
+else
+    echo "No changes in the directory force-app/main/default/profiles/ have been detected"
+    echo "In this case only DIFF should be deployed on the target org"
+    FILES_TO_DEPLOY=$(${GET_DIFF} | tr '\n' ',' | sed 's/\(.*\),/\1 /')
+    TEST_TRUNC=$(${GET_DIFF} | tr '\n' ',' | sed 's/\(.*\),/\1 /')
+fi    
+
+echo -e "\n\n\n------------------------"
+echo $TEST_TRUNC
+echo -e "------------------------\n\n\n"
+
+
 echo -e "\n\n\nGet back to origin branch"
 git checkout $ORIGIN_BRANCH
 
