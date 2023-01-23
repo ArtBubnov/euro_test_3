@@ -74,6 +74,12 @@ echo "---------------"
 echo "previous pull request ID:"
 echo $getpreviousPRid
 
+echo -e "\n\n\nCheckout to current pull request"
+git checkout $getpreviousPRid
+echo"!!!!!!!!!!!!!!!!!!!!"
+echo ${{ github.event.pull_request.base.ref }}
+echo"!!!!!!!!!!!!!!!!!!!!"
+
 
 echo -e "\n\n\nCheckout to previous pull request"
 git checkout $getpreviousPRid
