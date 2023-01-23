@@ -17,14 +17,14 @@ jobs:
       - name: variable test
         run: |
           echo "SECRET TEST"
-          echo $CIRCLE_CI_API
+          echo ${{ secrets.CIRCLE_CI_API}}
           echo $GITHUB_REF_NAME
           echo "**************"
           echo $GITHUB_HEAD_REF
           echo "----------------"
           echo -e '{"branch":"'$GITHUB_REF_NAME'","parameters":{"eventType":"push", "branchName":"'$GITHUB_REF_NAME'", "sourceBranchName":"false"}}'
-        with:
-          CIRCLE_CI_API: ${{ CIRCLE_CI_API }}
+#        with:
+#          CIRCLE_CI_API: ${{ CIRCLE_CI_API }}
 
       - name: dev push
         run: |
