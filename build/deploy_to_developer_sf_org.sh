@@ -1,4 +1,4 @@
-echo -e "Deploy data to Dev Env logic execution has started ..."
+echo -e "Deploy data to Dev Env logic execution has started ... "
 
 
 echo "Global variables display"
