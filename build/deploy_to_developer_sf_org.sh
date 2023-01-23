@@ -88,7 +88,7 @@ if [[ $GET_DIFF == *"/profiles/"* ]];
 then
     echo "Changes in the directory force-app/main/default/profiles/ have been detected"
     echo "In this case all files in force-app should be deployed on the target org"
-    FILES_TO_DEPLOY="force-app/main/default"
+    FILES_TO_DEPLOY="force-app//main//default"
     TEST_TRUNC=$(${GET_DIFF} | tr '\n' ',' | sed 's/\(.*\),/\1 /')
 else
     echo "No changes in the directory force-app/main/default/profiles/ have been detected"
@@ -98,6 +98,9 @@ else
 fi    
 
 echo -e "\n\n\n------------------------"
+echo "Files to deploy:"
+echo $FILES_TO_DEPLOY
+echo "##################################"
 echo $TEST_TRUNC
 echo -e "------------------------\n\n\n"
 
