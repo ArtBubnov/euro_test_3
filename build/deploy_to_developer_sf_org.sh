@@ -57,7 +57,7 @@ echo "Get git log:"
 echo $(git log --oneline --no-decorate --merges ${TARGET_BRANCH_NAME})
 echo -e "\n\n\n"
 
-echo -e "Git log cut logic execution:"
+echo -e "Git log cut logic execution"
 cutPRLog=$((git log --oneline --no-decorate --merges ${TARGET_BRANCH_NAME})| cut -d\  -f1)
 
 echo -e "Git log cut logic result:\n"
