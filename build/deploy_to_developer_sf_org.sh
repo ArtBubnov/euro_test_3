@@ -89,7 +89,7 @@ if [[ $GET_DIFF == *"/profiles/"* ]];
 then
     echo "Changes in the directory force-app/main/default/profiles/ have been detected"
     echo "In this case all files in force-app should be deployed on the target org"
-    FILES_TO_DEPLOY="force-app//main//default"
+    FILES_TO_DEPLOY="force-app/main/default"
 else
     echo "No changes in the directory force-app/main/default/profiles/ have been detected"
     echo "In this case only DIFF should be deployed on the target org"
