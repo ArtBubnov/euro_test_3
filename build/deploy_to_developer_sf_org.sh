@@ -82,6 +82,7 @@ echo -e "\n\n\n"
 
 echo "Diff logic execution result"
 GET_DIFF=$(git diff --name-only ${DIFF_BRANCH} force-app)
+echo $GET_DIFF
 
 echo -e "\n\n\nGet back to origin branch"
 git checkout $ORIGIN_BRANCH
