@@ -26,9 +26,9 @@ jobs:
           name: "NPM version check"
           command: npm --version
 
-      #- run:
-      #    name: "Install Dependencies"
-      #    command: . build/install_dependencies.sh
+      - run:
+          name: "Install Dependencies"
+          command: . build/install_dependencies.sh
 
       - run:
           name: "Set global variables"
@@ -37,9 +37,9 @@ jobs:
             echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
             echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
-      #- run:
-      #    name: "Salesforce AUTH"
-      #    command: . build/login_to_org.sh
+      - run:
+          name: "Salesforce AUTH"
+          command: . build/login_to_org.sh
       
       - run:
           name: "Deploy data to Dev Env"
@@ -59,30 +59,23 @@ jobs:
           command: npm --version
 
       - run:
-          name: "test"
+          name: "Install Dependencies"
+          command: . build/install_dependencies.sh
+
+      - run:
+          name: "SET EVENT_TYPE"
           command: |
-            echo -e << pipeline.parameters.eventType >>
-            echo -e << pipeline.parameters.branchName >>
-            echo -e << pipeline.parameters.sourceBranchName >>
+            echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
+            echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
+            echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
-      #- run:
-      #    name: "Install Dependencies"
-      #    command: . build/install_dependencies.sh
+      - run:
+          name: "Salesforce AUTH"
+          command: . build/login_to_org.sh
 
-      #- run:
-      #    name: "SET EVENT_TYPE"
-      #    command: |
-      #      echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
-      #      echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
-      #      echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
-
-      #- run:
-      #    name: "Salesforce AUTH"
-      #    command: . build/login_to_org.sh
-
-      #- run:
-      #    name: "Salesforce predeploy tests"
-      #    command: . build/pre_deploy_actions.sh
+      - run:
+          name: "Salesforce predeploy tests"
+          command: . build/pre_deploy_actions.sh
 
 
 workflows:
