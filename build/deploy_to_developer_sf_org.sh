@@ -68,10 +68,10 @@ echo "Get current and previous pull request ID"
 getcurrentPRid=$(echo $cutPRLog| cut -d\  -f1)
 getpreviousPRid=$(echo $cutPRLog| cut -d\  -f2)
 
-echo "getcurrentPRid"
+echo "current pull request ID:"
 echo $getcurrentPRid
 echo "---------------"
-echo "getpreviousPRid"
+echo "previous pull request ID:"
 echo $getpreviousPRid
 
 
@@ -90,20 +90,14 @@ then
     echo "Changes in the directory force-app/main/default/profiles/ have been detected"
     echo "In this case all files in force-app should be deployed on the target org"
     FILES_TO_DEPLOY="force-app//main//default"
-    TEST_TRUNC=$(git diff --name-only ${DIFF_BRANCH} force-app | tr '\n' ',' | sed 's/\(.*\),/\1 /')
 else
     echo "No changes in the directory force-app/main/default/profiles/ have been detected"
     echo "In this case only DIFF should be deployed on the target org"
-    FILES_TO_DEPLOY=$(${GET_DIFF} | tr '\n' ',' | sed 's/\(.*\),/\1 /')
-    TEST_TRUNC=$(${GET_DIFF} | tr '\n' ',' | sed 's/\(.*\),/\1 /')
+    FILES_TO_DEPLOY=$(git diff --name-only ${DIFF_BRANCH} force-app | tr '\n' ',' | sed 's/\(.*\),/\1 /')
 fi    
 
-echo -e "\n\n\n------------------------"
-echo "Files to deploy:"
+echo -e "\n\n\nFiles to deploy:"
 echo $FILES_TO_DEPLOY
-echo "##################################"
-echo $TEST_TRUNC
-echo -e "------------------------\n\n\n"
 
 
 echo -e "\n\n\nGet back to origin branch"
