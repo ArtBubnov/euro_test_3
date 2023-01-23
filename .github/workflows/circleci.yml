@@ -16,6 +16,8 @@ jobs:
 
       - name: variable test
         run: |
+          echo "SECRET TEST"
+          echo ${{ secrets.CIRCLE_CI_API}}
           echo $GITHUB_REF_NAME
           echo "**************"
           echo $GITHUB_HEAD_REF
@@ -27,6 +29,6 @@ jobs:
         run: |
             curl --request POST \
             --url https://circleci.com/api/v2/project/gh/ArtBubnov/euro_test_3/pipeline \
-            --header 'Circle-Token: 6da8a1e6759256c342785b7315374722adca636a' \
+            --header 'Circle-Token: '${{ secrets.CIRCLE_CI_API}} \
             --header 'content-type: application/json' \
             --data '{"branch":"'$GITHUB_REF_NAME'","parameters":{"eventType":"push", "branchName":"'$GITHUB_REF_NAME'", "sourceBranchName":"false"}}'

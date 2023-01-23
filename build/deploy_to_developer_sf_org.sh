@@ -17,19 +17,19 @@ case $TARGET_BRANCH_NAME in
     "qa")
         CASE_LOG="qa"
         ORIGIN_BRANCH="qa"
-        DIFF_BRANCH="origin/dev"
+        #DIFF_BRANCH="origin/"$SOURCE_BRANCH_NAME
         SALESFORCE_ORG_ALIAS="salesforce_qa.org"
         ;;
     "uat")
         CASE_LOG="uat"
         ORIGIN_BRANCH="uat"
-        DIFF_BRANCH="origin/qa"
+        #DIFF_BRANCH="origin/"$SOURCE_BRANCH_NAME
         SALESFORCE_ORG_ALIAS="salesforce_uat.org"
         ;;
     "main")
         CASE_LOG="prod"
         ORIGIN_BRANCH="prod"
-        DIFF_BRANCH="origin/uat"
+        #DIFF_BRANCH="origin/"$SOURCE_BRANCH_NAME
         SALESFORCE_ORG_ALIAS="salesforce_prod.org"
         ;;
     *)
@@ -45,8 +45,8 @@ echo "Case result:"
 echo $CASE_LOG
 echo "Origin branch is:"
 echo $ORIGIN_BRANCH
-echo "Name of the branch to find diff is:"
-echo $DIFF_BRANCH
+#echo "Name of the branch to find diff is:"
+#echo $DIFF_BRANCH
 echo "Salesforce org alias is:"
 echo $SALESFORCE_ORG_ALIAS
 
@@ -79,6 +79,13 @@ git checkout $getpreviousPRid
 echo "!!!!!!!!!!!!!!!!!!!!"
 echo ${{ github.event.pull_request.base.ref }}
 echo "!!!!!!!!!!!!!!!!!!!!"
+
+
+echo -e "\n\n\nCheckout to current pull request"
+git checkout $getpreviousPRid
+echo"!!!!!!!!!!!!!!!!!!!!"
+echo ${{ github.event.pull_request.base.ref }}
+echo"!!!!!!!!!!!!!!!!!!!!"
 
 
 echo -e "\n\n\nCheckout to previous pull request"
