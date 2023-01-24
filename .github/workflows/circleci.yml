@@ -3,7 +3,7 @@ name: CI
 
 on:
   push:
-    patch:
+    branches:
       - qa
       - uat
       - main
@@ -32,7 +32,7 @@ jobs:
           echo "SECRET TEST"
           echo ${{ secrets.CIRCLE_CI_API}}
           echo $GITHUB_REF_NAME
-          echo "**************"
+          echo "*************"
           echo $GITHUB_HEAD_REF
           echo "----------------"
           echo -e '{"branch":"'$GITHUB_REF_NAME'","parameters":{"eventType":"push", "branchName":"'$GITHUB_REF_NAME'", "sourceBranchName":"false"}}'
