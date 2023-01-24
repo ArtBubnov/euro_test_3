@@ -18,14 +18,10 @@ jobs:
   
       - name: git terst
         run: |
-          git fetch origin qa
-          git fetch origin dev
-          git fetch origin uat
           git branch --contains 7cf1acc
           echo $GITHUB_WORKSPACE
-          git checkout ${GITHUB_WORKSPACE}
-          git branch
-          
+          git checkout dev
+          git branch --contains 7cf1acc
 
 
       - name: my test
