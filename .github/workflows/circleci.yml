@@ -4,7 +4,11 @@ name: CI
 on:
   push:
     patch:
-      - './'
+      - dev
+      - qa
+      - uat
+      - main
+
 
   workflow_dispatch:
 
