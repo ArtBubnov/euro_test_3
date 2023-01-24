@@ -75,13 +75,12 @@ git branch
 #mapfile -t my_array < <( my_command )
 mapfile -t branches_array < <( git branch -r --contains 7cf1acc )
 
-echo ",,,,,,,,,"
-echo "${branches_array[0]}"
-echo ",,,,,,,,,"
 
-echo -e "\n the RESULT:"
-git branch -r --contains 7cf1acc
+echo "${branches_array[0]}"
+
 echo "********************"
+echo "RESULT----------"
+DIFF_BRANCH=$(echo ${branches_array[0]} | cut -d ' ' -f1)
 echo $DIFF_BRANCH
 
 
