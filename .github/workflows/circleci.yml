@@ -17,7 +17,10 @@ jobs:
           fetch-depth: 2
   
       - name: git terst
-        run: git fetch --prune --progress --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+        run: |
+          git fetch --prune --progress --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+          git branch --list
+
 
       - name: my test
         run: git branch
