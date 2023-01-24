@@ -58,7 +58,7 @@ CUT_MERGES_LOG=$((git log --oneline --no-decorate ${TARGET_BRANCH_NAME})| cut -d
 echo -e "\nCUT_MERGES_LOG"
 echo $CUT_MERGES_LOG
 
-GET_PREVIOUS_MERGE_ID=$(echo $CUT_MERGES_LOG| cut -d\  -f7)
+GET_PREVIOUS_MERGE_ID=$(echo $CUT_MERGES_LOG| cut -d\  -f8)
 echo -e "\nGET_PREVIOUS_MERGE_ID"
 echo $GET_PREVIOUS_MERGE_ID
 
