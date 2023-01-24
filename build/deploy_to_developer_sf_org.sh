@@ -14,6 +14,26 @@ case $TARGET_BRANCH_NAME in
         CASE_LOG="dev"
         SALESFORCE_ORG_ALIAS="salesforce_dev.org"
         #put logic here
+        #echo -e "\nDue to the target branch is DEV the source branch is unnown for the current circleCi pipeline execution"
+        #echo "Initializing source branch defining process"
+
+        #echo "Get git logs"
+        #CUT_MERGES_LOG=$((git log --oneline --no-decorate ${TARGET_BRANCH_NAME})| cut -d\  -f1)
+        #echo -e "\nCUT_MERGES_LOG"
+        #echo $CUT_MERGES_LOG
+
+        #GET_PREVIOUS_MERGE_ID=$(echo $CUT_MERGES_LOG| cut -d\  -f8)
+        #echo -e "\nGET_PREVIOUS_MERGE_ID"
+        #echo $GET_PREVIOUS_MERGE_ID
+
+        #git checkout $GET_PREVIOUS_MERGE_ID
+        #mapfile -t branches_array < <( git branch -r --contains 7cf1acc )
+
+        #echo "RESULT----------"
+        #DIFF_BRANCH=$(echo ${branches_array[0]} | cut -d ' ' -f1)
+        #echo $DIFF_BRANCH
+        #echo -e "\n\n\n-*-*---------------------------------------------------------------"
+        #put logic here
         ;;
     "qa")
         CASE_LOG="qa"
@@ -62,33 +82,12 @@ GET_PREVIOUS_MERGE_ID=$(echo $CUT_MERGES_LOG| cut -d\  -f8)
 echo -e "\nGET_PREVIOUS_MERGE_ID"
 echo $GET_PREVIOUS_MERGE_ID
 
-
-echo -e "\nBEFORE"
-git branch
 git checkout $GET_PREVIOUS_MERGE_ID
-echo -e "\nAFTER"
-git branch
-
-
-#DIFF_BRANCH=$(git branch --contains ${GET_PREVIOUS_MERGE_ID})
-#DIFF_BRANCH=$((git branch -r --contains 7cf1acc)|  |cut -d\  -f1)
-#mapfile -t my_array < <( my_command )
 mapfile -t branches_array < <( git branch -r --contains 7cf1acc )
 
-
-echo "${branches_array[0]}"
-
-echo "********************"
 echo "RESULT----------"
 DIFF_BRANCH=$(echo ${branches_array[0]} | cut -d ' ' -f1)
 echo $DIFF_BRANCH
-
-
-
-
-
-
-
 echo -e "\n\n\n-*-*---------------------------------------------------------------"
 
 
