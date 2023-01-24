@@ -71,7 +71,14 @@ git branch
 
 
 #DIFF_BRANCH=$(git branch --contains ${GET_PREVIOUS_MERGE_ID})
-DIFF_BRANCH=$((git branch -r --contains 7cf1acc)| cut -d\  -f1)
+#DIFF_BRANCH=$((git branch -r --contains 7cf1acc)|  |cut -d\  -f1)
+#mapfile -t my_array < <( my_command )
+mapfile -t branches_array < <( git branch -r --contains 7cf1acc )
+
+echo ",,,,,,,,,"
+echo "${branches_array[0]}"
+echo ",,,,,,,,,"
+
 echo -e "\n the RESULT:"
 git branch -r --contains 7cf1acc
 echo "********************"
