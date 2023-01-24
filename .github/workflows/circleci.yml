@@ -22,6 +22,7 @@ jobs:
           git fetch origin dev
           git fetch origin uat
           git branch --contains 7cf1acc
+          echo pwd
           
 
 
