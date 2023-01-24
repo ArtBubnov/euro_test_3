@@ -22,6 +22,9 @@ jobs:
     steps:
       - checkout
       
+      - run:
+          name: "BRANCH TEST"
+          command: git branch
       #- run:
       #    name: "NPM version check"
       #    command: npm --version
