@@ -8,7 +8,6 @@ on:
       - qa
       - uat
       - main
-      - uganda736
 
 
   workflow_dispatch:
@@ -21,25 +20,6 @@ jobs:
         with:
           fetch-depth: 0
   
-      - name: git terst
-        run: |
-          git branch -r --contains 7cf1acc
-
-
-      - name: my test
-        run: git branch
-
-      - name: variable test
-        run: |
-          echo "SECRET TEST"
-          echo ${{ secrets.CIRCLE_CI_API}}
-          echo $GITHUB_REF_NAME
-          echo "*************"
-          echo $GITHUB_HEAD_REF
-          echo "----------------"
-          echo -e '{"branch":"'$GITHUB_REF_NAME'","parameters":{"eventType":"push", "branchName":"'$GITHUB_REF_NAME'", "sourceBranchName":"false"}}'
-
-
       - name: dev push
         run: |
             curl --request POST \
