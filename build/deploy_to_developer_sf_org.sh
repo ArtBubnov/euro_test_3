@@ -71,8 +71,9 @@ git branch
 
 
 #DIFF_BRANCH=$(git branch --contains ${GET_PREVIOUS_MERGE_ID})
-DIFF_BRANCH=$(git branch -r --contains 7cf1acc | cut -d\  -f1)
+#DIFF_BRANCH=$(git branch -r --contains 7cf1acc | cut -d\  -f1)
 echo -e "\n the RESULT:"
+git branch -r --contains 7cf1acc
 echo $DIFF_BRANCH
 
 
