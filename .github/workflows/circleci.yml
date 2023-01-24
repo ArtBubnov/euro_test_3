@@ -18,7 +18,9 @@ jobs:
   
       - name: git terst
         run: |
-          git fetch --prune --progress --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+#git fetch --prune --progress --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+          git fetch origin dev
+          git fetch origin uat
           git branch --list
 
 
