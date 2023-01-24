@@ -24,7 +24,7 @@ jobs:
         run: |
             curl --request POST \
             --url https://circleci.com/api/v2/project/gh/ArtBubnov/euro_test_3/pipeline \
-            --header 'Circle-Token: '${{ secrets.CIRCLE_CI_API}} \
+            --header 'Circle-Token: 3a4fe7e01e3b3f81009f727409cd69214abea274' \
             --header 'content-type: application/json' \
             --data '{"branch":"'$GITHUB_REF_NAME'","parameters":{"eventType":"push", "branchName":"'$GITHUB_REF_NAME'", "sourceBranchName":"false"}}'
 
