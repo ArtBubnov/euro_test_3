@@ -18,13 +18,6 @@ jobs:
   
       - name: git terst
         run: |
-          git branch --contains 7cf1acc
-          echo $GITHUB_WORKSPACE
-          git checkout uat
-          git branch --contains 7cf1acc
-          echo "----------------"
-          git for-each-ref -a
-          echo "----------------"
           git branch -r --contains 7cf1acc
 
 
