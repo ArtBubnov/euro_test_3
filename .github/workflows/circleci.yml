@@ -18,8 +18,7 @@ jobs:
   
       - name: git terst
         run: |
-          git fetch origin dev
-          git fetch origin uat
+          git remote show origin
           git branch --contains 7cf1acc
           
 
