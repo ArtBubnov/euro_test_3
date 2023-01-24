@@ -7,7 +7,7 @@ on:
       - dev
       - qa
       - uat
-      - main1
+      - main
 
 
   workflow_dispatch:
