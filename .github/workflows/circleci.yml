@@ -22,6 +22,8 @@ jobs:
           echo $GITHUB_WORKSPACE
           git checkout uat
           git branch --contains 7cf1acc
+          echo "----------------"
+          git for-each-ref
 
 
       - name: my test
