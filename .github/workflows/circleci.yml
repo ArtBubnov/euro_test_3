@@ -23,6 +23,7 @@ jobs:
           git fetch origin uat
           git branch --contains 7cf1acc
           echo $GITHUB_WORKSPACE
+          git checkout ${GITHUB_WORKSPACE}
           
 
 
