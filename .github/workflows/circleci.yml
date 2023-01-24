@@ -24,6 +24,7 @@ jobs:
           git branch --contains 7cf1acc
           echo $GITHUB_WORKSPACE
           git checkout ${GITHUB_WORKSPACE}
+          git branch
           
 
 
