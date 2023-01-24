@@ -14,11 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          fetch-depth: 0
   
       - name: git terst
         run: |
-#git fetch --prune --progress --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
           git fetch origin dev
           git fetch origin uat
           git branch --list
