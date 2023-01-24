@@ -62,8 +62,12 @@ GET_PREVIOUS_MERGE_ID=$(echo $CUT_MERGES_LOG| cut -d\  -f2)
 echo -e "\nGET_PREVIOUS_MERGE_ID"
 echo $GET_PREVIOUS_MERGE_ID
 
+echo -e "\n before script"
+echo $DIFF_BRANCH
 
-DIFF_BRANCH=$(git branch --contains 7cf1acc | cut -d\  -f1)
+
+DIFF_BRANCH=$(git branch --contains 7cf1acc)
+#DIFF_BRANCH=$(git branch --contains 7cf1acc | cut -d\  -f1)
 echo "\n the RESULT:"
 echo $DIFF_BRANCH
 
