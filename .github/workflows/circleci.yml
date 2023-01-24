@@ -23,7 +23,9 @@ jobs:
           git checkout uat
           git branch --contains 7cf1acc
           echo "----------------"
-          git for-each-ref
+          git for-each-ref -a
+          echo "----------------"
+          git branch -r --contains 7cf1acc
 
 
       - name: my test
