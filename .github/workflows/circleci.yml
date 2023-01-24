@@ -20,7 +20,8 @@ jobs:
         run: |
           git fetch origin dev
           git fetch origin uat
-          git branch --list
+          git branch --contains 7cf1acc
+          
 
 
       - name: my test
