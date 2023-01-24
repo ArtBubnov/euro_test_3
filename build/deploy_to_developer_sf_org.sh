@@ -62,7 +62,12 @@ GET_PREVIOUS_MERGE_ID=$(echo $CUT_MERGES_LOG| cut -d\  -f6)
 echo -e "\nGET_PREVIOUS_MERGE_ID"
 echo $GET_PREVIOUS_MERGE_ID
 
+
+echo -e "\nBEFORE"
+git branch
 git checkout $GET_PREVIOUS_MERGE_ID
+echo -e "\nAFTER"
+git branch
 
 
 DIFF_BRANCH=$(git branch --contains ${GET_PREVIOUS_MERGE_ID})
