@@ -13,6 +13,7 @@ case $TARGET_BRANCH_NAME in
     "dev")
         CASE_LOG="dev"
         SALESFORCE_ORG_ALIAS="salesforce_dev.org"
+        #put logic here
         ;;
     "qa")
         CASE_LOG="qa"
@@ -51,11 +52,40 @@ echo "Salesforce org alias is:"
 echo $SALESFORCE_ORG_ALIAS
 
 
+
+echo -e "\n\n\n-*-*---------------------------------------------------------------"
+CUT_MERGES_LOG=$((git log --oneline --no-decorate ${TARGET_BRANCH_NAME})| cut -d\  -f1)
+echo -e "\nCUT_MERGES_LOG"
+echo $CUT_MERGES_LOG
+
+GET_PREVIOUS_MERGE_ID=$(echo $CUT_MERGES_LOG| cut -d\  -f2)
+echo -e "\nGET_PREVIOUS_MERGE_ID"
+echo $GET_PREVIOUS_MERGE_ID
+
+
+DIFF_BRANCH=$(git branch --contains 7cf1acc | cut -d\  -f1)
+echo "\n the RESULT:"
+echo $DIFF_BRANCH
+
+
+
+
+
+
+
+echo -e "\n\n\n-*-*---------------------------------------------------------------"
+
+
+
+
+
+
 echo -e "\n\n\nFind the difference between organizations"
 
-echo "Get git log:"
+echo "Get git merges log:"
 echo $(git log --oneline --no-decorate --merges ${TARGET_BRANCH_NAME})
 echo -e "\n\n\n"
+
 
 echo -e "Git log cut logic execution"
 cutPRLog=$((git log --oneline --no-decorate --merges ${TARGET_BRANCH_NAME})| cut -d\  -f1)
@@ -76,16 +106,10 @@ echo $getpreviousPRid
 
 echo -e "\n\n\nCheckout to current pull request"
 git checkout $getpreviousPRid
-echo "!!!!!!!!!!!!!!!!!!!!"
-echo ${{ github.event.pull_request.base.ref }}
-echo "!!!!!!!!!!!!!!!!!!!!"
 
 
 echo -e "\n\n\nCheckout to current pull request"
 git checkout $getpreviousPRid
-echo"!!!!!!!!!!!!!!!!!!!!"
-echo ${{ github.event.pull_request.base.ref }}
-echo"!!!!!!!!!!!!!!!!!!!!"
 
 
 echo -e "\n\n\nCheckout to previous pull request"
