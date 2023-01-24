@@ -20,7 +20,7 @@ jobs:
         run: |
           git branch --contains 7cf1acc
           echo $GITHUB_WORKSPACE
-          git checkout dev
+          git checkout uat
           git branch --contains 7cf1acc
 
 
