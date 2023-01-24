@@ -74,6 +74,7 @@ git branch
 DIFF_BRANCH=$((git branch -r --contains 7cf1acc)| cut -d\  -f1)
 echo -e "\n the RESULT:"
 git branch -r --contains 7cf1acc
+echo "********************"
 echo $DIFF_BRANCH
 
 
