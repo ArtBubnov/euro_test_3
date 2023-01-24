@@ -15,6 +15,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 2
+  
+      - name: git terst
+        run: fetch --prune --progress --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
 
       - name: my test
         run: git branch
