@@ -173,19 +173,13 @@ while [ $COUNT -le $ARRAY_LEN ]
 do
     echo $COUNT
     echo ${branches_array[$COUNT]}
-    CURRENT_FILE=${branches_array[$COUNT]}
-    read CURRENT_FILE
-    echo ${CURRENT_FILE[0]}
-    #IFS='/'
-    #read -a strarr <<< "$CURRENT_FILE"
-    #echo ${strarr[0]}
-    #echo ${strarr[1]}
-    #echo ${strarr[2]}
-    #echo ${strarr[3]}
-    #echo ${strarr[4]}
-    #echo ${strarr[5]}
-    #echo ${strarr[6]}
-    #echo "@@@@@@@@@@@@@@"
+    echo ${branches_array[$COUNT]} | cut -d\/ -f1
+    echo ${branches_array[$COUNT]} | cut -d\/ -f2
+    echo ${branches_array[$COUNT]} | cut -d\/ -f3
+    #echo ${branches_array[$COUNT]} | cut -d\/ -f4
+    #echo ${branches_array[$COUNT]} | cut -d\/ -f5
+    #echo ${branches_array[$COUNT]} | cut -d\/ -f6
+    echo "@@@@@@@@@@@@@@@@@@"
     
 
 
