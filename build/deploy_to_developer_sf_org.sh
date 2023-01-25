@@ -172,6 +172,10 @@ ARRAY_LEN=${#branches_array[@]}
 while [ $COUNT -le $ARRAY_LEN ]
 do
     echo $COUNT
+    echo ${branches_array[$COUNT]}
+
+
+
     COUNT=$(( $COUNT +1))
 done
 echo "DONE"
