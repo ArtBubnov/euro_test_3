@@ -176,8 +176,8 @@ do
     echo ${branches_array[$COUNT]} | cut -d\/ -f1
     echo ${branches_array[$COUNT]} | cut -d\/ -f2
     echo ${branches_array[$COUNT]} | cut -d\/ -f3
-    #echo ${branches_array[$COUNT]} | cut -d\/ -f4
-    #echo ${branches_array[$COUNT]} | cut -d\/ -f5
+    echo ${branches_array[$COUNT]} | cut -d\/ -f4
+    echo ${branches_array[$COUNT]} | cut -d\/ -f5
     #echo ${branches_array[$COUNT]} | cut -d\/ -f6
     echo "@@@@@@@@@@@@@@@@@@"
     
