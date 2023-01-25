@@ -4,7 +4,7 @@
     <assignments>
         <name>Assign_Public_Calendar_Names_For_Outlook</name>
         <label>Assign Public Calendar Names For Outlook</label>
-        <locationX>183</locationX>
+        <locationX>189</locationX>
         <locationY>431</locationY>
         <assignmentItems>
             <assignToReference>Public_Calendar_Names_For_Outlook</assignToReference>
