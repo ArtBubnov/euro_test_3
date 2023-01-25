@@ -175,7 +175,7 @@ do
     echo ${branches_array[$COUNT]}
     CURRENT_FILE=${branches_array[$COUNT]}
     read CURRENT_FILE
-    echo $CURRENT_FILE
+    echo ${CURRENT_FILE[0]}
     #IFS='/'
     #read -a strarr <<< "$CURRENT_FILE"
     #echo ${strarr[0]}
