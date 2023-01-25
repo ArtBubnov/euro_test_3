@@ -158,6 +158,11 @@ echo ${branches_array[1]}
 echo ${branches_array[2]}
 echo ${branches_array[3]}
 echo ${branches_array[4]}
+echo ${branches_array[5]}
+echo ${branches_array[6]}
+echo ${branches_array[7]}
+echo ${branches_array[8]}
+echo ${branches_array[9]}
 echo ${#branches_array[@]} 
 echo "--------------------------------------"
 
