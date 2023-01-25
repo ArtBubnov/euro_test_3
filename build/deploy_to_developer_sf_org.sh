@@ -153,43 +153,16 @@ else
 fi    
 
 echo -e "\n\n\nFiles to deploy:"
-echo ${branches_array[0]}
-echo ${branches_array[1]}
-echo ${branches_array[2]}
-echo ${branches_array[3]}
-echo ${branches_array[4]}
-echo ${branches_array[5]}
-echo ${branches_array[6]}
-echo ${branches_array[7]}
-echo ${branches_array[8]}
-echo ${branches_array[9]}
-echo ${#branches_array[@]} 
-echo "--------------------------------------"
 
 COUNT=0
 ARRAY_LEN=${#branches_array[@]}
 
 while [ $COUNT -le $ARRAY_LEN ]
 do
-    echo $COUNT
-    echo ${branches_array[$COUNT]}
-    echo ${branches_array[$COUNT]} | cut -d\/ -f1
-    echo ${branches_array[$COUNT]} | cut -d\/ -f2
-    echo ${branches_array[$COUNT]} | cut -d\/ -f3
-    echo ${branches_array[$COUNT]} | cut -d\/ -f4
-    echo ${branches_array[$COUNT]} | cut -d\/ -f5
-    echo "test"
     folder=$(echo ${branches_array[$COUNT]} | cut -d\/ -f4)
     file=$(echo ${branches_array[$COUNT]} | cut -d\/ -f5)
-    echo $folder
-    echo $file
     echo -e "$folder: $file"
-    #echo ${branches_array[$COUNT]} | cut -d\/ -f6
-    echo "@@@@@@@@@@@@@@@@@@"
-    
-
-
-
+    echo -e "\n"
     COUNT=$(( $COUNT +1))
 done
 echo "DONE"
