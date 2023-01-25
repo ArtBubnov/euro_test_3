@@ -7,7 +7,7 @@
     <referenceTo>Business_Account__c</referenceTo>
     <relationshipLabel>Customers</relationshipLabel>
     <relationshipName>Customers</relationshipName>
-    <required>false</required>
+    <required>true</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Lookup</type>
