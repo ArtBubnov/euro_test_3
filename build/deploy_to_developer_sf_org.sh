@@ -143,7 +143,7 @@ then
     echo "In this case all files in force-app should be deployed on the target org"
     FILES_TO_DEPLOY="force-app/main/default"
 else
-    echo "No changes in the directory force-app/main/default/profiles/ have been detected"
+    echo "No changes in the directory force-app/main/default/profiles/ have been detected "
     echo "In this case only DIFF should be deployed on the target org"
     #-------------------------------------
     mapfile -t branches_array < <( git diff --name-only ${DIFF_BRANCH} force-app )
