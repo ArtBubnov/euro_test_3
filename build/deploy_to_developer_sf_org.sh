@@ -158,6 +158,26 @@ echo ${branches_array[1]}
 echo ${branches_array[2]}
 echo ${branches_array[3]}
 echo ${branches_array[4]}
+arrs=(Hello World)
+arrs[0]="force-app/main/default/flows/DLT_Event_Before_Create_Triggered_Flow.flow-meta.xml"
+arrs[1]="force-app/main/default/globalValueSets/Countries.globalValueSet-meta.xml"
+arrs[2]="force-app/main/default/groups/Manage_Room_Bookings.group-meta.xml"
+arrs[3]="force-app/main/default/layouts/Business_Account__c-Business Account Layout.layout-meta.xml"
+arrs[4]="force-app/main/default/objects/Account/fields/Business_Account__c.field-meta.xml"
+arrs[5]="force-app/main/default/tabs/Business_Account__c.tab-meta.xml"
+echo ${arrs[0]}
+echo ${arrs[1]}
+echo ${arrs[2]}
+echo ${arrs[3]}
+echo ${arrs[4]}
+echo ${arrs[5]}
+echo ${#arrs[@]} 
+echo "---------------------"
+for arr in ${arrs[@]}
+do 
+echo $arr
+done
+
 echo $FILES_TO_DEPLOY
 
 
