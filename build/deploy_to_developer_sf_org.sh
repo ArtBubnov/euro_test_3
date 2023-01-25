@@ -158,7 +158,9 @@ echo ${branches_array[1]}
 echo ${branches_array[2]}
 echo ${branches_array[3]}
 echo ${branches_array[4]}
+echo "--------------------------------------"
 arrs=(Hello World)
+
 arrs[0]="force-app/main/default/flows/DLT_Event_Before_Create_Triggered_Flow.flow-meta.xml"
 arrs[1]="force-app/main/default/globalValueSets/Countries.globalValueSet-meta.xml"
 arrs[2]="force-app/main/default/groups/Manage_Room_Bookings.group-meta.xml"
