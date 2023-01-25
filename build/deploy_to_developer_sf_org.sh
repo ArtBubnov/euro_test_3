@@ -169,10 +169,10 @@ echo "--------------------------------------"
 COUNT=0
 ARRAY_LEN=${#branches_array[@]}
 
-while (( COUNT < ARRAY_LEN ))
+while (( $COUNT < $ARRAY_LEN ))
     do
-        echo -e "$COUNT \c"
-        (( COUNT ++ ))
+        echo $COUNT
+        (( $COUNT ++ ))
     done
 echo "DONE"
 
