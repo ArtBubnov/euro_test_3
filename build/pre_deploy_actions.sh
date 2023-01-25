@@ -56,4 +56,4 @@ echo -e "\n\n\nFiles to deploy:"
 echo $FILES_TO_DEPLOY
 
 echo "Test deploy to Salesforce env without saving \n\n\n"
-sfdx force:source:deploy -p $FILES_TO_DEPLOY -c -l RunLocalTests -u $SALESFORCE_ORG_ALIAS --loglevel WARN
+#sfdx force:source:deploy -p $FILES_TO_DEPLOY -c -l RunLocalTests -u $SALESFORCE_ORG_ALIAS --loglevel WARN
