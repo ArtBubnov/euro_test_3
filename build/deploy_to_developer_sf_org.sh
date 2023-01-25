@@ -147,17 +147,17 @@ else
     echo "In this case only DIFF should be deployed on the target org"
     #-------------------------------------
     mapfile -t branches_array < <( git diff --name-only ${DIFF_BRANCH} force-app )
-    NEW_TEST=$(echo ${branches_array})
+
     #-------------------------------------
     FILES_TO_DEPLOY=$(git diff --name-only ${DIFF_BRANCH} force-app | tr '\n' ',' | sed 's/\(.*\),/\1 /')
 fi    
 
 echo -e "\n\n\nFiles to deploy:"
-echo ${NEW_TEST[0]}
-echo ${NEW_TEST[1]}
-echo ${NEW_TEST[2]}
-echo ${NEW_TEST[3]}
-echo ${NEW_TEST[4]}
+echo ${branches_array[0]}
+echo ${branches_array[1]}
+echo ${branches_array[2]}
+echo ${branches_array[3]}
+echo ${branches_array[4]}
 echo $FILES_TO_DEPLOY
 
 
