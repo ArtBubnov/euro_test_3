@@ -179,7 +179,11 @@ do
     echo ${branches_array[$COUNT]} | cut -d\/ -f4
     echo ${branches_array[$COUNT]} | cut -d\/ -f5
     echo "test"
-    echo -e "${branches_array[$COUNT]} | cut -d\/ -f4 ': ' ${branches_array[$COUNT]} | cut -d\/ -f5"
+    folder=$(echo ${branches_array[$COUNT]} | cut -d\/ -f4)
+    file=$(echo ${branches_array[$COUNT]} | cut -d\/ -f5)
+    echo $folder
+    echo $file
+    echo -e "$folder: $file"
     #echo ${branches_array[$COUNT]} | cut -d\/ -f6
     echo "@@@@@@@@@@@@@@@@@@"
     
