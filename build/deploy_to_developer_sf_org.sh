@@ -158,6 +158,7 @@ echo ${branches_array[1]}
 echo ${branches_array[2]}
 echo ${branches_array[3]}
 echo ${branches_array[4]}
+echo ${#branches_array[@]} 
 echo "--------------------------------------"
 
 for item in ${branches_array[@]}
