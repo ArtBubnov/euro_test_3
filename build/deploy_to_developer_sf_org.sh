@@ -179,7 +179,7 @@ do
     echo ${branches_array[$COUNT]} | cut -d\/ -f4
     echo ${branches_array[$COUNT]} | cut -d\/ -f5
     echo "test"
-    echo ${branches_array[$COUNT]} | cut -d\/ -f4 ": ${branches_array[$COUNT]} | cut -d\/ -f5"
+    echo -e "${branches_array[$COUNT]} | cut -d\/ -f4 ': ' ${branches_array[$COUNT]} | cut -d\/ -f5"
     #echo ${branches_array[$COUNT]} | cut -d\/ -f6
     echo "@@@@@@@@@@@@@@@@@@"
     
