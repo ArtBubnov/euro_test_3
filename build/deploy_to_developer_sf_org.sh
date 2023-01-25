@@ -145,10 +145,15 @@ then
 else
     echo "No changes in the directory force-app/main/default/profiles/ have been detected"
     echo "In this case only DIFF should be deployed on the target org"
+    #-------------------------------------
+    mapfile -t branches_array < <( git diff --name-only ${DIFF_BRANCH} force-app )
+    NEW_TEST=$(echo ${branches_array})
+    #-------------------------------------
     FILES_TO_DEPLOY=$(git diff --name-only ${DIFF_BRANCH} force-app | tr '\n' ',' | sed 's/\(.*\),/\1 /')
 fi    
 
 echo -e "\n\n\nFiles to deploy:"
+echo $NEW_TEST
 echo $FILES_TO_DEPLOY
 
 
