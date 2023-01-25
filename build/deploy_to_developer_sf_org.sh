@@ -153,7 +153,11 @@ else
 fi    
 
 echo -e "\n\n\nFiles to deploy:"
-echo $NEW_TEST
+echo $NEW_TESTp[0]
+echo $NEW_TESTp[1]
+echo $NEW_TESTp[2]
+echo $NEW_TESTp[3]
+echo $NEW_TESTp[4]
 echo $FILES_TO_DEPLOY
 
 
