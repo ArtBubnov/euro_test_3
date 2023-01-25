@@ -143,12 +143,34 @@ then
     echo "In this case all files in force-app should be deployed on the target org"
     FILES_TO_DEPLOY="force-app/main/default"
 else
-    echo "No changes in the directory force-app/main/default/profiles/ have been detected"
+    echo "No changes in the directory force-app/main/default/profiles/ have been detected "
     echo "In this case only DIFF should be deployed on the target org"
+    #-------------------------------------
+    mapfile -t branches_array < <( git diff --name-only ${DIFF_BRANCH} force-app )
+
+    #-------------------------------------
     FILES_TO_DEPLOY=$(git diff --name-only ${DIFF_BRANCH} force-app | tr '\n' ',' | sed 's/\(.*\),/\1 /')
 fi    
 
 echo -e "\n\n\nFiles to deploy:"
+
+COUNT=0
+ARRAY_LEN=${#branches_array[@]}
+
+while [ $COUNT -le $ARRAY_LEN ]
+do
+    folder=$(echo ${branches_array[$COUNT]} | cut -d\/ -f4)
+    file=$(echo ${branches_array[$COUNT]} | cut -d\/ -f5)
+    echo -e "$folder: $file"
+    echo -e "\n"
+    COUNT=$(( $COUNT +1))
+done
+echo "DONE"
+
+
+
+
+
 echo $FILES_TO_DEPLOY
 
 
