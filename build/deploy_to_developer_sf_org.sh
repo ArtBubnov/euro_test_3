@@ -166,10 +166,18 @@ echo ${branches_array[9]}
 echo ${#branches_array[@]} 
 echo "--------------------------------------"
 
-for item in ${branches_array[@]}
-do 
-echo $item
-done
+COUNT=0
+
+while (( COUNT < ${#branches_array[@]} ))
+    do
+        echo -e "$COUNT \c"
+        (( COUNT ++ ))
+    done
+echo "DONE"
+
+
+
+
 
 echo $FILES_TO_DEPLOY
 
