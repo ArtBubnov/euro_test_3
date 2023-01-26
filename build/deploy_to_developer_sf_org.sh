@@ -220,7 +220,7 @@ echo ${classes_files_array[6]}
 COUNT=0
 ARRAY_LEN=${#classes_files_array[@]}
 LIST_OF_FILES_TO_TEST=""
-TEST= $ARRAY_LEN - 1
+TEST=$ARRAY_LEN - 1
 echo "TEST VAR"
 echo $TEST
 
