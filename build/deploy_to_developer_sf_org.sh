@@ -231,7 +231,14 @@ do
         echo $COUNT
         echo ${classes_files_array[$COUNT]}
         echo "LOOP TEST TRUE"
-        LIST_OF_FILES_TO_TEST=$LIST_OF_FILES_TO_TEST${classes_files_array[$COUNT]}", "
+
+            if [[ ${classes_files_array[$COUNT]} == *"cls-meta.xml"* ]];
+            then
+                LIST_OF_XML_FILES=$LIST_OF_XML_FILES{classes_files_array[$COUNT]}", "
+            else
+                LIST_OF_FILES_TO_TEST=$LIST_OF_FILES_TO_TEST${classes_files_array[$COUNT]}", "
+            fi
+            
     else
         echo $COUNT
         echo ${classes_files_array[$COUNT]}
