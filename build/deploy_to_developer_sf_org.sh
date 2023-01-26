@@ -196,7 +196,7 @@ cd classes
 ls
 
 mapfile -t classes_files_array < <( ls )
-
+echo "list test##############"
 echo ${classes_files_array[0]}
 echo ${classes_files_array[1]}
 echo ${classes_files_array[2]}
@@ -204,6 +204,60 @@ echo ${classes_files_array[3]}
 echo ${classes_files_array[4]}
 echo ${classes_files_array[5]}
 echo ${classes_files_array[6]}
+
+
+
+
+
+
+
+
+
+
+
+
+
+COUNT=0
+ARRAY_LEN=${#classes_files_array[@]}
+LIST_OF_FILES_TO_TEST=""
+
+while [ $COUNT -le $ARRAY_LEN ]
+do
+    if [[ ${classes_files_array[@]} == *"Test.cls"* ]];
+    then
+        LIST_OF_FILES_TO_TEST=$( $LIST_OF_FILES_TO_TEST", ")
+    fi 
+
+
+
+
+
+
+    COUNT=$(( $COUNT +1))
+done
+
+echo "LIST_OF_FILES_TO_TEST"
+echo $LIST_OF_FILES_TO_TEST
+
+echo "DONE"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
