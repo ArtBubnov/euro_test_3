@@ -191,9 +191,9 @@ ls
 echo "@@@@@"
 cd default
 ls
-echo "@@@@@"
+echo "@@@@@----------------------"
 cd classes
-ls -l
+ls
 echo "get back to the project dir"
 cd /home/circleci/project
 pwd
