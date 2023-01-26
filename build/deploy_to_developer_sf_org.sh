@@ -171,7 +171,17 @@ echo "DONE"
 echo "--------------tests list-----------------"
 pwd
 ls
+echo "@@@@@"
 cd force-app
+ls
+echo "@@@@@"
+cd main
+ls
+echo "@@@@@"
+cd default
+ls
+echo "@@@@@"
+cd classes
 ls
 #cd force-app/main/default/classes
 ls
