@@ -194,6 +194,19 @@ ls
 echo "@@@@@----------------------"
 cd classes
 ls
+
+mapfile -t classes_files_array < <( ls )
+
+echo ${classes_files_array[0]}
+echo ${classes_files_array[1]}
+echo ${classes_files_array[2]}
+echo ${classes_files_array[3]}
+echo ${classes_files_array[4]}
+echo ${classes_files_array[5]}
+echo ${classes_files_array[6]}
+
+
+
 echo "get back to the project dir"
 cd /home/circleci/project
 pwd
