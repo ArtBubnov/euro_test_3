@@ -170,7 +170,7 @@ echo "DONE"
 
 echo "--------------tests list-----------------"
 pwd
-
+ls
 echo "--------------tests list-----------------"
 
 
