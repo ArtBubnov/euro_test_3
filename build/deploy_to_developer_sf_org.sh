@@ -193,9 +193,7 @@ cd default
 ls
 echo "@@@@@"
 cd classes
-ls
-#cd force-app/main/default/classes
-ls
+ls -l
 echo "get back to the project dir"
 cd /home/circleci/project
 pwd
