@@ -225,7 +225,7 @@ while [ $COUNT -le $ARRAY_LEN ]
 do
     if [[ ${classes_files_array[@]} == *"Test.cls"* ]];
     then
-        LIST_OF_FILES_TO_TEST=$(( $LIST_OF_FILES_TO_TEST", " ))
+        LIST_OF_FILES_TO_TEST=$LIST_OF_FILES_TO_TEST", "
     fi 
 
 
