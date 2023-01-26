@@ -221,14 +221,18 @@ COUNT=0
 ARRAY_LEN=${#classes_files_array[@]}
 LIST_OF_FILES_TO_TEST=""
 
+
+echo "START OF THE LOOP--------------"
 while [ $COUNT -le $ARRAY_LEN ]
 do
     if [[ ${classes_files_array[$COUNT]} == *"Test.cls"* ]];
     then
+        echo $COUNT
         echo ${classes_files_array[$COUNT]}
         echo "LOOP TEST TRUE"
         LIST_OF_FILES_TO_TEST=$LIST_OF_FILES_TO_TEST", "
     else
+        echo $COUNT
         echo ${classes_files_array[$COUNT]}
         echo "LOOP TEST FALSE"
     fi 
@@ -240,7 +244,7 @@ do
 
     COUNT=$(( $COUNT +1))
 done
-
+echo "END OF THE LOOP--------------"
 echo "LIST_OF_FILES_TO_TEST"
 echo $LIST_OF_FILES_TO_TEST
 
