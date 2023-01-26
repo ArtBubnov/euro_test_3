@@ -196,26 +196,6 @@ cd classes
 ls
 
 mapfile -t classes_files_array < <( ls )
-echo "list test##############"
-echo ${classes_files_array[0]}
-echo ${classes_files_array[1]}
-echo ${classes_files_array[2]}
-echo ${classes_files_array[3]}
-echo ${classes_files_array[4]}
-echo ${classes_files_array[5]}
-echo ${classes_files_array[6]}
-
-
-
-
-
-
-
-
-
-
-
-
 
 COUNT=0
 ARRAY_LEN=${#classes_files_array[@]}
@@ -239,10 +219,6 @@ do
                 LIST_OF_FILES_TO_TEST=$LIST_OF_FILES_TO_TEST${classes_files_array[$COUNT]}", "
             fi
 
-    else
-        echo $COUNT
-        echo ${classes_files_array[$COUNT]}
-        echo "LOOP TEST FALSE"
     fi 
 
 
