@@ -13,6 +13,7 @@ case $TARGET_BRANCH_NAME in
     "dev")
         CASE_LOG="dev"
         SALESFORCE_ORG_ALIAS="salesforce_dev.org"
+        ORIGIN_BRANCH="dev"
         #put logic here
         #echo -e "\nDue to the target branch is DEV the source branch is unnown for the current circleCi pipeline execution"
         #echo "Initializing source branch defining process"
