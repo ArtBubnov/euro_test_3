@@ -238,7 +238,7 @@ do
             else
                 LIST_OF_FILES_TO_TEST=$LIST_OF_FILES_TO_TEST${classes_files_array[$COUNT]}", "
             fi
-            
+
     else
         echo $COUNT
         echo ${classes_files_array[$COUNT]}
@@ -253,6 +253,16 @@ do
     COUNT=$(( $COUNT +1))
 done
 echo "END OF THE LOOP--------------"
+LEN_OF_LIST_OF_FILES_TO_TEST=${#$LIST_OF_FILES_TO_TEST}
+echo "LEN is "
+echo $LEN_OF_LIST_OF_FILES_TO_TEST
+NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_LIST_OF_FILES_TO_TEST - 1 )
+echo "trunc num"
+$NUMBER_OF_SYMBOLS_TO_TRUNCATE
+
+
+
+LIST_OF_FILES_TO_TEST_TRUNC=$(echo $LIST_OF_FILES_TO_TEST | cut 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE)
 echo "LIST_OF_FILES_TO_TEST"
 echo $LIST_OF_FILES_TO_TEST
 
