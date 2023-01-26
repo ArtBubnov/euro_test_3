@@ -223,7 +223,7 @@ LIST_OF_FILES_TO_TEST=""
 
 while [ $COUNT -le $ARRAY_LEN ]
 do
-    if [[ ${classes_files_array[$COUNT]} == *"Test.cls"* ]];
+    if [[ ${classes_files_array[$COUNT]} == *"vacanda"* ]];
     then
         echo ${classes_files_array[$COUNT]}
         echo "LOOP TEST TRUE"
