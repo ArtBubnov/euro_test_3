@@ -220,19 +220,18 @@ echo ${classes_files_array[6]}
 COUNT=0
 ARRAY_LEN=${#classes_files_array[@]}
 LIST_OF_FILES_TO_TEST=""
-TEST=$( expr $ARRAY_LEN - 1)
-echo "TEST VAR"
-echo $TEST
+LOOP_LEN=$( expr $ARRAY_LEN - 1)
+
 
 echo "START OF THE LOOP--------------"
-while [ $COUNT -le $ARRAY_LEN ]
+while [ $COUNT -le $LOOP_LEN ]
 do
     if [[ ${classes_files_array[$COUNT]} == *"Test.cls"* ]];
     then
         echo $COUNT
         echo ${classes_files_array[$COUNT]}
         echo "LOOP TEST TRUE"
-        LIST_OF_FILES_TO_TEST=${classes_files_array[$COUNT]}", "
+        LIST_OF_FILES_TO_TEST=$LIST_OF_FILES_TO_TEST${classes_files_array[$COUNT]}", "
     else
         echo $COUNT
         echo ${classes_files_array[$COUNT]}
