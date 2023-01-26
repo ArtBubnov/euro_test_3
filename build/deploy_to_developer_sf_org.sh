@@ -168,7 +168,10 @@ done
 echo "DONE"
 
 
+echo "--------------tests list-----------------"
+pwd
 
+echo "--------------tests list-----------------"
 
 
 echo $FILES_TO_DEPLOY
