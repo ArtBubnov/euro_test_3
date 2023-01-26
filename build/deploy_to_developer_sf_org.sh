@@ -169,8 +169,11 @@ echo "DONE"
 
 
 echo "--------------tests list-----------------"
-pwd
+cd force-app/main/default/classes
 ls
+echo "get back to the project dir"
+cd /home/circleci/project
+pwd
 echo "--------------tests list-----------------"
 
 
