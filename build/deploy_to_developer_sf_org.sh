@@ -168,6 +168,16 @@ done
 echo "DONE"
 
 
+
+
+
+echo $FILES_TO_DEPLOY
+
+
+echo -e "\n\n\nGet back to origin branch"
+git checkout $ORIGIN_BRANCH
+
+
 echo "--------------tests list-----------------"
 pwd
 ls
@@ -190,12 +200,6 @@ cd /home/circleci/project
 pwd
 echo "--------------tests list-----------------"
 
-
-echo $FILES_TO_DEPLOY
-
-
-echo -e "\n\n\nGet back to origin branch"
-git checkout $ORIGIN_BRANCH
 
 #echo "Deploy to Salesforce env \n\n\n"
 #sfdx force:source:deploy -p "$ORIGIN_BRANCH" -l RunLocalTests -u salesforce_build.org --loglevel WARN
