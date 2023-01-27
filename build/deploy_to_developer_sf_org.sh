@@ -216,7 +216,12 @@ do
             then
                 LIST_OF_XML_FILES=$LIST_OF_XML_FILES{classes_files_array[$COUNT]}", "
             else
-                LIST_OF_FILES_TO_TEST=$LIST_OF_FILES_TO_TEST${classes_files_array[$COUNT]}", "
+                CURRENT_FILE_LEN_NAME=${#classes_files_array[$COUNT]}
+                echo "CURRENT_FILE_LEN_NAME"
+                echo $CURRENT_FILE_LEN_NAME
+
+                NUM_SYMBOLS_TO_TRUNC=$( expr $CURRENT_FILE_LEN_NAME - 4 )
+                LIST_OF_FILES_TO_TEST=$LIST_OF_FILES_TO_TEST$(${classes_files_array[$COUNT]} | cut -c 1-$NUM_SYMBOLS_TO_TRUNC)", "
             fi
 
     fi 
