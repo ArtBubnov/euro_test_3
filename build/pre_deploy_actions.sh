@@ -168,7 +168,7 @@ then
         #then
         #else
         #fi 
-        #COUNT=$(( $COUNT +1))
+        COUNT=$(( $COUNT +1))
     done
 #-------------------TRUE logic start------------------------------------
 else
