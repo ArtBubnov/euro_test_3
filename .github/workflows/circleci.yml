@@ -3,7 +3,7 @@ name: circleci_push
 on:
   push:
     branches:
-      - develop
+      - dev
       - qa
       - uat
       - main
