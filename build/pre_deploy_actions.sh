@@ -10,7 +10,8 @@ echo $SOURCE_BRANCH_NAME
 
 
 echo "@@@@@@@@@@@@@@@@@@"
-echo pwd
+pwd
+ls -a
 echo "@@@@@@@@@@@@@@@@@@"
 
 echo -e "\n\n\nCase logic execution to define salesforce org alias and internal variables has started..."

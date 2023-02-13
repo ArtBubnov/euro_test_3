@@ -57,9 +57,9 @@ jobs:
           name: "NPM version check"
           command: npm --version
 
-      - run:
-          name: "Install Dependencies"
-          command: . build/install_dependencies.sh
+      #- run:
+      #    name: "Install Dependencies"
+      #    command: . build/install_dependencies.sh
 
       - run:
           name: "Set pipeline global variables"
