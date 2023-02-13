@@ -9,7 +9,9 @@ echo "Source branch name is:"
 echo $SOURCE_BRANCH_NAME
 
 
-
+echo "@@@@@@@@@@@@@@@@@@"
+echo pwd
+echo "@@@@@@@@@@@@@@@@@@"
 
 echo -e "\n\n\nCase logic execution to define salesforce org alias and internal variables has started..."
 case $TARGET_BRANCH_NAME in
