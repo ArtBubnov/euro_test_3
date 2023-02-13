@@ -173,9 +173,11 @@ then
         do
             if [[ -f ${current_folder_files_array[$COUNT_02]} ]];
             then
+                echo -e "\n***"
                 echo "FILE IS"
                 echo ${current_folder_files_array[$COUNT_02]}
                 echo "THIS IS FILE"
+                echo -e "***\n"
             else
                 echo "FILE IS"
                 echo ${current_folder_files_array[$COUNT_02]}
