@@ -2,15 +2,15 @@ version: 2.1
 
 parameters:
   eventType:
-    default: "test"
+    default: "null"
     type: string
     
   branchName:
-    default: "test"
+    default: "null"
     type: string   
 
   sourceBranchName:
-    default: "test"
+    default: "null"
     type: string
 
 
@@ -21,17 +21,14 @@ jobs:
       - image: cimg/node:19.2.0
     steps:
       - checkout
-      
-      - run:
-          name: "BRANCH TEST"
-          command: git branch
-      #- run:
-      #    name: "NPM version check"
-      #    command: npm --version
 
-      #- run:
-      #    name: "Install Dependencies"
-      #    command: . build/install_dependencies.sh
+      - run:
+          name: "NPM version check"
+          command: npm --version
+
+      - run:
+          name: "Install Dependencies"
+          command: . build/install_dependencies.sh
 
       - run:
           name: "Set global variables"
@@ -40,14 +37,13 @@ jobs:
             echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
             echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
-      #- run:
-      #    name: "Salesforce AUTH"
-      #    command: . build/login_to_org.sh
-      
       - run:
-          name: "Deploy data to Dev Env"
-          command: . build/deploy_to_developer_sf_org.sh
+          name: "Login to Salesforce org"
+          command: . build/login_to_org.sh
 
+      - run:
+          name: "Salesforce deploy actions"
+          command: . build/deploy_to_sf_org.sh
 
 
 
@@ -57,27 +53,27 @@ jobs:
     steps:
       - checkout
       
-      #- run:
-      #    name: "NPM version check"
-      #    command: npm --version
-
-      #- run:
-      #    name: "Install Dependencies"
-      #    command: . build/install_dependencies.sh
+      - run:
+          name: "NPM version check"
+          command: npm --version
 
       - run:
-          name: "SET EVENT_TYPE"
+          name: "Install Dependencies"
+          command: . build/install_dependencies.sh
+
+      - run:
+          name: "Set pipeline global variables"
           command: |
             echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
             echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
             echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
-      #- run:
-      #    name: "Salesforce AUTH"
-      #    command: . build/login_to_org.sh
+      - run:
+          name: "Login to Salesforce org"
+          command: . build/login_to_org.sh
 
       - run:
-          name: "Salesforce predeploy tests"
+          name: "Salesforce predeploy actions"
           command: . build/pre_deploy_actions.sh
 
 
@@ -89,7 +85,7 @@ workflows:
         - equal: [ "push", << pipeline.parameters.eventType >> ]
     jobs:
       - deploy
-
+  
   pull-request-workflow:
     when:
       and:
