@@ -68,9 +68,9 @@ jobs:
             echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
             echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
-      - run:
-          name: "Login to Salesforce org"
-          command: . build/login_to_org.sh
+      #- run:
+      #    name: "Login to Salesforce org"
+      #    command: . build/login_to_org.sh
 
       - run:
           name: "Salesforce predeploy actions"
