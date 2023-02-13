@@ -171,15 +171,14 @@ then
 
         while [ $COUNT_02 -le $LOOP_LEN_02 ]
         do
-
-            if [[ -f ${current_folder_files_array[$COUNT]} ]];
+            if [[ -f ${current_folder_files_array[$COUNT_02]} ]];
             then
                 echo "FILE IS"
-                echo ${current_folder_files_array[$COUNT]}
+                echo ${current_folder_files_array[$COUNT_02]}
                 echo "THIS IS FILE"
             else
                 echo "FILE IS"
-                echo ${current_folder_files_array[$COUNT]}
+                echo ${current_folder_files_array[$COUNT_02]}
                 echo "THIS IS DIRECTORY"
             fi 
 
