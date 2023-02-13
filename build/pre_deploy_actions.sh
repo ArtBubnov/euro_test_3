@@ -174,9 +174,11 @@ then
 
             if [[ -f ${current_folder_files_array[$COUNT]} ]];
             then
-                echo "DIRECTORY FALSE"
+                echo "FILE IS"
+                echo ${current_folder_files_array[$COUNT]}
+                echo "THIS IS FILE"
             else
-                echo "DIRECTORY TRUE"
+                echo "THIS IS DIRECTORY"
             fi 
 
             COUNT_02=$(( $COUNT_02 +1))
