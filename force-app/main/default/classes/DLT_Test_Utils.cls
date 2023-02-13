@@ -42,7 +42,7 @@ public without sharing class DLT_Test_Utils {
         User u = new User();
 
         u.Username = userName;
-        u.FirstName = 'Test';
+        u.FirstName = 'Test_01';
         u.LastName = 'Dummy';
         u.LanguageLocaleKey = 'fr';
         u.Email = 'test@test.com';
