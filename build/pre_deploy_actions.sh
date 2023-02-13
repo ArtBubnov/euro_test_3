@@ -164,7 +164,7 @@ then
 
 
 
-        COUNT_02=0
+        COUNT_02=1
         ARRAY_LEN_02=${#current_folder_files_array[@]}
         LIST_OF_FILES_TO_TEST_02=""
         LOOP_LEN_02=$( expr $ARRAY_LEN_02 - 1)
@@ -178,6 +178,8 @@ then
                 echo ${current_folder_files_array[$COUNT]}
                 echo "THIS IS FILE"
             else
+                echo "FILE IS"
+                echo ${current_folder_files_array[$COUNT]}
                 echo "THIS IS DIRECTORY"
             fi 
 
