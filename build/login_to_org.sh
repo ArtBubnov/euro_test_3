@@ -4,13 +4,12 @@ echo "Global variables display"
 echo "Target branch is:"
 echo $TARGET_BRANCH_NAME
 
-
 echo -e "\n\n\nCase logic execution logic to define salesforce org alias and internal variables has started..."
 case $TARGET_BRANCH_NAME in
-    "dev")
-        CASE_LOG="dev"
-        ACCESS_KEY_SF=$ACCESS_KEY_SF_DEV
-        SALESFORCE_ORG_ALIAS="salesforce_dev.org"
+    "develop")
+        CASE_LOG="qa"
+        ACCESS_KEY_SF=$ACCESS_KEY_SF_DELTAQA_SANDBOX
+        SALESFORCE_ORG_ALIAS="salesforce_qa_sandbox.org"
         ;;
     "qa")
         CASE_LOG="qa"
@@ -51,6 +50,17 @@ touch access_pass.key
 echo -e "\n\n\nAdding access data to .key file"
 echo $ACCESS_KEY_SF > access_pass.key
 
-
 echo "Try SF login"
-sfdx force:auth:sfdxurl:store -f "access_pass.key" -a $SALESFORCE_ORG_ALIAS -d
+sfdx force:auth:sfdxurl:store -f "access_pass.key" -a ${SALESFORCE_ORG_ALIAS} -d
+
+#previous version-----------------------------------
+#echo "Login into Salesforce Org"
+
+#cho "Create .key file"
+#touch access_pass.key
+
+#echo "Add access data to .key file"
+#echo $ACCESS_KEY_SF_EINSTEINQA_SANDBOX > access_pass.key
+
+#echo "Try Salesforce Org login"
+#sfdx force:auth:sfdxurl:store -f "access_pass.key" -a salesforce_qa_sandbox.org -d

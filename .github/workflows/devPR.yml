@@ -3,7 +3,7 @@ name: CI
 
 on:
   pull_request:
-    types: [opened, reopened]
+    types: [opened, reopened, edited]
 
   workflow_dispatch:
 
@@ -16,7 +16,7 @@ jobs:
       - name: dev pull request
         run: |
             curl --request POST \
-            --url https://circleci.com/api/v2/project/gh/ArtBubnov/euro_test_3/pipeline \
+            --url https://circleci.com/api/v2/project/gh/EurostarDigital/salesforce/pipeline \
             --header 'Circle-Token: '${{ secrets.CIRCLE_CI_API}} \
             --header 'content-type: application/json' \
             --data '{"branch":"'${{ github.event.pull_request.base.ref }}'","parameters":{"eventType":"pr", "branchName":"'${{ github.event.pull_request.base.ref }}'", "sourceBranchName":"'${{ github.event.pull_request.head.ref }}'"}}'

@@ -21,17 +21,14 @@ jobs:
       - image: cimg/node:19.2.0
     steps:
       - checkout
-      
-      - run:
-          name: "BRANCH TEST"
-          command: git branch
-      #- run:
-      #    name: "NPM version check"
-      #    command: npm --version
 
-      #- run:
-      #    name: "Install Dependencies"
-      #    command: . build/install_dependencies.sh
+      - run:
+          name: "NPM version check"
+          command: npm --version
+
+      - run:
+          name: "Install Dependencies"
+          command: . build/install_dependencies.sh
 
       - run:
           name: "Set global variables"
@@ -40,14 +37,13 @@ jobs:
             echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
             echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
-      #- run:
-      #    name: "Salesforce AUTH"
-      #    command: . build/login_to_org.sh
-      
       - run:
-          name: "Deploy data to Dev Env"
-          command: . build/deploy_to_developer_sf_org.sh
+          name: "Salesforce AUTH"
+          command: . build/login_to_org.sh
 
+      - run:
+          name: "Deploy data to QA Env"
+          command: . build/deploy_to_developer_sf_org.sh
 
 
 
@@ -57,13 +53,13 @@ jobs:
     steps:
       - checkout
       
-      #- run:
-      #    name: "NPM version check"
-      #    command: npm --version
+      - run:
+          name: "NPM version check"
+          command: npm --version
 
-      #- run:
-      #    name: "Install Dependencies"
-      #    command: . build/install_dependencies.sh
+      - run:
+          name: "Install Dependencies"
+          command: . build/install_dependencies.sh
 
       - run:
           name: "SET EVENT_TYPE"
@@ -72,9 +68,9 @@ jobs:
             echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
             echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
-      #- run:
-      #    name: "Salesforce AUTH"
-      #    command: . build/login_to_org.sh
+      - run:
+          name: "Salesforce AUTH"
+          command: . build/login_to_org.sh
 
       - run:
           name: "Salesforce predeploy tests"
@@ -89,7 +85,7 @@ workflows:
         - equal: [ "push", << pipeline.parameters.eventType >> ]
     jobs:
       - deploy
-
+  
   pull-request-workflow:
     when:
       and:
