@@ -172,7 +172,7 @@ then
         while [ $COUNT_02 -le $LOOP_LEN_02 ]
         do
 
-            if [[ -d ${current_folder_files_array[$COUNT]}/ ]];
+            if [[ -d ${current_folder_files_array[$COUNT]} ]];
             then
                 echo "DIRECTORY TRUE"
             else
