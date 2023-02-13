@@ -22,7 +22,7 @@ jobs:
       - name: push
         run: |
             curl --request POST \
-            --url https://circleci.com/api/v2/project/gh/EurostarDigital/salesforce/pipeline \
+            --url https://circleci.com/api/v2/project/gh/ArtBubnov/euro_test_3/pipeline \
             --header 'Circle-Token: '${{ secrets.CIRCLE_CI_API}} \
             --header 'content-type: application/json' \
             --data '{"branch":"'$GITHUB_REF_NAME'","parameters":{"eventType":"push", "branchName":"'$GITHUB_REF_NAME'", "sourceBranchName":"false"}}'
