@@ -164,7 +164,7 @@ then
 
 
 
-        COUNT_02=1
+        COUNT_02=0
         ARRAY_LEN_02=${#current_folder_files_array[@]}
         LIST_OF_FILES_TO_TEST_02=""
         LOOP_LEN_02=$( expr $ARRAY_LEN_02 - 1)
