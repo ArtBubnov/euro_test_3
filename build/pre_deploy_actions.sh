@@ -172,11 +172,11 @@ then
         while [ $COUNT_02 -le $LOOP_LEN_02 ]
         do
 
-            if [[ -d ${current_folder_files_array[$COUNT]} ]];
+            if [[ -f ${current_folder_files_array[$COUNT]} ]];
             then
-                echo "DIRECTORY TRUE"
-            else
                 echo "DIRECTORY FALSE"
+            else
+                echo "DIRECTORY TRUE"
             fi 
 
             COUNT_02=$(( $COUNT_02 +1))
