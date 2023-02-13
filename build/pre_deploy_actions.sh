@@ -158,16 +158,34 @@ then
         echo -e "\n\n\nLOOP STEP START"
         echo -e "\nName of the folder"
         echo ${forceapp_files_array[$COUNT]}
-        echo -e "\nWhat is in the foleder"
+        echo -e "\nWhat is in the foleder\n"
         ls -a
-        echo -e "\nGet back to force-app/main/default"
+        mapfile -t current_folder_files_array < <( ls -a )
+
+
+
+        COUNT_02=0
+        ARRAY_LEN_02=${#current_folder_files_array[@]}
+        LIST_OF_FILES_TO_TEST_02=""
+        LOOP_LEN_02=$( expr $ARRAY_LEN_02 - 1)
+
+        while [ $COUNT_02 -le $LOOP_LEN_02 ]
+        do
+
+            if [[ -d ${current_folder_files_array[$COUNT]}/ ]];
+            then
+                echo "DIRECTORY TRUE"
+            else
+                echo "DIRECTORY FALSE"
+            fi 
+
+            COUNT_02=$(( $COUNT_02 +1))
+        done
+
+
+
         cd $LOOP_ROOT_DIR
-        ls
         echo -e "\nLOOP STEP END\n\n\n"
-        #if [[ -d directory/ ]];
-        #then
-        #else
-        #fi 
         COUNT=$(( $COUNT +1))
     done
 #-------------------TRUE logic start------------------------------------
