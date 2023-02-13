@@ -124,12 +124,4 @@ echo -e "\n\n\nGet back to origin branch"
 git checkout $ORIGIN_BRANCH
 
 echo "Deploy data to Dev Env"
-sfdx force:source:deploy -p ${FILES_TO_DEPLOY} -u ${SALESFORCE_ORG_ALIAS} --loglevel WARN
-
-
-#echo "Deploy to Salesforce env \n\n\n"
-#sfdx force:source:deploy -p "$ORIGIN_BRANCH" -l RunLocalTests -u salesforce_build.org --loglevel WARN
-
-#previous version-----------------------------------
-#echo "Deploy data to Dev Env"
-#sfdx force:source:deploy -p force-app/main/default -u salesforce_qa_sandbox.org --loglevel WARN
+#sfdx force:source:deploy -p ${FILES_TO_DEPLOY} -u ${SALESFORCE_ORG_ALIAS} --loglevel WARN

@@ -2,15 +2,15 @@ version: 2.1
 
 parameters:
   eventType:
-    default: "test"
+    default: "null"
     type: string
     
   branchName:
-    default: "test"
+    default: "null"
     type: string   
 
   sourceBranchName:
-    default: "test"
+    default: "null"
     type: string
 
 
@@ -38,12 +38,12 @@ jobs:
             echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
       - run:
-          name: "Salesforce AUTH"
+          name: "Login to Salesforce org"
           command: . build/login_to_org.sh
 
       - run:
-          name: "Deploy data to QA Env"
-          command: . build/deploy_to_developer_sf_org.sh
+          name: "Salesforce deploy actions"
+          command: . build/deploy_to_sf_org.sh
 
 
 
@@ -62,18 +62,18 @@ jobs:
           command: . build/install_dependencies.sh
 
       - run:
-          name: "SET EVENT_TYPE"
+          name: "Set pipeline global variables"
           command: |
             echo 'export EVENT_TYPE=<< pipeline.parameters.eventType >>' >> "$BASH_ENV"
             echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
             echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
       - run:
-          name: "Salesforce AUTH"
+          name: "Login to Salesforce org"
           command: . build/login_to_org.sh
 
       - run:
-          name: "Salesforce predeploy tests"
+          name: "Salesforce predeploy actions"
           command: . build/pre_deploy_actions.sh
 
 
