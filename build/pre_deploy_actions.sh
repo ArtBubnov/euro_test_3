@@ -159,8 +159,8 @@ then
         echo -e "\nName of the folder"
         echo ${forceapp_files_array[$COUNT]}
         echo -e "\nWhat is in the foleder"
-        ls
-        echo -e"\nGet back to force-app/main/default"
+        ls -a
+        echo -e "\nGet back to force-app/main/default"
         cd $LOOP_ROOT_DIR
         ls
         echo -e "\nLOOP STEP END\n\n\n"
