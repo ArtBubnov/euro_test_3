@@ -103,7 +103,7 @@ then
                             if [[ -f ${current_folder_files_array_03[$COUNT_04]} ]];
                             then
                                 echo -e "\n!!!!"
-                                echo "NEST 2"
+                                echo "NEST 3"
                                 echo "FILE IS"
                                 echo ${current_folder_files_array_03[$COUNT_04]}
                                 echo "THIS IS FILE"
@@ -111,7 +111,7 @@ then
                                 STRING_NESTED_FILES_3=$STRING_NESTED_FILES_2${forceapp_files_array[$COUNT]}" -->"${current_folder_files_array[$COUNT_02]}"-->"${current_folder_files_array_02[$COUNT_03]}"/"${current_folder_files_array_03[$COUNT_04]}","
                             else
                                 echo -e "\n!!!"
-                                echo "NEST 2"
+                                echo "NEST 3"
                                 echo "FILE IS"
                                 echo ${current_folder_files_array_03[$COUNT_04]}
                                 echo "THIS IS DIRECTORY"
