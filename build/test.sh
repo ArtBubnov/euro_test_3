@@ -208,7 +208,7 @@ echo -e "\n\n\nSTRING_NESTED_FILES_2_TRUNC\n\n\n"
 echo $STRING_NESTED_FILES_2_TRUNC
 
 
-IFS=',' read -r -a string_nested_files_2_trunc_array <<< "$STRING_NESTED_FILES_1_TRUNC"
+IFS=',' read -r -a string_nested_files_2_trunc_array <<< "$STRING_NESTED_FILES_2_TRUNC"
 
 
 COUNT_NEST_2=0
