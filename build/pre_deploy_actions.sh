@@ -250,8 +250,10 @@ STRING_NESTED_FILES_1_TRUNC=$((echo ${STRING_NESTED_FILES_1}) | cut -c 1-$NUMBER
 echo -e "\n\n\nSTRING_NESTED_FILES_1_TRUNC\n\n\n"
 echo $STRING_NESTED_FILES_1_TRUNC
 
-
+echo "before issue"
 IFS=',' read -r -a string_nested_files_1_trunc_array <<< "$STRING_NESTED_FILES_1_TRUNC"
+echo "after issue"
+
 
 COUNT_NEST_1=0
 ARRAY_LEN_NEST_1=${#string_nested_files_1_trunc_array[@]}
