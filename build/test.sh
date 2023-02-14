@@ -48,7 +48,7 @@ then
                 echo ${current_folder_files_array[$COUNT_02]}
                 echo "THIS IS FILE"
                 echo -e "***\n"
-                STRING_NESTED_FILES_1=$STRING_NESTED_FILES_1${current_folder_files_array[$COUNT_02]}","
+                STRING_NESTED_FILES_1=$STRING_NESTED_FILES_1${forceapp_files_array[$COUNT]}"/"${current_folder_files_array[$COUNT_02]}","
             else
                 echo -e "\n***"
                 echo "FILE IS"
