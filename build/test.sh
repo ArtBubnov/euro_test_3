@@ -256,45 +256,55 @@ fi
 echo -e "\n\n\nNESTED 1-----------------------------------------------------------------------------------------------------------------------------------"
 echo "STRING_NESTED_FILES_1"
 echo $STRING_NESTED_FILES_1
-LEN_OF_STRING_NESTED_FILES_1=${#STRING_NESTED_FILES_1}
-NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_STRING_NESTED_FILES_1 - 1 )
-STRING_NESTED_FILES_1_TRUNC=$((echo ${STRING_NESTED_FILES_1}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
 
-echo -e "\n\n\nSTRING_NESTED_FILES_1_TRUNC\n\n\n"
-echo $STRING_NESTED_FILES_1_TRUNC
+STRING_NESTED_FILES_1_LEN=${#STRING_NESTED_FILES_1}
 
+if [[ $ARRAY_LEN_NEST_1 > 0 ]];
+then
+    echo "STRING_NESTED_FILES_1 is NOT empty"
 
-IFS=',' read -r -a string_nested_files_1_trunc_array <<< "$STRING_NESTED_FILES_1_TRUNC"
+    LEN_OF_STRING_NESTED_FILES_1=${#STRING_NESTED_FILES_1}
+    NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_STRING_NESTED_FILES_1 - 1 )
+    STRING_NESTED_FILES_1_TRUNC=$((echo ${STRING_NESTED_FILES_1}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
 
-
-COUNT_NEST_1=0
-ARRAY_LEN_NEST_1=${#string_nested_files_1_trunc_array[@]}
-echo $ARRAY_LEN_NEST_1
-LIST_OF_FILES_TO_TEST_NEST_1=""
-LOOP_LEN_NEST_1=$( expr $ARRAY_LEN_NEST_1 - 1)
-COLLECT_XML_FILES=""
+    echo -e "\n\n\nSTRING_NESTED_FILES_1_TRUNC\n\n\n"
+    echo $STRING_NESTED_FILES_1_TRUNC
 
 
-while [ $COUNT_NEST_1 -le $LOOP_LEN_NEST_1 ]
-do
-    if [[ ${string_nested_files_1_trunc_array[$COUNT_NEST_1]} == *".xml"* ]];
-    then
-        echo "TRUE"
-        echo ${string_nested_files_1_trunc_array[$COUNT_NEST_1]}
-        COLLECT_XML_FILES=$COLLECT_XML_FILES${string_nested_files_1_trunc_array[$COUNT_NEST_1]}","
-    else
-        echo "FALSE"
-        echo ${string_nested_files_1_trunc_array[$COUNT_NEST_1]}
-    fi
-    COUNT_NEST_1=$(( $COUNT_NEST_1 +1))
-done
+    IFS=',' read -r -a string_nested_files_1_trunc_array <<< "$STRING_NESTED_FILES_1_TRUNC"
 
-LEN_OF_COLLECT_XML_FILES=${#COLLECT_XML_FILES}
-NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_COLLECT_XML_FILES - 1 )
-STRING_NESTED_FILES_1_TRUNC=$((echo ${COLLECT_XML_FILES}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
 
-echo -e "\n\n\nFINAL ___ STRING_NESTED_FILES_1_TRUNC-------\n\n\n"
-echo $STRING_NESTED_FILES_1_TRUNC
+    COUNT_NEST_1=0
+    ARRAY_LEN_NEST_1=${#string_nested_files_1_trunc_array[@]}
+    echo $ARRAY_LEN_NEST_1
+    LIST_OF_FILES_TO_TEST_NEST_1=""
+    LOOP_LEN_NEST_1=$( expr $ARRAY_LEN_NEST_1 - 1)
+    COLLECT_XML_FILES=""
+
+
+    while [ $COUNT_NEST_1 -le $LOOP_LEN_NEST_1 ]
+    do
+        if [[ ${string_nested_files_1_trunc_array[$COUNT_NEST_1]} == *".xml"* ]];
+        then
+            echo "TRUE"
+            echo ${string_nested_files_1_trunc_array[$COUNT_NEST_1]}
+            COLLECT_XML_FILES=$COLLECT_XML_FILES${string_nested_files_1_trunc_array[$COUNT_NEST_1]}","
+        else
+            echo "FALSE"
+            echo ${string_nested_files_1_trunc_array[$COUNT_NEST_1]}
+        fi
+        COUNT_NEST_1=$(( $COUNT_NEST_1 +1))
+    done
+
+    LEN_OF_COLLECT_XML_FILES=${#COLLECT_XML_FILES}
+    NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_COLLECT_XML_FILES - 1 )
+    STRING_NESTED_FILES_1_TRUNC=$((echo ${COLLECT_XML_FILES}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
+
+    echo -e "\n\n\nFINAL ___ STRING_NESTED_FILES_1_TRUNC-------\n\n\n"
+    echo $STRING_NESTED_FILES_1_TRUNC
+else
+    echo "STRING_NESTED_FILES_1 is empty"
+fi  
 #NESTED 1-----------------------------------------------------------------------------------------------------------------------------------
 echo -e "NESTED 1-----------------------------------------------------------------------------------------------------------------------------------\n\n\n"
 
@@ -302,45 +312,55 @@ echo -e "NESTED 1---------------------------------------------------------------
 echo -e "\n\n\nNESTED 2-----------------------------------------------------------------------------------------------------------------------------------"
 echo "STRING_NESTED_FILES_2"
 echo $STRING_NESTED_FILES_2
-LEN_OF_STRING_NESTED_FILES_2=${#STRING_NESTED_FILES_2}
-NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_STRING_NESTED_FILES_2 - 1 )
-STRING_NESTED_FILES_2_TRUNC=$((echo ${STRING_NESTED_FILES_2}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
 
-echo -e "\n\n\nSTRING_NESTED_FILES_2_TRUNC\n\n\n"
-echo $STRING_NESTED_FILES_2_TRUNC
+STRING_NESTED_FILES_2_LEN=${#STRING_NESTED_FILES_2}
 
+if [[ $ARRAY_LEN_NEST_2 > 0 ]];
+then
+    echo "STRING_NESTED_FILES_2 is NOT empty"
 
-IFS=',' read -r -a string_nested_files_2_trunc_array <<< "$STRING_NESTED_FILES_2_TRUNC"
+    LEN_OF_STRING_NESTED_FILES_2=${#STRING_NESTED_FILES_2}
+    NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_STRING_NESTED_FILES_2 - 1 )
+    STRING_NESTED_FILES_2_TRUNC=$((echo ${STRING_NESTED_FILES_2}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
 
-
-COUNT_NEST_2=0
-ARRAY_LEN_NEST_2=${#string_nested_files_2_trunc_array[@]}
-echo $ARRAY_LEN_NEST_2
-LIST_OF_FILES_TO_TEST_NEST_2=""
-LOOP_LEN_NEST_2=$( expr $ARRAY_LEN_NEST_2 - 1)
-COLLECT_XML_FILES=""
+    echo -e "\n\n\nSTRING_NESTED_FILES_2_TRUNC\n\n\n"
+    echo $STRING_NESTED_FILES_2_TRUNC
 
 
-while [ $COUNT_NEST_2 -le $LOOP_LEN_NEST_2 ]
-do
-    if [[ ${string_nested_files_2_trunc_array[$COUNT_NEST_2]} == *".xml"* ]];
-    then
-        echo "TRUE"
-        echo ${string_nested_files_2_trunc_array[$COUNT_NEST_2]}
-        COLLECT_XML_FILES=$COLLECT_XML_FILES${string_nested_files_2_trunc_array[$COUNT_NEST_2]}","
-    else
-        echo "FALSE"
-        echo ${string_nested_files_2_trunc_array[$COUNT_NEST_2]}
-    fi
-    COUNT_NEST_2=$(( $COUNT_NEST_2 +1))
-done
+    IFS=',' read -r -a string_nested_files_2_trunc_array <<< "$STRING_NESTED_FILES_2_TRUNC"
 
-LEN_OF_COLLECT_XML_FILES=${#COLLECT_XML_FILES}
-NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_COLLECT_XML_FILES - 1 )
-STRING_NESTED_FILES_2_TRUNC=$((echo ${COLLECT_XML_FILES}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
 
-echo -e "\n\n\nFINAL ___ STRING_NESTED_FILES_2_TRUNC-------\n\n\n"
-echo $STRING_NESTED_FILES_2_TRUNC
+    COUNT_NEST_2=0
+    ARRAY_LEN_NEST_2=${#string_nested_files_2_trunc_array[@]}
+    echo $ARRAY_LEN_NEST_2
+    LIST_OF_FILES_TO_TEST_NEST_2=""
+    LOOP_LEN_NEST_2=$( expr $ARRAY_LEN_NEST_2 - 1)
+    COLLECT_XML_FILES=""
+
+
+    while [ $COUNT_NEST_2 -le $LOOP_LEN_NEST_2 ]
+    do
+        if [[ ${string_nested_files_2_trunc_array[$COUNT_NEST_2]} == *".xml"* ]];
+        then
+            echo "TRUE"
+            echo ${string_nested_files_2_trunc_array[$COUNT_NEST_2]}
+            COLLECT_XML_FILES=$COLLECT_XML_FILES${string_nested_files_2_trunc_array[$COUNT_NEST_2]}","
+        else
+            echo "FALSE"
+            echo ${string_nested_files_2_trunc_array[$COUNT_NEST_2]}
+        fi
+        COUNT_NEST_2=$(( $COUNT_NEST_2 +1))
+    done
+
+    LEN_OF_COLLECT_XML_FILES=${#COLLECT_XML_FILES}
+    NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_COLLECT_XML_FILES - 1 )
+    STRING_NESTED_FILES_2_TRUNC=$((echo ${COLLECT_XML_FILES}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
+
+    echo -e "\n\n\nFINAL ___ STRING_NESTED_FILES_2_TRUNC-------\n\n\n"
+    echo $STRING_NESTED_FILES_2_TRUNC
+else
+    echo "STRING_NESTED_FILES_2 is empty"
+fi  
 echo -e "NESTED 2-----------------------------------------------------------------------------------------------------------------------------------\n\n\n"
 
 
@@ -349,45 +369,57 @@ echo -e "NESTED 2---------------------------------------------------------------
 echo -e "\n\n\nNESTED 3-----------------------------------------------------------------------------------------------------------------------------------"
 echo "STRING_NESTED_FILES_3"
 echo $STRING_NESTED_FILES_3
-LEN_OF_STRING_NESTED_FILES_3=${#STRING_NESTED_FILES_3}
-NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_STRING_NESTED_FILES_3 - 1 )
-STRING_NESTED_FILES_3_TRUNC=$((echo ${STRING_NESTED_FILES_3}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
 
-echo -e "\n\n\nSTRING_NESTED_FILES_3_TRUNC\n\n\n"
-echo $STRING_NESTED_FILES_3_TRUNC
+STRING_NESTED_FILES_3_LEN=${#STRING_NESTED_FILES_3}
 
+if [[ $ARRAY_LEN_NEST_3 > 0 ]];
+then
+    echo "STRING_NESTED_FILES_3 is NOT empty"
 
-IFS=',' read -r -a string_nested_files_3_trunc_array <<< "$STRING_NESTED_FILES_3_TRUNC"
+    LEN_OF_STRING_NESTED_FILES_3=${#STRING_NESTED_FILES_3}
+    NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_STRING_NESTED_FILES_3 - 1 )
+    STRING_NESTED_FILES_3_TRUNC=$((echo ${STRING_NESTED_FILES_3}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
 
-
-COUNT_NEST_3=0
-ARRAY_LEN_NEST_3=${#string_nested_files_3_trunc_array[@]}
-echo $ARRAY_LEN_NEST_3
-LIST_OF_FILES_TO_TEST_NEST_3=""
-LOOP_LEN_NEST_3=$( expr $ARRAY_LEN_NEST_3 - 1)
-COLLECT_XML_FILES=""
+    echo -e "\n\n\nSTRING_NESTED_FILES_3_TRUNC\n\n\n"
+    echo $STRING_NESTED_FILES_3_TRUNC
 
 
-while [ $COUNT_NEST_3 -le $LOOP_LEN_NEST_3 ]
-do
-    if [[ ${string_nested_files_3_trunc_array[$COUNT_NEST_3]} == *".xml"* ]];
-    then
-        echo "TRUE"
-        echo ${string_nested_files_3_trunc_array[$COUNT_NEST_3]}
-        COLLECT_XML_FILES=$COLLECT_XML_FILES${string_nested_files_3_trunc_array[$COUNT_NEST_3]}","
-    else
-        echo "FALSE"
-        echo ${string_nested_files_3_trunc_array[$COUNT_NEST_3]}
-    fi
-    COUNT_NEST_3=$(( $COUNT_NEST_3 +1))
-done
+    IFS=',' read -r -a string_nested_files_3_trunc_array <<< "$STRING_NESTED_FILES_3_TRUNC"
 
-LEN_OF_COLLECT_XML_FILES=${#COLLECT_XML_FILES}
-NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_COLLECT_XML_FILES - 1 )
-STRING_NESTED_FILES_3_TRUNC=$((echo ${COLLECT_XML_FILES}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
 
-echo -e "\n\n\nFINAL ___ STRING_NESTED_FILES_3_TRUNC-------\n\n\n"
-echo $STRING_NESTED_FILES_3_TRUNC
+    COUNT_NEST_3=0
+    ARRAY_LEN_NEST_3=${#string_nested_files_3_trunc_array[@]}
+    echo $ARRAY_LEN_NEST_3
+    LIST_OF_FILES_TO_TEST_NEST_3=""
+    LOOP_LEN_NEST_3=$( expr $ARRAY_LEN_NEST_3 - 1)
+    COLLECT_XML_FILES=""
+
+
+    while [ $COUNT_NEST_3 -le $LOOP_LEN_NEST_3 ]
+    do
+        if [[ ${string_nested_files_3_trunc_array[$COUNT_NEST_3]} == *".xml"* ]];
+        then
+            echo "TRUE"
+            echo ${string_nested_files_3_trunc_array[$COUNT_NEST_3]}
+            COLLECT_XML_FILES=$COLLECT_XML_FILES${string_nested_files_3_trunc_array[$COUNT_NEST_3]}","
+        else
+            echo "FALSE"
+            echo ${string_nested_files_3_trunc_array[$COUNT_NEST_3]}
+        fi
+        COUNT_NEST_3=$(( $COUNT_NEST_3 +1))
+    done
+
+    LEN_OF_COLLECT_XML_FILES=${#COLLECT_XML_FILES}
+    NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_COLLECT_XML_FILES - 1 )
+    STRING_NESTED_FILES_3_TRUNC=$((echo ${COLLECT_XML_FILES}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
+
+    echo -e "\n\n\nFINAL ___ STRING_NESTED_FILES_3_TRUNC-------\n\n\n"
+    echo $STRING_NESTED_FILES_3_TRUNC
+else
+    echo "STRING_NESTED_FILES_3 is empty"
+fi
+
+
 echo -e "NESTED 3-----------------------------------------------------------------------------------------------------------------------------------\n\n\n"
 
 
