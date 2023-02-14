@@ -192,31 +192,33 @@ then
                 echo -e "***\n"
 
 #nesting level 02--------------------------------------------------------------------
-                #cd ${current_folder_files_array[$COUNT_02]}
-                #mapfile -t current_folder_files_array_02 < <( ls -a )
+                cd ${current_folder_files_array[$COUNT_02]}
+                mapfile -t current_folder_files_array_02 < <( ls -a )
 
-                #COUNT_03=2
-                #ARRAY_LEN_03=${#current_folder_files_array_02[@]}
-                #LIST_OF_FILES_TO_TEST_03=""
-                #LOOP_LEN_03=$( expr $ARRAY_LEN_03 - 1)
+                COUNT_03=2
+                ARRAY_LEN_03=${#current_folder_files_array_02[@]}
+                LIST_OF_FILES_TO_TEST_03=""
+                LOOP_LEN_03=$( expr $ARRAY_LEN_03 - 1)
 
-                #while [ $COUNT_03 -le $LOOP_LEN_03 ]
-                #do
-                #    if [[ -f ${current_folder_files_array_02[$COUNT_02]} ]];
-                #    then
-                #        echo -e "\n***"
-                #        echo "FILE IS"
-                #        echo ${current_folder_files_array_02[$COUNT_02]}
-                #        echo "THIS IS FILE"
-                #        echo -e "***\n"
-                #    else
-                #        echo -e "\n***"
-                #        echo "FILE IS"
-                #        echo ${current_folder_files_array_02[$COUNT_02]}
-                #        echo "THIS IS DIRECTORY"
-                #        echo -e "***\n"
-                #    fi
-                #done
+                while [ $COUNT_03 -le $LOOP_LEN_03 ]
+                do
+                    if [[ -f ${current_folder_files_array_02[$COUNT_02]} ]];
+                    then
+                        echo -e "\n***"
+                        echo "NEST 2"
+                        echo "FILE IS"
+                        echo ${current_folder_files_array_02[$COUNT_02]}
+                        echo "THIS IS FILE"
+                        echo -e "***\n"
+                    else
+                        echo -e "\n***"
+                        echo "NEST 2"
+                        echo "FILE IS"
+                        echo ${current_folder_files_array_02[$COUNT_02]}
+                        echo "THIS IS DIRECTORY"
+                        echo -e "***\n"
+                    fi
+                done
 
 
 
@@ -253,24 +255,13 @@ echo $STRING_NESTED_FILES_1_TRUNC
 
 IFS=',' read -r -a string_nested_files_1_trunc_array <<< "$STRING_NESTED_FILES_1_TRUNC"
 
-echo "string 1 ------------"
 
 COUNT_NEST_1=0
-echo "string 2 ------------"
 ARRAY_LEN_NEST_1=${#string_nested_files_1_trunc_array[@]}
-echo "possible problem"
 echo $ARRAY_LEN_NEST_1
-echo "string 3 ------------"
 LIST_OF_FILES_TO_TEST_NEST_1=""
-echo "string 4 ------------"
 LOOP_LEN_NEST_1=$( expr $ARRAY_LEN_NEST_1 - 1)
-echo "string 5 ------------"
 COLLECT_XML_FILES=""
-echo "string 6 ------------"
-
-
-
-
 
 
 while [ $COUNT_NEST_1 -le $LOOP_LEN_NEST_1 ]
