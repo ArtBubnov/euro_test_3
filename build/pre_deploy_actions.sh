@@ -183,7 +183,7 @@ then
                 echo ${current_folder_files_array[$COUNT_02]}
                 echo "THIS IS FILE"
                 echo -e "***\n"
-                STRING_NESTED_FILES_1=$STRING_NESTED_FILES_1${current_folder_files_array[$COUNT_02]}","
+                STRING_NESTED_FILES_1=$STRING_NESTED_FILES_1${current_folder_files_array[$COUNT_02]}"\n"
             else
                 echo -e "\n***"
                 echo "FILE IS"
@@ -244,9 +244,7 @@ fi
 echo "STRING_NESTED_FILES_1"
 echo $STRING_NESTED_FILES_1
 LEN_OF_STRING_NESTED_FILES_1=${#STRING_NESTED_FILES_1}
-
 NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_STRING_NESTED_FILES_1 - 1 )
-
 STRING_NESTED_FILES_1_TRUNC=$((echo ${STRING_NESTED_FILES_1}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
 
 echo -e "\n\n\nSTRING_NESTED_FILES_1_TRUNC\n\n\n"
