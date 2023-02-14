@@ -397,7 +397,7 @@ echo -e "\n\n\nNESTED 4---------------------------------------------------------
 echo "STRING_NESTED_FILES_4"
 echo $STRING_NESTED_FILES_4
 
-STRING_NESTED_FILES_4_LEN=${#$STRING_NESTED_FILES_4}
+STRING_NESTED_FILES_4_LEN=${#STRING_NESTED_FILES_4}
 
 if [[ $ARRAY_LEN_NEST_4 > 0 ]];
 then
@@ -457,7 +457,7 @@ echo -e "\n\n\nNESTED 5---------------------------------------------------------
 echo "STRING_NESTED_FILES_5"
 echo $STRING_NESTED_FILES_5
 
-STRING_NESTED_FILES_5_LEN=${#$STRING_NESTED_FILES_5}
+STRING_NESTED_FILES_5_LEN=${#STRING_NESTED_FILES_5}
 
 if [[ $ARRAY_LEN_NEST_5 > 0 ]];
 then
