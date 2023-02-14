@@ -142,7 +142,10 @@ if [[ $FILES_TO_DEPLOY == *"force-app/main/default"* ]];
 then
 #-------------------TRUE logic start------------------------------------
     echo "TRUE"
+
+    #get into force-app/main/default
     cd force-app/main/default
+    #get list of folders nested in force-app/main/default
     mapfile -t forceapp_files_array < <( ls )
     LOOP_ROOT_DIR="/home/circleci/project/force-app/main/default"
 
@@ -151,7 +154,7 @@ then
     LIST_OF_FILES_TO_TEST=""
     LOOP_LEN=$( expr $ARRAY_LEN - 1)
 
-
+    # start of the loop to check each folder in force-app/main/default
     while [ $COUNT -le $LOOP_LEN ]
     do
         cd ${forceapp_files_array[$COUNT]}
@@ -163,7 +166,7 @@ then
         mapfile -t current_folder_files_array < <( ls -a )
 
 
-
+#nesting level 01----------------------------------------------------------------
         COUNT_02=2
         ARRAY_LEN_02=${#current_folder_files_array[@]}
         LIST_OF_FILES_TO_TEST_02=""
@@ -184,6 +187,40 @@ then
                 echo ${current_folder_files_array[$COUNT_02]}
                 echo "THIS IS DIRECTORY"
                 echo -e "***\n"
+
+#nesting level 02--------------------------------------------------------------------
+                #cd ${current_folder_files_array[$COUNT_02]}
+                #mapfile -t current_folder_files_array_02 < <( ls -a )
+
+                #COUNT_03=2
+                #ARRAY_LEN_03=${#current_folder_files_array_02[@]}
+                #LIST_OF_FILES_TO_TEST_03=""
+                #LOOP_LEN_03=$( expr $ARRAY_LEN_03 - 1)
+
+                #while [ $COUNT_03 -le $LOOP_LEN_03 ]
+                #do
+                #    if [[ -f ${current_folder_files_array_02[$COUNT_02]} ]];
+                #    then
+                #        echo -e "\n***"
+                #        echo "FILE IS"
+                #        echo ${current_folder_files_array_02[$COUNT_02]}
+                #        echo "THIS IS FILE"
+                #        echo -e "***\n"
+                #    else
+                #        echo -e "\n***"
+                #        echo "FILE IS"
+                #        echo ${current_folder_files_array_02[$COUNT_02]}
+                #        echo "THIS IS DIRECTORY"
+                #        echo -e "***\n"
+                #    fi
+                #done
+
+
+
+
+
+
+
             fi 
 
             COUNT_02=$(( $COUNT_02 +1))
