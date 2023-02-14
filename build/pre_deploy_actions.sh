@@ -258,6 +258,8 @@ echo "string 1 ------------"
 COUNT_NEST_1=0
 echo "string 2 ------------"
 ARRAY_LEN_NEST_1=${#string_nested_files_1_trunc_array[@]}
+echo "possible problem"
+echo $ARRAY_LEN_NEST_1
 echo "string 3 ------------"
 LIST_OF_FILES_TO_TEST_NEST_1=""
 echo "string 4 ------------"
