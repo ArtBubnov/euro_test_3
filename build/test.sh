@@ -70,19 +70,19 @@ then
 
                 while [ $COUNT_03 -le $LOOP_LEN_03 ]
                 do
-                    if [[ -f ${current_folder_files_array_02[$COUNT_02]} ]];
+                    if [[ -f ${current_folder_files_array_02[$COUNT_03]} ]];
                     then
                         echo -e "\n!!!!"
                         echo "NEST 2"
                         echo "FILE IS"
-                        echo ${current_folder_files_array_02[$COUNT_02]}
+                        echo ${current_folder_files_array_02[$COUNT_03]}
                         echo "THIS IS FILE"
                         echo -e "!!!\n"
                     else
                         echo -e "\n!!!"
                         echo "NEST 2"
                         echo "FILE IS"
-                        echo ${current_folder_files_array_02[$COUNT_02]}
+                        echo ${current_folder_files_array_02[$COUNT_03]}
                         echo "THIS IS DIRECTORY"
                         echo -e "!!!\n"
                     fi
