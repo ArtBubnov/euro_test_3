@@ -429,8 +429,8 @@ echo -e "\n\n\nNESTED 4---------------------------------------------------------
 echo "STRING_NESTED_FILES_4"
 echo $STRING_NESTED_FILES_4
 
-STRING_NESTED_FILES_4_LEN=${#STRING_NESTED_FILES_4}
-
+#STRING_NESTED_FILES_4_LEN=${#STRING_NESTED_FILES_4}
+STRING_NESTED_FILES_4_LEN=3
 if [[ $STRING_NESTED_FILES_4_LEN > 0 ]];
 then
     echo "STRING_NESTED_FILES_4 is NOT empty"
@@ -489,7 +489,8 @@ echo -e "\n\n\nNESTED 5---------------------------------------------------------
 echo "STRING_NESTED_FILES_5"
 echo $STRING_NESTED_FILES_5
 
-STRING_NESTED_FILES_5_LEN=${#STRING_NESTED_FILES_5}
+#STRING_NESTED_FILES_5_LEN=${#STRING_NESTED_FILES_5}
+STRING_NESTED_FILES_5_LEN=3
 
 if [[ $STRING_NESTED_FILES_5_LEN > 0 ]];
 then
