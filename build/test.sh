@@ -87,8 +87,8 @@ then
                         echo "THIS IS DIRECTORY"
                         echo -e "!!!\n"
 #nesting level 03---------------------------------------------------------------------------------------------------------------------------------------
-                        echo "get inside of the ___ "${current_folder_files_array[$COUNT_03]}" ___ directory"
-                        cd ${current_folder_files_array[$COUNT_03]}
+                        echo "get inside of the ___ "${current_folder_files_array_02[$COUNT_03]}" ___ directory"
+                        cd ${current_folder_files_array_02[$COUNT_03]}
                         echo "inside or the dir is the following"
                         ls -a
                         mapfile -t current_folder_files_array_03 < <( ls -a )
