@@ -218,6 +218,7 @@ then
                         echo "THIS IS DIRECTORY"
                         echo -e "***\n"
                     fi
+                    COUNT_03=$(( $COUNT_03 +1))
                 done
 
 
