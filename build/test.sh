@@ -59,7 +59,7 @@ then
 #nesting level 02--------------------------------------------------------------------
                 cd ${current_folder_files_array[$COUNT_02]}
                 echo -e "\nName of the folder"
-                echo ${forceapp_files_array[$COUNT]}
+                echo ${current_folder_files_array[$COUNT_02]}
                 echo -e "\nWhat is in the foleder\n"
                 ls -a
                 mapfile -t current_folder_files_array_02 < <( ls -a )
