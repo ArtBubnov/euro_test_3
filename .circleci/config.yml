@@ -26,9 +26,9 @@ jobs:
           name: "NPM version check"
           command: npm --version
 
-      - run:
-          name: "Install Dependencies"
-          command: . build/install_dependencies.sh
+      #- run:
+      #    name: "Install Dependencies"
+      #    command: . build/install_dependencies.sh
 
       - run:
           name: "Set global variables"
@@ -37,9 +37,9 @@ jobs:
             echo 'export TARGET_BRANCH_NAME=<< pipeline.parameters.branchName >>' >> "$BASH_ENV"
             echo 'export SOURCE_BRANCH_NAME=<< pipeline.parameters.sourceBranchName >>' >> "$BASH_ENV"
 
-      - run:
-          name: "Login to Salesforce org"
-          command: . build/login_to_org.sh
+      #- run:
+      #    name: "Login to Salesforce org"
+      #    command: . build/login_to_org.sh
 
       - run:
           name: "Salesforce deploy actions"
