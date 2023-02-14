@@ -78,7 +78,7 @@ then
                         echo ${current_folder_files_array_02[$COUNT_03]}
                         echo "THIS IS FILE"
                         echo -e "!!!\n"
-                        STRING_NESTED_FILES_2=$STRING_NESTED_FILES_2${forceapp_files_array[$COUNT]}"==>"${current_folder_files_array[$COUNT_02]}"/"${current_folder_files_array_02[$COUNT_03]}","
+                        STRING_NESTED_FILES_2=$STRING_NESTED_FILES_2${forceapp_files_array[$COUNT]}"-->"${current_folder_files_array[$COUNT_02]}"/"${current_folder_files_array_02[$COUNT_03]}","
                     else
                         echo -e "\n!!!"
                         echo "NEST 2"
@@ -86,17 +86,57 @@ then
                         echo ${current_folder_files_array_02[$COUNT_03]}
                         echo "THIS IS DIRECTORY"
                         echo -e "!!!\n"
+#nesting level 03---------------------------------------------------------------------------------------------------------------------------------------
+                        echo "get inside of the ___ "${current_folder_files_array[$COUNT_03]}" ___ directory"
+                        cd ${current_folder_files_array[$COUNT_03]}
+                        echo "inside or the dir is the following"
+                        ls -a
+                        mapfile -t current_folder_files_array_03 < <( ls -a )
+
+                        COUNT_04=2
+                        ARRAY_LEN_04=${#current_folder_files_array_03[@]}
+                        LIST_OF_FILES_TO_TEST_04=""
+                        LOOP_LEN_04=$( expr $ARRAY_LEN_04 - 1)
+
+                        while [ $COUNT_04 -le $LOOP_LEN_04 ]
+                        do
+                            if [[ -f ${current_folder_files_array_03[$COUNT_04]} ]];
+                            then
+                                echo -e "\n!!!!"
+                                echo "NEST 2"
+                                echo "FILE IS"
+                                echo ${current_folder_files_array_03[$COUNT_04]}
+                                echo "THIS IS FILE"
+                                echo -e "!!!\n"
+                                STRING_NESTED_FILES_3=$STRING_NESTED_FILES_2${forceapp_files_array[$COUNT]}"-->"${current_folder_files_array[$COUNT_02]}"/"${current_folder_files_array_03[$COUNT_04]}","
+                            else
+                                echo -e "\n!!!"
+                                echo "NEST 2"
+                                echo "FILE IS"
+                                echo ${current_folder_files_array_03[$COUNT_04]}
+                                echo "THIS IS DIRECTORY"
+                                echo -e "!!!\n"
+
+                            fi
+                            COUNT_04=$(( $COUNT_04 +1))
+                        done
+                        cd ..
+
+
+
+
+#nesting level 03----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
                     fi
                     COUNT_03=$(( $COUNT_03 +1))
                 done
                 cd ..
 #nesting level 02--------------------------------------------------------------------
-
-
-
-
-
-
             fi 
 
             COUNT_02=$(( $COUNT_02 +1))
@@ -197,7 +237,7 @@ echo $STRING_NESTED_FILES_1_TRUNC
 echo -e "NESTED 1-----------------------------------------------------------------------------------------------------------------------------------\n\n\n"
 
 
-
+echo -e "\n\n\nNESTED 2-----------------------------------------------------------------------------------------------------------------------------------"
 echo "STRING_NESTED_FILES_2"
 echo $STRING_NESTED_FILES_2
 LEN_OF_STRING_NESTED_FILES_2=${#STRING_NESTED_FILES_2}
@@ -239,5 +279,13 @@ STRING_NESTED_FILES_2_TRUNC=$((echo ${COLLECT_XML_FILES}) | cut -c 1-$NUMBER_OF_
 
 echo -e "\n\n\nFINAL ___ STRING_NESTED_FILES_2_TRUNC-------\n\n\n"
 echo $STRING_NESTED_FILES_2_TRUNC
+echo -e "NESTED 2-----------------------------------------------------------------------------------------------------------------------------------\n\n\n"
+
+echo -e "\n\n\nNESTED 2-----------------------------------------------------------------------------------------------------------------------------------"
+echo $STRING_NESTED_FILES_3
+echo -e "NESTED 2-----------------------------------------------------------------------------------------------------------------------------------\n\n\n"
+
+
+
 
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@"
