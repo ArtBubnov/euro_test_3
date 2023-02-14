@@ -58,9 +58,7 @@ then
 
 #nesting level 02--------------------------------------------------------------------
                 echo "get inside of the ___ "${current_folder_files_array[$COUNT_02]}" ___ directory"
-                pwd
                 cd ${current_folder_files_array[$COUNT_02]}
-                pwd
                 echo "inside or the dir is the following"
                 ls -a
                 mapfile -t current_folder_files_array_02 < <( ls -a )
@@ -90,10 +88,6 @@ then
                     fi
                     COUNT_03=$(( $COUNT_03 +1))
                 done
-                echo "PWD"
-                pwd
-                cd ..
-                pwd
 #nesting level 02--------------------------------------------------------------------
 
 
@@ -116,6 +110,43 @@ then
 else
     echo "FALSE"
 fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 echo "STRING_NESTED_FILES_1"
