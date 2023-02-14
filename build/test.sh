@@ -88,6 +88,7 @@ then
                     fi
                     COUNT_03=$(( $COUNT_03 +1))
                 done
+                cd ${current_folder_files_array[$COUNT_02]}
 #nesting level 02--------------------------------------------------------------------
 
 
