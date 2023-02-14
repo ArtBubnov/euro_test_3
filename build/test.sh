@@ -108,7 +108,7 @@ then
                                 echo ${current_folder_files_array_03[$COUNT_04]}
                                 echo "THIS IS FILE"
                                 echo -e "!!!\n"
-                                STRING_NESTED_FILES_3=$STRING_NESTED_FILES_2${forceapp_files_array[$COUNT]}"-->"${current_folder_files_array[$COUNT_02]}"-->"${current_folder_files_array_02[$COUNT_03]}"/"${current_folder_files_array_03[$COUNT_04]}","
+                                STRING_NESTED_FILES_3=$STRING_NESTED_FILES_2${forceapp_files_array[$COUNT]}" -->"${current_folder_files_array[$COUNT_02]}"-->"${current_folder_files_array_02[$COUNT_03]}"/"${current_folder_files_array_03[$COUNT_04]}","
                             else
                                 echo -e "\n!!!"
                                 echo "NEST 2"
