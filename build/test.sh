@@ -116,7 +116,43 @@ then
                                 echo ${current_folder_files_array_03[$COUNT_04]}
                                 echo "THIS IS DIRECTORY"
                                 echo -e "xxxx\n"
+#nesting level 04---------------------------------------------------------------------------------------------------------------------------------------
+                                echo "get inside of the ___ "${current_folder_files_array_03[$COUNT_04]}" ___ directory"
+                                cd ${current_folder_files_array_03[$COUNT_04]}
+                                echo "inside or the dir is the following"
+                                ls -a
+                                mapfile -t current_folder_files_array_04 < <( ls -a )
 
+                                COUNT_05=2
+                                ARRAY_LEN_05=${#current_folder_files_array_04[@]}
+                                LIST_OF_FILES_TO_TEST_05=""
+                                LOOP_LEN_05=$( expr $ARRAY_LEN_05 - 1)
+
+                                while [ $COUNT_05 -le $LOOP_LEN_05 ]
+                                do
+                                    if [[ -f ${current_folder_files_array_04[$COUNT_05]} ]];
+                                    then
+                                        echo -e "\nxxxx"
+                                        echo "NEST 3"
+                                        echo "FILE IS"
+                                        echo ${current_folder_files_array_04[$COUNT_05]}
+                                        echo "THIS IS FILE"
+                                        echo -e "xxxx\n"
+                                        STRING_NESTED_FILES_3=$STRING_NESTED_FILES_4${forceapp_files_array[$COUNT]}" -->"${current_folder_files_array[$COUNT_02]}"-->"${current_folder_files_array_02[$COUNT_03]}"-->"${current_folder_files_array_03[$COUNT_04]}",""/"${current_folder_files_array_04[$COUNT_05]}","
+                                    else
+                                        echo -e "\nxxxx"
+                                        echo "NEST 3"
+                                        echo "FILE IS"
+                                        echo ${current_folder_files_array_04[$COUNT_05]}
+                                        echo "THIS IS DIRECTORY"
+                                        echo -e "xxxx\n"
+
+
+                                    fi
+                                    COUNT_05=$(( $COUNT_05 +1))
+                                done
+                                cd ..
+#nesting level 04---------------------------------------------------------------------------------------------------------------------------------------
                             fi
                             COUNT_04=$(( $COUNT_04 +1))
                         done
@@ -281,8 +317,51 @@ echo -e "\n\n\nFINAL ___ STRING_NESTED_FILES_2_TRUNC-------\n\n\n"
 echo $STRING_NESTED_FILES_2_TRUNC
 echo -e "NESTED 2-----------------------------------------------------------------------------------------------------------------------------------\n\n\n"
 
+
+
+
 echo -e "\n\n\nNESTED 3-----------------------------------------------------------------------------------------------------------------------------------"
+echo "STRING_NESTED_FILES_3"
 echo $STRING_NESTED_FILES_3
+LEN_OF_STRING_NESTED_FILES_3=${#STRING_NESTED_FILES_3}
+NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_STRING_NESTED_FILES_3 - 1 )
+STRING_NESTED_FILES_3_TRUNC=$((echo ${STRING_NESTED_FILES_3}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
+
+echo -e "\n\n\nSTRING_NESTED_FILES_3_TRUNC\n\n\n"
+echo $STRING_NESTED_FILES_3_TRUNC
+
+
+IFS=',' read -r -a string_nested_files_3_trunc_array <<< "$STRING_NESTED_FILES_3_TRUNC"
+
+
+COUNT_NEST_3=0
+ARRAY_LEN_NEST_3=${#string_nested_files_3_trunc_array[@]}
+echo $ARRAY_LEN_NEST_3
+LIST_OF_FILES_TO_TEST_NEST_3=""
+LOOP_LEN_NEST_3=$( expr $ARRAY_LEN_NEST_3 - 1)
+COLLECT_XML_FILES=""
+
+
+while [ $COUNT_NEST_3 -le $LOOP_LEN_NEST_3 ]
+do
+    if [[ ${string_nested_files_3_trunc_array[$COUNT_NEST_3]} == *".xml"* ]];
+    then
+        echo "TRUE"
+        echo ${string_nested_files_3_trunc_array[$COUNT_NEST_3]}
+        COLLECT_XML_FILES=$COLLECT_XML_FILES${string_nested_files_3_trunc_array[$COUNT_NEST_3]}","
+    else
+        echo "FALSE"
+        echo ${string_nested_files_3_trunc_array[$COUNT_NEST_3]}
+    fi
+    COUNT_NEST_3=$(( $COUNT_NEST_3 +1))
+done
+
+LEN_OF_COLLECT_XML_FILES=${#COLLECT_XML_FILES}
+NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_COLLECT_XML_FILES - 1 )
+STRING_NESTED_FILES_3_TRUNC=$((echo ${COLLECT_XML_FILES}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
+
+echo -e "\n\n\nFINAL ___ STRING_NESTED_FILES_3_TRUNC-------\n\n\n"
+echo $STRING_NESTED_FILES_3_TRUNC
 echo -e "NESTED 3-----------------------------------------------------------------------------------------------------------------------------------\n\n\n"
 
 
