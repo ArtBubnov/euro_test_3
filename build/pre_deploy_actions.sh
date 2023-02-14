@@ -142,6 +142,8 @@ if [[ $FILES_TO_DEPLOY == *"force-app/main/default"* ]];
 then
 #-------------------TRUE logic start------------------------------------
     echo "TRUE"
+    STRING_NESTED_FILES_1=""
+
 
     #get into force-app/main/default
     cd force-app/main/default
@@ -181,6 +183,7 @@ then
                 echo ${current_folder_files_array[$COUNT_02]}
                 echo "THIS IS FILE"
                 echo -e "***\n"
+                STRING_NESTED_FILES_1=$STRING_NESTED_FILES_1${current_folder_files_array[$COUNT_02]}","
             else
                 echo -e "\n***"
                 echo "FILE IS"
@@ -236,6 +239,10 @@ then
 else
     echo "FALSE"
 fi
+
+
+echo "STRING_NESTED_FILES_1"
+echo $STRING_NESTED_FILES_1
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@"
 
 
