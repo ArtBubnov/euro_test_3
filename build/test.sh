@@ -54,13 +54,12 @@ then
                 echo "FILE IS"
                 echo ${current_folder_files_array[$COUNT_02]}
                 echo "THIS IS DIRECTORY"
-                echo -e "***\n"
+                echo -e "\n"
 
 #nesting level 02--------------------------------------------------------------------
+                echo "get inside of the ___ "${current_folder_files_array[$COUNT_02]}" ___ directory"
                 cd ${current_folder_files_array[$COUNT_02]}
-                echo -e "\nName of the folder"
-                echo ${current_folder_files_array[$COUNT_02]}
-                echo -e "\nWhat is in the foleder\n"
+                echo "inside or the dir is the following"
                 ls -a
                 mapfile -t current_folder_files_array_02 < <( ls -a )
 
@@ -69,27 +68,27 @@ then
                 LIST_OF_FILES_TO_TEST_03=""
                 LOOP_LEN_03=$( expr $ARRAY_LEN_03 - 1)
 
-                while [ $COUNT_03 -le $LOOP_LEN_03 ]
-                do
-                    if [[ -f ${current_folder_files_array_02[$COUNT_02]} ]];
-                    then
-                        echo -e "\n***"
-                        echo "NEST 2"
-                        echo "FILE IS"
-                        echo ${current_folder_files_array_02[$COUNT_02]}
-                        echo "THIS IS FILE"
-                        echo -e "***\n"
-                    else
-                        echo -e "\n***"
-                        echo "NEST 2"
-                        echo "FILE IS"
-                        echo ${current_folder_files_array_02[$COUNT_02]}
-                        echo "THIS IS DIRECTORY"
-                        echo -e "***\n"
-                    fi
-                    COUNT_03=$(( $COUNT_03 +1))
-                done
-
+                #while [ $COUNT_03 -le $LOOP_LEN_03 ]
+                #do
+                #    if [[ -f ${current_folder_files_array_02[$COUNT_02]} ]];
+                #    then
+                #        echo -e "\n***"
+                #        echo "NEST 2"
+                #        echo "FILE IS"
+                #        echo ${current_folder_files_array_02[$COUNT_02]}
+                #        echo "THIS IS FILE"
+                #        echo -e "***\n"
+                #    else
+                #        echo -e "\n***"
+                #        echo "NEST 2"
+                #        echo "FILE IS"
+                #        echo ${current_folder_files_array_02[$COUNT_02]}
+                #        echo "THIS IS DIRECTORY"
+                #        echo -e "***\n"
+                #    fi
+                #    COUNT_03=$(( $COUNT_03 +1))
+                #done
+#nesting level 02--------------------------------------------------------------------
 
 
 
