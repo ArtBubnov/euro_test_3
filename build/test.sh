@@ -159,7 +159,6 @@ then
         if [[ ${string_nested_files_1_trunc_array[$COUNT_NEST_1]} == *".xml"* ]];
         then
             COLLECT_XML_FILES=$COLLECT_XML_FILES${string_nested_files_1_trunc_array[$COUNT_NEST_1]}","
-        else
         fi
         COUNT_NEST_1=$(( $COUNT_NEST_1 +1))
     done
