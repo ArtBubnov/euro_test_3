@@ -577,6 +577,18 @@ then
     do
         echo "LOOP STEP ___"$COUNT_01"__"
         echo ${display_array_01[$COUNT_01]}
+
+        folder=$(echo ${display_array_01[$COUNT_01]} | cut -d\/ -f1)
+        file=$(echo ${display_array_01[$COUNT_01]} | cut -d\/ -f2)
+        echo -e "$folder: $file"
+        echo -e "\n"
+
+
+
+
+
+
+
         COUNT_01=$(( $COUNT_01 + 1 ))
     done
 
