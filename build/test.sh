@@ -4,9 +4,7 @@ FILES_TO_DEPLOY="force-app/main/default"
 if [[ $FILES_TO_DEPLOY == *"force-app/main/default"* ]];
 then
 #-------------------TRUE logic start------------------------------------
-    echo "TRUE"
     STRING_NESTED_FILES_1=""
-
 
     #get into force-app/main/default
     cd force-app/main/default
@@ -54,7 +52,7 @@ then
                 do
                     if [[ -f ${current_folder_files_array_02[$COUNT_03]} ]];
                     then
-                        STRING_NESTED_FILES_2=$STRING_NESTED_FILES_2${forceapp_files_array[$COUNT]}"-->"${current_folder_files_array[$COUNT_02]}"/"${current_folder_files_array_02[$COUNT_03]}","
+                        STRING_NESTED_FILES_2=$STRING_NESTED_FILES_2${forceapp_files_array[$COUNT]}" --> "${current_folder_files_array[$COUNT_02]}"/"${current_folder_files_array_02[$COUNT_03]}","
                     else
 #nesting level 03---------------------------------------------------------------------------------------------------------------------------------------
                         cd ${current_folder_files_array_02[$COUNT_03]}
@@ -70,7 +68,7 @@ then
                         do
                             if [[ -f ${current_folder_files_array_03[$COUNT_04]} ]];
                             then
-                                STRING_NESTED_FILES_3=$STRING_NESTED_FILES_3${forceapp_files_array[$COUNT]}" -->"${current_folder_files_array[$COUNT_02]}"-->"${current_folder_files_array_02[$COUNT_03]}"/"${current_folder_files_array_03[$COUNT_04]}","
+                                STRING_NESTED_FILES_3=$STRING_NESTED_FILES_3${forceapp_files_array[$COUNT]}" --> "${current_folder_files_array[$COUNT_02]}" --> "${current_folder_files_array_02[$COUNT_03]}"/"${current_folder_files_array_03[$COUNT_04]}","
                             else
 #nesting level 04---------------------------------------------------------------------------------------------------------------------------------------
                                 cd ${current_folder_files_array_03[$COUNT_04]}
@@ -86,7 +84,7 @@ then
                                 do
                                     if [[ -f ${current_folder_files_array_04[$COUNT_05]} ]];
                                     then
-                                        STRING_NESTED_FILES_4=$STRING_NESTED_FILES_4${forceapp_files_array[$COUNT]}" -->"${current_folder_files_array[$COUNT_02]}"-->"${current_folder_files_array_02[$COUNT_03]}"-->"${current_folder_files_array_03[$COUNT_04]}"-->""/"${current_folder_files_array_04[$COUNT_05]}","
+                                        STRING_NESTED_FILES_4=$STRING_NESTED_FILES_4${forceapp_files_array[$COUNT]}" --> "${current_folder_files_array[$COUNT_02]}" --> "${current_folder_files_array_02[$COUNT_03]}" --> "${current_folder_files_array_03[$COUNT_04]}"/"${current_folder_files_array_04[$COUNT_05]}","
                                     else
 #nesting level 05---------------------------------------------------------------------------------------------------------------------------------------
                                         cd ${current_folder_files_array_04[$COUNT_05]}
@@ -102,7 +100,7 @@ then
                                         do
                                             if [[ -f ${current_folder_files_array_05[$COUNT_06]} ]];
                                             then
-                                                STRING_NESTED_FILES_5=$STRING_NESTED_FILES_4${forceapp_files_array[$COUNT]}" -->"${current_folder_files_array[$COUNT_02]}"-->"${current_folder_files_array_02[$COUNT_03]}"-->"${current_folder_files_array_03[$COUNT_04]}"-->"${current_folder_files_array_04[$COUNT_05]}"/"${current_folder_files_array_05[$COUNT_06]}","
+                                                STRING_NESTED_FILES_5=$STRING_NESTED_FILES_4${forceapp_files_array[$COUNT]}" --> "${current_folder_files_array[$COUNT_02]}" --> "${current_folder_files_array_02[$COUNT_03]}" --> "${current_folder_files_array_03[$COUNT_04]}" --> "${current_folder_files_array_04[$COUNT_05]}"/"${current_folder_files_array_05[$COUNT_06]}","
                                             fi
                                             COUNT_06=$(( $COUNT_06 +1))
                                         done
