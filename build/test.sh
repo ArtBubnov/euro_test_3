@@ -1,3 +1,6 @@
+#test. delete
+FILES_TO_DEPLOY="force-app/main/default"
+#test. delete
 if [[ $FILES_TO_DEPLOY == *"force-app/main/default"* ]];
 then
 #-------------------TRUE logic start------------------------------------
