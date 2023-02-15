@@ -123,5 +123,7 @@ echo $FILES_TO_DEPLOY
 echo -e "\n\n\nGet back to origin branch"
 git checkout $ORIGIN_BRANCH
 
+source . build/test.sh
+
 echo "Deploy data to Dev Env"
 #sfdx force:source:deploy -p ${FILES_TO_DEPLOY} -u ${SALESFORCE_ORG_ALIAS} --loglevel WARN

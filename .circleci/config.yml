@@ -43,8 +43,8 @@ jobs:
 
       - run:
           name: "Salesforce deploy actions"
-          #command: . build/deploy_to_sf_org.sh
-          command: . build/test.sh
+          command: . build/deploy_to_sf_org.sh
+          #command: . build/test.sh
 
 
 

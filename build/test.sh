@@ -3,7 +3,6 @@ FILES_TO_DEPLOY="force-app/main/default"
 #test. delete
 if [[ $FILES_TO_DEPLOY == *"force-app/main/default"* ]];
 then
-#-------------------TRUE logic start------------------------------------
     STRING_NESTED_FILES_1=""
 
     #get into force-app/main/default
