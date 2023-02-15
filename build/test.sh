@@ -262,7 +262,7 @@ STRING_NESTED_FILES_1_LEN=${#STRING_NESTED_FILES_1}
 if [[ $STRING_NESTED_FILES_1_LEN > 0 ]];
 then
     echo "STRING_NESTED_FILES_1 is NOT empty"
-
+    STRING_NESTED_FILES_1_EMPTY=0
     LEN_OF_STRING_NESTED_FILES_1=${#STRING_NESTED_FILES_1}
     NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_STRING_NESTED_FILES_1 - 1 )
     STRING_NESTED_FILES_1_TRUNC=$((echo ${STRING_NESTED_FILES_1}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
@@ -304,6 +304,7 @@ then
     echo $STRING_NESTED_FILES_1_TRUNC
 else
     echo "STRING_NESTED_FILES_1 is empty"
+    STRING_NESTED_FILES_1_EMPTY=1
 fi  
 #NESTED 1-----------------------------------------------------------------------------------------------------------------------------------
 echo -e "NESTED 1-----------------------------------------------------------------------------------------------------------------------------------\n\n\n"
@@ -318,6 +319,7 @@ STRING_NESTED_FILES_2_LEN=${#STRING_NESTED_FILES_2}
 if [[ $STRING_NESTED_FILES_2_LEN > 0 ]];
 then
     echo "STRING_NESTED_FILES_2 is NOT empty"
+    STRING_NESTED_FILES_2_EMPTY=0
 
     LEN_OF_STRING_NESTED_FILES_2=${#STRING_NESTED_FILES_2}
     NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_STRING_NESTED_FILES_2 - 1 )
@@ -360,6 +362,7 @@ then
     echo $STRING_NESTED_FILES_2_TRUNC
 else
     echo "STRING_NESTED_FILES_2 is empty"
+    STRING_NESTED_FILES_2_EMPTY=1
 fi  
 echo -e "NESTED 2-----------------------------------------------------------------------------------------------------------------------------------\n\n\n"
 
@@ -375,6 +378,7 @@ STRING_NESTED_FILES_3_LEN=${#STRING_NESTED_FILES_3}
 if [[ $STRING_NESTED_FILES_3_LEN > 0 ]];
 then
     echo "STRING_NESTED_FILES_3 is NOT empty"
+    STRING_NESTED_FILES_3_EMPTY=0
 
     LEN_OF_STRING_NESTED_FILES_3=${#STRING_NESTED_FILES_3}
     NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_STRING_NESTED_FILES_3 - 1 )
@@ -417,6 +421,7 @@ then
     echo $STRING_NESTED_FILES_3_TRUNC
 else
     echo "STRING_NESTED_FILES_3 is empty"
+    STRING_NESTED_FILES_3_EMPTY=1
 fi
 
 
@@ -434,6 +439,8 @@ STRING_NESTED_FILES_4_LEN=${#STRING_NESTED_FILES_4}
 if [[ $STRING_NESTED_FILES_4_LEN > 0 ]];
 then
     echo "STRING_NESTED_FILES_4 is NOT empty"
+    STRING_NESTED_FILES_4_EMPTY=1
+
     LEN_OF_STRING_NESTED_FILES_4=${#STRING_NESTED_FILES_4}
     NUMBER_OF_SYMBOLS_TO_TRUNCATE=$( expr $LEN_OF_STRING_NESTED_FILES_4 - 1 )
     STRING_NESTED_FILES_4_TRUNC=$((echo ${STRING_NESTED_FILES_4}) | cut -c 1-$NUMBER_OF_SYMBOLS_TO_TRUNCATE )
@@ -475,6 +482,7 @@ then
     echo $STRING_NESTED_FILES_4_TRUNC
 else
     echo "STRING_NESTED_FILES_4 is empty"
+    STRING_NESTED_FILES_4_EMPTY=1
 fi
 
 
@@ -495,6 +503,7 @@ STRING_NESTED_FILES_5_LEN=${#STRING_NESTED_FILES_5}
 if [[ $STRING_NESTED_FILES_5_LEN > 0 ]];
 then
     echo "STRING_NESTED_FILES_5 is NOT empty"
+    STRING_NESTED_FILES_5_EMPTY=0
 
 
 
@@ -540,6 +549,7 @@ then
     echo -e "NESTED 5-----------------------------------------------------------------------------------------------------------------------------------\n\n\n"
 else
     echo "STRING_NESTED_FILES_5 is empty"
+    STRING_NESTED_FILES_5_EMPTY=1
 fi
 
 
@@ -552,8 +562,13 @@ echo "---------------------------  === START OF THE LIST ===  ------------------
 echo "                                                                                              |"
 echo "                                                                                              |"
 echo "                                                                                              |"
-echo "        
+echo "                                                                                              |"
 
+if [[ $STRING_NESTED_FILES_1_EMPTY == 0 ]];
+then
+    echo $STRING_NESTED_FILES_1_TRUNC
+    IFS=',' read -r -a display_array <<< "$STRING_NESTED_FILES_1_TRUNC"
+fi
 
 
 
