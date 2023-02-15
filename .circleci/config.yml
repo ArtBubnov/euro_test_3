@@ -77,9 +77,6 @@ jobs:
           name: "Salesforce predeploy actions"
           command: . build/pre_deploy_actions.sh
 
-      - run:
-          name: "List of metadata to be deployed to Salesforce org"
-          command: . build/test.sh
 
 
 workflows:
