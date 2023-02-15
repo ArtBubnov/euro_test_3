@@ -577,7 +577,7 @@ then
     do
         echo "LOOP STEP ___"$COUNT_01"__"
         echo ${display_array_01[@]}
-        COUNT=$(( $COUNT_01 + 1 ))
+        COUNT_01=$(( $COUNT_01 + 1 ))
     done
 
 fi
