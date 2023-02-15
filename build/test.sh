@@ -566,7 +566,6 @@ echo "                                                                          
 
 if [[ $STRING_NESTED_FILES_1_EMPTY == 0 ]];
 then
-    echo $STRING_NESTED_FILES_1_TRUNC
     IFS=',' read -r -a display_array_01 <<< "$STRING_NESTED_FILES_1_TRUNC"
 
     COUNT_01=0
@@ -578,19 +577,28 @@ then
         folder=$(echo ${display_array_01[$COUNT_01]} | cut -d\/ -f1)
         file=$(echo ${display_array_01[$COUNT_01]} | cut -d\/ -f2)
         echo -e "$folder: $file"
-
-
-
-
-
-
-
         COUNT_01=$(( $COUNT_01 + 1 ))
     done
 
 fi
+echo "----------------------------------------------------------------------"
+if [[ $STRING_NESTED_FILES_2_EMPTY == 0 ]];
+then
+    IFS=',' read -r -a display_array_02 <<< "$STRING_NESTED_FILES_2_TRUNC"
 
+    COUNT_02=0
+    ARRAY_LEN_02=${#display_array_02[@]}
+    LOOP_LEN_02=$( expr $ARRAY_LEN_02 - 1)
 
+    while [ $COUNT_02 -le $LOOP_LEN_02 ]
+    do
+        folder=$(echo ${display_array_02[$COUNT_02]} | cut -d\/ -f1)
+        file=$(echo ${display_array_02[$COUNT_02]} | cut -d\/ -f2)
+        echo -e "$folder: $file"
+        COUNT_02=$(( $COUNT_02 + 1 ))
+    done
+
+fi
 
 
 echo "                                                                                              |"
