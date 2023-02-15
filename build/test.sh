@@ -581,11 +581,14 @@ then
     done
 
 fi
-echo "----------------------------------------------------------------------"
+
+
+
+
 if [[ $STRING_NESTED_FILES_2_EMPTY == 0 ]];
 then
     IFS=',' read -r -a display_array_02 <<< "$STRING_NESTED_FILES_2_TRUNC"
-
+    echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
     COUNT_02=0
     ARRAY_LEN_02=${#display_array_02[@]}
     LOOP_LEN_02=$( expr $ARRAY_LEN_02 - 1)
@@ -599,6 +602,27 @@ then
     done
 
 fi
+
+
+
+if [[ $STRING_NESTED_FILES_3_EMPTY == 0 ]];
+then
+    IFS=',' read -r -a display_array_03 <<< "$STRING_NESTED_FILES_3_TRUNC"
+    echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+    COUNT_03=0
+    ARRAY_LEN_03=${#display_array_03[@]}
+    LOOP_LEN_03=$( expr $ARRAY_LEN_03 - 1)
+
+    while [ $COUNT_03 -le $LOOP_LEN_03 ]
+    do
+        folder=$(echo ${display_array_03[$COUNT_03]} | cut -d\/ -f1)
+        file=$(echo ${display_array_03[$COUNT_03]} | cut -d\/ -f2)
+        echo -e "$folder: $file"
+        COUNT_03=$(( $COUNT_03 + 1 ))
+    done
+
+fi
+
 
 
 echo "                                                                                              |"
