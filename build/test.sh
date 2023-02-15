@@ -568,6 +568,17 @@ if [[ $STRING_NESTED_FILES_1_EMPTY == 0 ]];
 then
     echo $STRING_NESTED_FILES_1_TRUNC
     IFS=',' read -r -a display_array <<< "$STRING_NESTED_FILES_1_TRUNC"
+
+    COUNT=0
+    ARRAY_LEN=${#display_array[@]}
+    LOOP_LEN=$( expr $ARRAY_LEN - 1)
+
+    while [ $COUNT -le $LOOP_LEN ]
+    do
+        echo "LOOP STEP ___"$COUNT"__"
+        echo ${display_array[@]}
+    done
+
 fi
 
 
