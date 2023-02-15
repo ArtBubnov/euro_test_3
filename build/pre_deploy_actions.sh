@@ -132,7 +132,7 @@ git checkout $SOURCE_BRANCH_NAME
 
 
 echo -e "\n\n\nOutput list of files to be deployed logic execution"
-source build/test.sh
+/bin/bash build/test.sh
 
 
 echo "Test deploy to Salesforce env without saving \n\n\n"
