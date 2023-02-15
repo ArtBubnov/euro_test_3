@@ -576,7 +576,7 @@ then
     while [ $COUNT_01 -le $LOOP_LEN_01 ]
     do
         echo "LOOP STEP ___"$COUNT_01"__"
-        echo ${display_array_01[@]}
+        echo ${display_array_01[$COUNT_01]}
         COUNT_01=$(( $COUNT_01 + 1 ))
     done
 
