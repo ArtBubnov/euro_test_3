@@ -353,7 +353,7 @@ echo "---------------------------  === START OF THE LIST ===  ------------------
 echo "                                                                                              |"
 echo "                                                                                              |"
 echo "                                                                                              |"
-echo "                                                                                              |"
+echo -e "                                                                                              |\n\n\n"
 
 if [[ $STRING_NESTED_FILES_1_EMPTY == 0 ]];
 then
@@ -460,7 +460,7 @@ fi
 
 
 
-echo "                                                                                              |"
+echo -e "\n\n\n                                                                                              |"
 echo "                                                                                              |"
 echo "                                                                                              |"
 echo "                                                                                              |"
