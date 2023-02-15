@@ -489,8 +489,8 @@ echo -e "\n\n\nNESTED 5---------------------------------------------------------
 echo "STRING_NESTED_FILES_5"
 echo $STRING_NESTED_FILES_5
 
-#STRING_NESTED_FILES_5_LEN=${#STRING_NESTED_FILES_5}
-STRING_NESTED_FILES_5_LEN=3
+STRING_NESTED_FILES_5_LEN=${#STRING_NESTED_FILES_5}
+
 
 if [[ $STRING_NESTED_FILES_5_LEN > 0 ]];
 then
