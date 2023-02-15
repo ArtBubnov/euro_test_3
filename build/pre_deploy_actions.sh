@@ -1,5 +1,5 @@
 echo -e "Predeploy actions \n\n\n"
-
+pwd
 echo "Global variables display:"
 echo "Event type is:"
 echo $EVENT_TYPE
