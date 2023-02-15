@@ -567,16 +567,17 @@ echo "                                                                          
 if [[ $STRING_NESTED_FILES_1_EMPTY == 0 ]];
 then
     echo $STRING_NESTED_FILES_1_TRUNC
-    IFS=',' read -r -a display_array <<< "$STRING_NESTED_FILES_1_TRUNC"
+    IFS=',' read -r -a display_array_01 <<< "$STRING_NESTED_FILES_1_TRUNC"
 
-    COUNT=0
-    ARRAY_LEN=${#display_array[@]}
-    LOOP_LEN=$( expr $ARRAY_LEN - 1)
+    COUNT_01=0
+    ARRAY_LEN_01=${#display_array_01[@]}
+    LOOP_LEN_01=$( expr $ARRAY_LEN_01 - 1)
 
-    while [ $COUNT -le $LOOP_LEN ]
+    while [ $COUNT_01 -le $LOOP_LEN_01 ]
     do
-        echo "LOOP STEP ___"$COUNT"__"
-        echo ${display_array[@]}
+        echo "LOOP STEP ___"$COUNT_01"__"
+        echo ${display_array_01[@]}
+        COUNT=$(( $COUNT_01 + 1 ))
     done
 
 fi
