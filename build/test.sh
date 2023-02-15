@@ -588,7 +588,7 @@ fi
 if [[ $STRING_NESTED_FILES_2_EMPTY == 0 ]];
 then
     IFS=',' read -r -a display_array_02 <<< "$STRING_NESTED_FILES_2_TRUNC"
-    echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+    echo -e "\n|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n"
     COUNT_02=0
     ARRAY_LEN_02=${#display_array_02[@]}
     LOOP_LEN_02=$( expr $ARRAY_LEN_02 - 1)
@@ -608,7 +608,7 @@ fi
 if [[ $STRING_NESTED_FILES_3_EMPTY == 0 ]];
 then
     IFS=',' read -r -a display_array_03 <<< "$STRING_NESTED_FILES_3_TRUNC"
-    echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+    echo -e "\n|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n"
     COUNT_03=0
     ARRAY_LEN_03=${#display_array_03[@]}
     LOOP_LEN_03=$( expr $ARRAY_LEN_03 - 1)
@@ -623,6 +623,45 @@ then
 
 fi
 
+
+STRING_NESTED_FILES_5_EMPTY=1
+if [[ $STRING_NESTED_FILES_4_EMPTY == 0 ]];
+then
+    IFS=',' read -r -a display_array_04 <<< "$STRING_NESTED_FILES_4_TRUNC"
+    echo -e "\n|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n"
+    COUNT_04=0
+    ARRAY_LEN_04=${#display_array_04[@]}
+    LOOP_LEN_04=$( expr $ARRAY_LEN_04 - 1)
+
+    while [ $COUNT_04 -le $LOOP_LEN_04 ]
+    do
+        folder=$(echo ${display_array_04[$COUNT_04]} | cut -d\/ -f1)
+        file=$(echo ${display_array_04[$COUNT_04]} | cut -d\/ -f2)
+        echo -e "$folder: $file"
+        COUNT_04=$(( $COUNT_04 + 1 ))
+    done
+
+fi
+
+
+STRING_NESTED_FILES_5_EMPTY=1
+if [[ $STRING_NESTED_FILES_5_EMPTY == 0 ]];
+then
+    IFS=',' read -r -a display_array_05 <<< "$STRING_NESTED_FILES_5_TRUNC"
+    echo -e "\n|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n"
+    COUNT_05=0
+    ARRAY_LEN_05=${#display_array_05[@]}
+    LOOP_LEN_05=$( expr $ARRAY_LEN_05 - 1)
+
+    while [ $COUNT_05 -le $LOOP_LEN_05 ]
+    do
+        folder=$(echo ${display_array_05[$COUNT_05]} | cut -d\/ -f1)
+        file=$(echo ${display_array_05[$COUNT_05]} | cut -d\/ -f2)
+        echo -e "$folder: $file"
+        COUNT_05=$(( $COUNT_05 + 1 ))
+    done
+
+fi
 
 
 echo "                                                                                              |"
